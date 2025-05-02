@@ -40,5 +40,19 @@ namespace WinCalcPro
             return result;
         }
 
+        // 나누기
+        public double Divide(double x, double y)
+        {
+
+            if (y == 0)
+            { // 0으로는 나눌 수 없음 
+                return double.NaN;
+            }
+
+            double result = x / y;
+
+            return result;
+        }
+
     } //StandardCalc 클래스 끝
 }
