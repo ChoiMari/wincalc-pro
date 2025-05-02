@@ -32,5 +32,13 @@ namespace WinCalcPro
             return result;
         }
 
+        // 곱하기
+        public double Multiply(double x, double y)
+        {
+            double result = x * y;
+
+            return result;
+        }
+
     } //StandardCalc 클래스 끝
 }
