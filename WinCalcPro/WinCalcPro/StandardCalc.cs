@@ -75,5 +75,21 @@ namespace WinCalcPro
             return result;
         }
 
+        // 1/x 버튼, 역수(입력된 숫자 x에 대해 1 / x를 계산함)
+        // x가 0이면 예외 처리(0으로는 나눌 수 없음)
+        public double Reciprocal(double x)
+        {
+
+            if (x == 0)
+            {
+                return double.NaN;
+                // Not a Number : 수학적으로 정의되지 않은 값이나 계산할 수 없는 값을 나타내는 특별한 값 
+                // 반환값을 받을 때는 주로 if문과 함께 double.IsNaN(result) 사용. result가 NaN이면 True반환 
+
+            }
+
+            return 1 / x;
+        }
+
     } //StandardCalc 클래스 끝
 }
