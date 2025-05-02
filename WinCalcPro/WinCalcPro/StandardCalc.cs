@@ -54,5 +54,18 @@ namespace WinCalcPro
             return result;
         }
 
+        // 제곱근(루트 씌움)
+        public double Sqrt(double x)
+        {
+
+            if (x < 0)
+            {
+                return double.NaN;
+            }
+
+            double result = Math.Sqrt(x);
+            return result;
+        }
+
     } //StandardCalc 클래스 끝
 }
