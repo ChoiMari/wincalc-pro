@@ -24,7 +24,13 @@ namespace WinCalcPro
             return result;
         }
 
+        // 빼기
+        public double Subtract(double x, double y)
+        {
+            double result = x - y;
 
+            return result;
+        }
 
     } //StandardCalc 클래스 끝
 }
