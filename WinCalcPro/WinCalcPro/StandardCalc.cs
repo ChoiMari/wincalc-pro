@@ -67,5 +67,13 @@ namespace WinCalcPro
             return result;
         }
 
+        // 제곱
+        public double Square(double x)
+        {
+            double result = x * x;
+
+            return result;
+        }
+
     } //StandardCalc 클래스 끝
 }
