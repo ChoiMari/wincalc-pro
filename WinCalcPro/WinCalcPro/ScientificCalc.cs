@@ -6,70 +6,122 @@ using System.Threading.Tasks;
 
 namespace WinCalcPro
 {
+    /// <summary>
+    ///  2025.05.02.
+    ///  김철수
+    ///  공학용 계산기 내용 추가
+    /// </summary>
+    /// <returns></returns>
     internal class ScientificCalc
     {
 
-/// <summary>
-///  2025.05.02.
-///  김철수
-///  공학용 계산기 내용 추가
-/// </summary>
-/// <returns></returns>
 
-        // 파이 출력
-        decimal Pi()
+
+        /// <summary>
+        /// 파이 출력
+        /// </summary>
+        /// <returns></returns>
+        public decimal Pi()
         {
-            return Math.PI;
+            return (decimal)Math.PI;
         }
-        decimal E()
+
+        /// <summary>
+        /// 상수 e 출력
+        /// </summary>
+        /// <returns></returns>
+        public decimal E()
         {
-            return Math.E;
+            return (decimal)Math.E;
         }
-        // 제곱근
-        decimal Sqrt(decimal number)
+        /// <summary>
+        /// 제곱근
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public decimal Sqrt(decimal number)
         {
             return (decimal)Math.Sqrt((double)number);
         }
-        // 제곱
-        decimal Pow(decimal number, decimal exponent)
+        /// <summary>
+        /// 제곱
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="exponent"></param>
+        /// <returns></returns>
+        public decimal Pow(decimal number, decimal exponent)
         {
             return (decimal)Math.Pow((double)number, (double)exponent);
         }
-        // 로그
-        decimal Log(decimal number, decimal baseNumber)
+        /// <summary>
+        /// 로그
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="baseNumber"></param>
+        /// <returns></returns>
+        public decimal Log(decimal number, decimal baseNumber)
         {
             return (decimal)Math.Log((double)number, (double)baseNumber);
         }
-        // 로그10
-        decimal Log10(decimal number)
+        /// <summary>
+        /// 로그 10
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public decimal Log10(decimal number)
         {
             return (decimal)Math.Log10((double)number);
         }
-        //팩토리얼
-        decimal n=0;
-        decimal Fatory(decimal number)
+
+        decimal n =0;
+        /// <summary>
+        ///  팩토리얼
+        /// </summary>
+        public decimal Fatory(decimal number)
         {
             n += number;
-            if (number < 0)
+            if (number > 0)
             {
-                return n;
+                Fatory(number - 1);
             }
-            Fatory(number - 1);
+            return n;
         }
-        // |x|
-        decimal Abs(decimal number)
+        /// <summary>
+        /// lxl 절대값
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public decimal Abs(decimal number)
         {
             return Math.Abs(number);
         }
-        // exp
-        decimal Exp(decimal number)
+        /// <summary>
+        /// exp 자연로그
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public decimal Exp(double number)
         {
-            return Math.Exp(number);
+            return (decimal)Math.Exp(number);
         }
-        //mod
-        decimal Mod(decimal number,decimal number2)
+        /// <summary>
+        /// mod 
+        /// </summary>
+        /// <param name="number"></param>
+        /// <param name="number2"></param>
+        /// <returns></returns>
+        public decimal Mod(decimal number,decimal number2)
         {
             return number % number2;
+        }
+        /// <summary>
+        /// sin 
+        /// </summary>
+        /// <param name="number"></param>
+        /// <returns></returns>
+        public decimal Sin(decimal number)
+        {
+            return (decimal)Math.Sin((double)number);
         }
 
 
