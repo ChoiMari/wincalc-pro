@@ -24,6 +24,11 @@ namespace WinCalcPro
         private bool isMenuOpen = false;
 
         /// <summary>
+        /// 메뉴 애니메이션을 위한 타이머 객체 생성(재사용)
+        /// </summary>
+        private Timer menuTimer;
+
+        /// <summary>
         /// 메뉴를 보여주는 메서드
         /// </summary>
         private void ShowMenu() {
@@ -91,11 +96,13 @@ namespace WinCalcPro
             }
         }
 
+        // 메뉴 버튼 클릭 이벤트 핸들러
         private void button_menu_Click(object sender, EventArgs e)
         {
             ShowMenu();
         }
 
+        // 메뉴 닫기 버튼 클릭 이벤트 핸들러
         private void button_close_Click(object sender, EventArgs e)
         {
             HideMenu();

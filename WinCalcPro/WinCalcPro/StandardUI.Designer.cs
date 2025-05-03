@@ -1,6 +1,6 @@
 ﻿namespace WinCalcPro
 {
-    partial class UC_Standard
+    partial class StandardUI
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
