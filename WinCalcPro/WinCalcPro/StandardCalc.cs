@@ -142,5 +142,24 @@ namespace WinCalcPro
             return result;
         }
 
+        //  = : 계산 실행(입력된 수식 계산)
+
+        // . : 소수점 입력
+
+        // +/- : 부호 변경
+
+        // 메모리 버튼 MC & MR & M : 메모리에 값이 저장되어야 활성화됨 
+        // M+ : 메모리에 더하기
+        /// <summary>
+        /// 메모리 더하기 : 메모리에 저장된 값에 x를 더합니다.
+        /// </summary>
+        /// <param name="x">입력 값</param>
+        /// <param name="memory">메모리에 저장된 값</param>
+        /// <returns>메모리에 저장된 값에 x를 더한 값을 반환</returns>
+        public double MemoryPlus(double x, double memory)
+        {
+            return memory + x; // 메모리에 x를 더한 값을 반환
+        }
+
     } //StandardCalc 클래스 끝
 }
