@@ -64,6 +64,12 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ScientificCalc.cs" />
     <Compile Include="StandardCalc.cs" />
+    <Compile Include="UC_Standard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UC_Standard.Designer.cs">
+      <DependentUpon>UC_Standard.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
