@@ -27,7 +27,7 @@ namespace WinCalcPro
         /// 메뉴를 보여주는 메서드
         /// </summary>
         private void ShowMenu() {
-
+            panel_menu.BringToFront();
             button_menu.Visible = false; // 햄버거 버튼은 숨기기
             button_close.Visible = true; // 닫기 버튼 보이게
             isMenuOpen = true; // 메뉴 열림 상태로 변경
