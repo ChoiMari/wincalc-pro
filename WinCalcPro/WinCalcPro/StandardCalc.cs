@@ -161,7 +161,15 @@ namespace WinCalcPro
             return result;
         }
 
-        // +/- : 부호 변경
+        /// <summary>
+        /// +/- : 입력값의 부호를 변경합니다
+        /// </summary>
+        /// <param name="x">입력값</param>
+        /// <returns>부호를 바꿔서 반환</returns>
+        public double ChangeSign(double x)
+        {
+            return -x; // 부호를 바꿔서 반환
+        }
 
         // 메모리 버튼 MC & MR & M : 메모리에 값이 저장되어야 활성화됨 
         // M+ : 메모리에 더하기
