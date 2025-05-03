@@ -52,5 +52,23 @@ namespace WinCalcPro
         {
             input_number.Text= sc.Sin(UserInput(input_number.Text)).ToString();
         }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+
+        }
+        //private void Form1_Resize(object sender, EventArgs e)
+        //{
+        //    // 버튼 크기를 창 크기에 맞게 조정
+        //    if (btnExample != null)
+        //    {
+        //        btnExample.Width = this.ClientSize.Width / 2; // 창 너비의 절반
+        //        btnExample.Height = this.ClientSize.Height / 4; // 창 높이의 1/4
+        //        btnExample.Location = new Point(
+        //            (this.ClientSize.Width - btnExample.Width) / 2, // 중앙 정렬
+        //            (this.ClientSize.Height - btnExample.Height) / 2 // 중앙 정렬
+        //        );
+        //    }
+        //}
     }
 }
