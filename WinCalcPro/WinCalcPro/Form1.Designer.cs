@@ -32,6 +32,7 @@
             this.panel_menu = new System.Windows.Forms.Panel();
             this.button_close = new System.Windows.Forms.Button();
             this.button_menu = new System.Windows.Forms.Button();
+            this.label_title = new System.Windows.Forms.Label();
             this.panel_menu.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,12 +73,23 @@
             this.button_menu.UseVisualStyleBackColor = false;
             this.button_menu.Click += new System.EventHandler(this.button_menu_Click);
             // 
+            // label_title
+            // 
+            this.label_title.AutoSize = true;
+            this.label_title.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label_title.Location = new System.Drawing.Point(55, 17);
+            this.label_title.Name = "label_title";
+            this.label_title.Size = new System.Drawing.Size(68, 27);
+            this.label_title.TabIndex = 2;
+            this.label_title.Text = "표준";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(324, 501);
+            this.Controls.Add(this.label_title);
             this.Controls.Add(this.panel_menu);
             this.Controls.Add(this.button_menu);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -85,6 +97,7 @@
             this.Text = "계산기";
             this.panel_menu.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -93,5 +106,6 @@
         private System.Windows.Forms.Button button_menu;
         private System.Windows.Forms.Panel panel_menu;
         private System.Windows.Forms.Button button_close;
+        private System.Windows.Forms.Label label_title;
     }
 }
