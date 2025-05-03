@@ -144,7 +144,7 @@ namespace WinCalcPro
             return result;
         }
 
-        //  = : 계산 실행(입력된 수식 계산)
+        // = : 계산 결과를 보여줍니다.
 
         /// <summary>
         /// . 소수점을 추가합니다.
