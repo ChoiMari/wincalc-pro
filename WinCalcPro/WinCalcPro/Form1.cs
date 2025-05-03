@@ -24,11 +24,6 @@ namespace WinCalcPro
         private bool isMenuOpen = false;
 
         /// <summary>
-        /// 메뉴 애니메이션을 위한 타이머 객체 생성(재사용)
-        /// </summary>
-        private Timer menuTimer;
-
-        /// <summary>
         /// 메뉴를 보여주는 메서드
         /// </summary>
         private void ShowMenu() {
