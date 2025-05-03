@@ -97,9 +97,6 @@
     <Content Include="Resources\calc.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resources\closeImg.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <Content Include="Resources\menuImg.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
