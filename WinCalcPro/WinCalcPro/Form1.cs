@@ -57,6 +57,16 @@ namespace WinCalcPro
         {
 
         }
+
+        private void nd2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void number_9_Click(object sender, EventArgs e)
+        {
+
+        }
         //private void Form1_Resize(object sender, EventArgs e)
         //{
         //    // 버튼 크기를 창 크기에 맞게 조정

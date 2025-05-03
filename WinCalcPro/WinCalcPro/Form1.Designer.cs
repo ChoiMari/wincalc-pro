@@ -52,22 +52,17 @@
             this.parenthesesEnd = new System.Windows.Forms.Button();
             this.parentheses = new System.Windows.Forms.Button();
             this.squareRoot = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
             this.multiplication = new System.Windows.Forms.Button();
             this.number_9 = new System.Windows.Forms.Button();
-            this.numer_8 = new System.Windows.Forms.Button();
+            this.number_8 = new System.Windows.Forms.Button();
             this.number_7 = new System.Windows.Forms.Button();
             this.power = new System.Windows.Forms.Button();
-            this.button13 = new System.Windows.Forms.Button();
+            this.minus = new System.Windows.Forms.Button();
             this.number_6 = new System.Windows.Forms.Button();
             this.number_5 = new System.Windows.Forms.Button();
             this.number_4 = new System.Windows.Forms.Button();
             this.squareOfTen = new System.Windows.Forms.Button();
-            this.button18 = new System.Windows.Forms.Button();
+            this.plus = new System.Windows.Forms.Button();
             this.numbere_3 = new System.Windows.Forms.Button();
             this.number_2 = new System.Windows.Forms.Button();
             this.number_1 = new System.Windows.Forms.Button();
@@ -96,6 +91,7 @@
             this.nd2.TabIndex = 2;
             this.nd2.Text = "2nd";
             this.nd2.UseVisualStyleBackColor = true;
+            this.nd2.Click += new System.EventHandler(this.nd2_Click);
             // 
             // sin
             // 
@@ -319,60 +315,10 @@
             this.squareRoot.Text = "√x";
             this.squareRoot.UseVisualStyleBackColor = true;
             // 
-            // button1
-            // 
-            this.button1.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button1.Location = new System.Drawing.Point(244, 375);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(52, 55);
-            this.button1.TabIndex = 30;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button4.Location = new System.Drawing.Point(186, 375);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(52, 55);
-            this.button4.TabIndex = 29;
-            this.button4.Text = "button4";
-            this.button4.UseVisualStyleBackColor = true;
-            // 
-            // button5
-            // 
-            this.button5.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button5.Location = new System.Drawing.Point(128, 375);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(52, 55);
-            this.button5.TabIndex = 28;
-            this.button5.Text = "|x|";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button6
-            // 
-            this.button6.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button6.Location = new System.Drawing.Point(70, 375);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(52, 55);
-            this.button6.TabIndex = 27;
-            this.button6.Text = "1/x";
-            this.button6.UseVisualStyleBackColor = true;
-            // 
-            // button7
-            // 
-            this.button7.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button7.Location = new System.Drawing.Point(12, 375);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(52, 55);
-            this.button7.TabIndex = 26;
-            this.button7.Text = "x²";
-            this.button7.UseVisualStyleBackColor = true;
-            // 
             // multiplication
             // 
             this.multiplication.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.multiplication.Location = new System.Drawing.Point(244, 436);
+            this.multiplication.Location = new System.Drawing.Point(244, 379);
             this.multiplication.Name = "multiplication";
             this.multiplication.Size = new System.Drawing.Size(52, 55);
             this.multiplication.TabIndex = 35;
@@ -382,28 +328,29 @@
             // number_9
             // 
             this.number_9.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.number_9.Location = new System.Drawing.Point(186, 436);
+            this.number_9.Location = new System.Drawing.Point(186, 379);
             this.number_9.Name = "number_9";
             this.number_9.Size = new System.Drawing.Size(52, 55);
             this.number_9.TabIndex = 34;
             this.number_9.Text = "9";
             this.number_9.UseVisualStyleBackColor = true;
+            this.number_9.Click += new System.EventHandler(this.number_9_Click);
             // 
-            // numer_8
+            // number_8
             // 
-            this.numer_8.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.numer_8.Location = new System.Drawing.Point(128, 436);
-            this.numer_8.Name = "numer_8";
-            this.numer_8.Size = new System.Drawing.Size(52, 55);
-            this.numer_8.TabIndex = 33;
-            this.numer_8.Text = "8";
-            this.numer_8.UseVisualStyleBackColor = true;
-            this.numer_8.Click += new System.EventHandler(this.button10_Click);
+            this.number_8.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.number_8.Location = new System.Drawing.Point(128, 379);
+            this.number_8.Name = "number_8";
+            this.number_8.Size = new System.Drawing.Size(52, 55);
+            this.number_8.TabIndex = 33;
+            this.number_8.Text = "8";
+            this.number_8.UseVisualStyleBackColor = true;
+            this.number_8.Click += new System.EventHandler(this.button10_Click);
             // 
             // number_7
             // 
             this.number_7.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.number_7.Location = new System.Drawing.Point(70, 436);
+            this.number_7.Location = new System.Drawing.Point(70, 379);
             this.number_7.Name = "number_7";
             this.number_7.Size = new System.Drawing.Size(52, 55);
             this.number_7.TabIndex = 32;
@@ -413,27 +360,27 @@
             // power
             // 
             this.power.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.power.Location = new System.Drawing.Point(12, 436);
+            this.power.Location = new System.Drawing.Point(12, 379);
             this.power.Name = "power";
             this.power.Size = new System.Drawing.Size(52, 55);
             this.power.TabIndex = 31;
             this.power.Text = "xʸ";
             this.power.UseVisualStyleBackColor = true;
             // 
-            // button13
+            // minus
             // 
-            this.button13.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button13.Location = new System.Drawing.Point(244, 497);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(52, 55);
-            this.button13.TabIndex = 40;
-            this.button13.Text = "button13";
-            this.button13.UseVisualStyleBackColor = true;
+            this.minus.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.minus.Location = new System.Drawing.Point(244, 440);
+            this.minus.Name = "minus";
+            this.minus.Size = new System.Drawing.Size(52, 55);
+            this.minus.TabIndex = 40;
+            this.minus.Text = "-";
+            this.minus.UseVisualStyleBackColor = true;
             // 
             // number_6
             // 
             this.number_6.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.number_6.Location = new System.Drawing.Point(186, 497);
+            this.number_6.Location = new System.Drawing.Point(186, 440);
             this.number_6.Name = "number_6";
             this.number_6.Size = new System.Drawing.Size(52, 55);
             this.number_6.TabIndex = 39;
@@ -443,7 +390,7 @@
             // number_5
             // 
             this.number_5.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.number_5.Location = new System.Drawing.Point(128, 497);
+            this.number_5.Location = new System.Drawing.Point(128, 440);
             this.number_5.Name = "number_5";
             this.number_5.Size = new System.Drawing.Size(52, 55);
             this.number_5.TabIndex = 38;
@@ -453,7 +400,7 @@
             // number_4
             // 
             this.number_4.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.number_4.Location = new System.Drawing.Point(70, 497);
+            this.number_4.Location = new System.Drawing.Point(70, 440);
             this.number_4.Name = "number_4";
             this.number_4.Size = new System.Drawing.Size(52, 55);
             this.number_4.TabIndex = 37;
@@ -463,27 +410,27 @@
             // squareOfTen
             // 
             this.squareOfTen.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.squareOfTen.Location = new System.Drawing.Point(12, 497);
+            this.squareOfTen.Location = new System.Drawing.Point(12, 440);
             this.squareOfTen.Name = "squareOfTen";
             this.squareOfTen.Size = new System.Drawing.Size(52, 55);
             this.squareOfTen.TabIndex = 36;
             this.squareOfTen.Text = "10ˣ";
             this.squareOfTen.UseVisualStyleBackColor = true;
             // 
-            // button18
+            // plus
             // 
-            this.button18.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button18.Location = new System.Drawing.Point(244, 558);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(52, 55);
-            this.button18.TabIndex = 45;
-            this.button18.Text = "button18";
-            this.button18.UseVisualStyleBackColor = true;
+            this.plus.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.plus.Location = new System.Drawing.Point(244, 501);
+            this.plus.Name = "plus";
+            this.plus.Size = new System.Drawing.Size(52, 55);
+            this.plus.TabIndex = 45;
+            this.plus.Text = "+";
+            this.plus.UseVisualStyleBackColor = true;
             // 
             // numbere_3
             // 
             this.numbere_3.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.numbere_3.Location = new System.Drawing.Point(186, 558);
+            this.numbere_3.Location = new System.Drawing.Point(186, 501);
             this.numbere_3.Name = "numbere_3";
             this.numbere_3.Size = new System.Drawing.Size(52, 55);
             this.numbere_3.TabIndex = 44;
@@ -493,7 +440,7 @@
             // number_2
             // 
             this.number_2.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.number_2.Location = new System.Drawing.Point(128, 558);
+            this.number_2.Location = new System.Drawing.Point(128, 501);
             this.number_2.Name = "number_2";
             this.number_2.Size = new System.Drawing.Size(52, 55);
             this.number_2.TabIndex = 43;
@@ -503,7 +450,7 @@
             // number_1
             // 
             this.number_1.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.number_1.Location = new System.Drawing.Point(70, 558);
+            this.number_1.Location = new System.Drawing.Point(70, 501);
             this.number_1.Name = "number_1";
             this.number_1.Size = new System.Drawing.Size(52, 55);
             this.number_1.TabIndex = 42;
@@ -513,7 +460,7 @@
             // log
             // 
             this.log.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.log.Location = new System.Drawing.Point(12, 558);
+            this.log.Location = new System.Drawing.Point(12, 501);
             this.log.Name = "log";
             this.log.Size = new System.Drawing.Size(52, 55);
             this.log.TabIndex = 41;
@@ -523,7 +470,7 @@
             // equal
             // 
             this.equal.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.equal.Location = new System.Drawing.Point(244, 619);
+            this.equal.Location = new System.Drawing.Point(244, 562);
             this.equal.Name = "equal";
             this.equal.Size = new System.Drawing.Size(52, 55);
             this.equal.TabIndex = 50;
@@ -533,7 +480,7 @@
             // decimalPoint
             // 
             this.decimalPoint.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.decimalPoint.Location = new System.Drawing.Point(186, 619);
+            this.decimalPoint.Location = new System.Drawing.Point(186, 562);
             this.decimalPoint.Name = "decimalPoint";
             this.decimalPoint.Size = new System.Drawing.Size(52, 55);
             this.decimalPoint.TabIndex = 49;
@@ -543,7 +490,7 @@
             // zero
             // 
             this.zero.Font = new System.Drawing.Font("굴림", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.zero.Location = new System.Drawing.Point(128, 619);
+            this.zero.Location = new System.Drawing.Point(128, 562);
             this.zero.Name = "zero";
             this.zero.Size = new System.Drawing.Size(52, 55);
             this.zero.TabIndex = 48;
@@ -553,7 +500,7 @@
             // conversion
             // 
             this.conversion.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.conversion.Location = new System.Drawing.Point(70, 619);
+            this.conversion.Location = new System.Drawing.Point(70, 562);
             this.conversion.Name = "conversion";
             this.conversion.Size = new System.Drawing.Size(52, 55);
             this.conversion.TabIndex = 47;
@@ -563,7 +510,7 @@
             // naturalLog
             // 
             this.naturalLog.Font = new System.Drawing.Font("굴림", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.naturalLog.Location = new System.Drawing.Point(12, 619);
+            this.naturalLog.Location = new System.Drawing.Point(12, 562);
             this.naturalLog.Name = "naturalLog";
             this.naturalLog.Size = new System.Drawing.Size(52, 55);
             this.naturalLog.TabIndex = 46;
@@ -574,32 +521,27 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(300, 691);
+            this.ClientSize = new System.Drawing.Size(300, 619);
             this.Controls.Add(this.equal);
             this.Controls.Add(this.decimalPoint);
             this.Controls.Add(this.zero);
             this.Controls.Add(this.conversion);
             this.Controls.Add(this.naturalLog);
-            this.Controls.Add(this.button18);
+            this.Controls.Add(this.plus);
             this.Controls.Add(this.numbere_3);
             this.Controls.Add(this.number_2);
             this.Controls.Add(this.number_1);
             this.Controls.Add(this.log);
-            this.Controls.Add(this.button13);
+            this.Controls.Add(this.minus);
             this.Controls.Add(this.number_6);
             this.Controls.Add(this.number_5);
             this.Controls.Add(this.number_4);
             this.Controls.Add(this.squareOfTen);
             this.Controls.Add(this.multiplication);
             this.Controls.Add(this.number_9);
-            this.Controls.Add(this.numer_8);
+            this.Controls.Add(this.number_8);
             this.Controls.Add(this.number_7);
             this.Controls.Add(this.power);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.button4);
-            this.Controls.Add(this.button5);
-            this.Controls.Add(this.button6);
-            this.Controls.Add(this.button7);
             this.Controls.Add(this.sharing);
             this.Controls.Add(this.pectory);
             this.Controls.Add(this.parenthesesEnd);
@@ -657,22 +599,17 @@
         private System.Windows.Forms.Button parenthesesEnd;
         private System.Windows.Forms.Button parentheses;
         private System.Windows.Forms.Button squareRoot;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
         private System.Windows.Forms.Button multiplication;
         private System.Windows.Forms.Button number_9;
-        private System.Windows.Forms.Button numer_8;
+        private System.Windows.Forms.Button number_8;
         private System.Windows.Forms.Button number_7;
         private System.Windows.Forms.Button power;
-        private System.Windows.Forms.Button button13;
+        private System.Windows.Forms.Button minus;
         private System.Windows.Forms.Button number_6;
         private System.Windows.Forms.Button number_5;
         private System.Windows.Forms.Button number_4;
         private System.Windows.Forms.Button squareOfTen;
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button plus;
         private System.Windows.Forms.Button numbere_3;
         private System.Windows.Forms.Button number_2;
         private System.Windows.Forms.Button number_1;
