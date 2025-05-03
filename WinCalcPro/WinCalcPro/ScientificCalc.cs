@@ -44,6 +44,18 @@ namespace WinCalcPro
             return (decimal)Math.Sqrt((double)number);
         }
         /// <summary>
+        /// 역수
+        /// </summary>
+        public decimal Inverse(decimal number)
+        {
+            if (number == 0)
+            {
+                throw new DivideByZeroException("0으로 나눌 수 없습니다.");
+            }
+            return 1 / number;
+        }
+
+        /// <summary>
         /// 제곱
         /// </summary>
         /// <param name="number"></param>
@@ -86,6 +98,44 @@ namespace WinCalcPro
             }
             return n;
         }
+       /// <summary>
+       /// 나누기
+       /// </summary>
+       public decimal Div(decimal number, decimal number2)
+        {
+            try
+            {
+                return number / number2;
+            }
+            catch (DivideByZeroException)
+            {
+                throw new DivideByZeroException("0으로 나눌 수 없습니다.");
+            }
+        }
+
+        ///<summary>
+        /// 더하기
+        /// </summary>
+        public decimal Add(decimal number,decimal number2)
+        {
+            return number + number2;
+        }
+        /// <summary>
+        /// 빼기
+        /// </summary>
+        public decimal Sub(decimal number, decimal number2)
+        {
+            return number - number2;
+        }
+        /// <summary>
+        /// 곱하기
+        /// </summary>
+        public decimal Mul(decimal number, decimal number2)
+        {
+            return number * number2;
+        }
+
+
         /// <summary>
         /// lxl 절대값
         /// </summary>
@@ -96,13 +146,13 @@ namespace WinCalcPro
             return Math.Abs(number);
         }
         /// <summary>
-        /// exp 자연로그
+        /// exp 지수 함수
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
-        public decimal Exp(double number)
+        public decimal Exp(decimal number)
         {
-            return (decimal)Math.Exp(number);
+            return (decimal)Math.Exp((double)number);
         }
         /// <summary>
         /// mod 
@@ -110,20 +160,105 @@ namespace WinCalcPro
         /// <param name="number"></param>
         /// <param name="number2"></param>
         /// <returns></returns>
-        public decimal Mod(decimal number,decimal number2)
+        public decimal Mod(decimal number, decimal number2)
         {
-            return number % number2;
+            try
+            {
+                return number % number2;
+            }
+            catch (DivideByZeroException)
+            {
+                throw new DivideByZeroException("0으로 나눌 수 없습니다.");
+
+            }
         }
         /// <summary>
         /// sin 
         /// </summary>
         /// <param name="number"></param>
         /// <returns></returns>
-        public decimal Sin(decimal number)
+        public double Sin(decimal number)
         {
-            return (decimal)Math.Sin((double)number);
+            // 도를 라디안으로 변환
+            double radians = (double)number * (Math.PI / 180);
+            return Math.Sin(radians);
         }
-
-
+        /// <summary>
+        /// cos
+        /// </summary>
+        /// <param name="number"></param>
+        public decimal Cos(decimal number)
+        {
+            // 도를 라디안으로 변환
+            double radians = (double)number * (Math.PI / 180);
+            return (decimal)Math.Cos(radians);
+        }
+        /// <summary>
+        /// tan
+        /// </summary>
+        /// <param name="number"></param>
+        public decimal Tan(decimal number)
+        {
+            // 도를 라디안으로 변환
+            double radians = (double)number * (Math.PI / 180);
+            return (decimal)Math.Tan(radians);
+        }
+        /// <summary>
+        /// hyp
+        /// </summary>
+        /// <param name="number"></param>
+        public decimal Hyp(decimal number)
+        {
+            // 도를 라디안으로 변환
+            double radians = (double)number * (Math.PI / 180);
+            return (decimal)Math.Sinh(radians);
+        }
+        /// <summary>
+        /// sec
+        /// </summary>
+        /// <param name="number"></param>
+        public decimal Sec(decimal number)
+        {
+            // 도를 라디안으로 변환
+            double radians = (double)number * (Math.PI / 180);
+            return (decimal)(1 / Math.Cos(radians));
+        }
+        /// <summary>
+        /// csc
+        /// </summary>
+        /// 
+        public decimal Csc(decimal number)
+        {
+            // 도를 라디안으로 변환
+            double radians = (double)number * (Math.PI / 180);
+            return (decimal)(1 / Math.Sin(radians));
+        }
+        /// <summary>
+        /// cot
+        /// </summary>
+        /// 
+        public decimal Cot(decimal number)
+        {
+            // 도를 라디안으로 변환
+            double radians = (double)number * (Math.PI / 180);
+            return (decimal)(1 / Math.Tan(radians));
+        }
+        ///<summary>
+        ///10의 제곱
+        /// </summary>
+        /// 
+        public decimal SquareOfTen(decimal number)
+        {
+            //10제곱 리턴
+            return (decimal)Math.Pow((double)number,10);
+        }
+        ///<summary>
+        /// In 자연로그 
+        /// </summary>
+        /// 
+        public decimal naturalLog(decimal number)
+        {
+            return (decimal)Math.Log((double)number);
+        }
     }
 }
