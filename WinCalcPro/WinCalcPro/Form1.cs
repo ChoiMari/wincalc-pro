@@ -19,6 +19,12 @@ namespace WinCalcPro
             input_number.KeyPress += new KeyPressEventHandler(input_number_KeyPress);
             // 숫자만 입력받도록 이벤트 핸들러 추가
         }
+
+        /// <summary>
+        /// 키보드 숫자만 입력 받도록 설정
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void input_number_KeyPress(object sender, KeyPressEventArgs e)
         {
             // 숫자와 제어 문자만 허용
