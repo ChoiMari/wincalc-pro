@@ -1,7 +1,9 @@
 ﻿/*******************************
  * 작성일 : 2025-05-02
  * 작성자 : 최마리
- * 최종 수정일 :
+ * -----------------------------
+ * 최종 수정일 : 
+ * 최종 작성자 :
  * 변경 내용 :
  *******************************/
 using System;
@@ -144,7 +146,20 @@ namespace WinCalcPro
 
         //  = : 계산 실행(입력된 수식 계산)
 
-        // . : 소수점 입력
+        /// <summary>
+        /// . 소수점을 추가합니다.
+        /// </summary>
+        /// <param name="s">입력값</param>
+        /// <returns>아규먼트로 넣은 문자열에 소수점(.)을 추가함(단, 이미 소수점(.)이 포함 되어 있는 경우 그대로 반환)</returns>
+        public string DecimalPoint(string s)
+        {
+            // 현재 입력값에 소수점(.)을 추가
+            if (s.Contains(".")) { // 이미 소수점이 포함되어 있으면 아무것도 하지 않고 그대로 반환
+                return s;
+            }
+            string result = s + "."; // 현재 입력값에 소수점 추가
+            return result;
+        }
 
         // +/- : 부호 변경
 
@@ -156,10 +171,11 @@ namespace WinCalcPro
         /// <param name="x">입력 값</param>
         /// <param name="memory">메모리에 저장된 값</param>
         /// <returns>메모리에 저장된 값에 x를 더한 값을 반환</returns>
-        public double MemoryPlus(double x, double memory)
-        {
+        public double MemoryPlus(double x, double memory) {
             return memory + x; // 메모리에 x를 더한 값을 반환
         }
+
+
 
     } //StandardCalc 클래스 끝
 }
