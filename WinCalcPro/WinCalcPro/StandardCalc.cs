@@ -112,9 +112,33 @@ namespace WinCalcPro
         /// CE : 지금 입력하고 있는 값을 "0"으로 만듭니다.(현재 입력값 지우기)
         /// </summary>
         /// <returns>현재 입력값을 "0"으로 만들어 반환</returns>
-        public string ClearEntry()
-        {
+        public string ClearEntry() {
             string result = "0"; // 현재 입력값을 0으로 초기화
+            return result;
+        }
+
+        // C : 지금 입력하고 있는 값 + 모든 값을 0으로 한다.(전체 지우기)
+        public string ClearAll() {
+            string result = "0"; // 현재 입력값을 0으로 초기화
+            return result;
+        }
+
+        /// <summary>
+        /// 백스페이스(⌫) : 맨 뒤의 한 글자를 지운다.
+        /// </summary>
+        /// <param name="s">입력 문자열</param>
+        /// <returns>마지막 한 문자가 제거된 새 문자열 반환(빈 문자열이면 "0"을 반환)</returns>
+        public string Backspace(string s) {
+
+            // 입력 문자열이 null이거나 빈 문자열일 경우 "0"리턴
+            if (string.IsNullOrEmpty(s)) { //s가 빈문자열("") 또는 null이면 true
+                return "0";
+            }
+
+            string result = s.Remove(s.Length - 1, 1); // 맨 뒤에서 한 글자 지우기
+            //string 클래스의 Remove(int startIndex, int count)
+            // ㄴ startIndex는 제거를 시작할 인덱스(0부터 시작), count는 제거할 문자 수
+            //원본 문자열은 수정되지 않으므로 새로운 문자열을 저장해서 리턴함
             return result;
         }
 
