@@ -34,6 +34,6 @@ namespace WinCalcPro
         {
             return value / 100;
         }
-        public ScientificCalc scientificCalc;
+        public ScientificCalc scientificCalc = new ScientificCalc();
     }
 }

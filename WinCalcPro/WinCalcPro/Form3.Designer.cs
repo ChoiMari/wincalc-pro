@@ -66,7 +66,7 @@
             this.Multiplication = new System.Windows.Forms.Button();
             this.Sharing = new System.Windows.Forms.Button();
             this.Back = new System.Windows.Forms.Button();
-            this.Privew = new System.Windows.Forms.TextBox();
+            this.preview = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // input_number
@@ -473,22 +473,22 @@
             this.Back.UseVisualStyleBackColor = true;
             this.Back.Click += new System.EventHandler(this.Back_Click);
             // 
-            // Privew
+            // preview
             // 
-            this.Privew.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.Privew.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.Privew.Location = new System.Drawing.Point(13, 57);
-            this.Privew.Name = "Privew";
-            this.Privew.Size = new System.Drawing.Size(400, 42);
-            this.Privew.TabIndex = 39;
-            this.Privew.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.preview.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.preview.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.preview.Location = new System.Drawing.Point(13, 57);
+            this.preview.Name = "preview";
+            this.preview.Size = new System.Drawing.Size(400, 42);
+            this.preview.TabIndex = 39;
+            this.preview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 682);
-            this.Controls.Add(this.Privew);
+            this.Controls.Add(this.preview);
             this.Controls.Add(this.Equal);
             this.Controls.Add(this.Plus);
             this.Controls.Add(this.Minus);
@@ -574,6 +574,6 @@
         private System.Windows.Forms.Button Multiplication;
         private System.Windows.Forms.Button Sharing;
         private System.Windows.Forms.Button Back;
-        private System.Windows.Forms.TextBox Privew;
+        private System.Windows.Forms.TextBox preview;
     }
 }

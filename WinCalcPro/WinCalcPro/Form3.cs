@@ -7,12 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.StartPanel;
 
 namespace WinCalcPro
 {
     public partial class Form3 : Form
     {
         ProgrammerCalc pc=new ProgrammerCalc();
+        decimal UserInput(string input)
+        {
+            decimal number;
+            if (decimal.TryParse(input, out number))
+            {
+                return number;
+            }
+            else
+            {
+                input_number.Text = "";
+                return 0;
+            }
+        }
         public Form3()
         {
             InitializeComponent();
@@ -222,68 +236,166 @@ namespace WinCalcPro
 
         private void Left_Click(object sender, EventArgs e)
         {
-            
+            if (input_number.Text.Length > 0)
+            {
+                preview.Text = input_number.Text + " << " + preview.Text;
+                input_number.Text = "";
+            }
         }
 
         private void Right_Click(object sender, EventArgs e)
         {
-            
+            if (input_number.Text.Length > 0)
+            {
+                preview.Text = input_number.Text + " >> " + preview.Text;
+                input_number.Text = "";
+            }
 
         }
 
         private void CEBtn_Click(object sender, EventArgs e)
         {
-
+            input_number.Text = "";
+            preview.Text = "";
         }
 
         private void Back_Click(object sender, EventArgs e)
         {
-
+            // 뒤로 한 글자 지우기
+            if (input_number.Text.Length > 0)
+            {
+                input_number.Text = input_number.Text.Substring(0, input_number.Text.Length - 1);
+            }
         }
 
         private void Parentheses_Click(object sender, EventArgs e)
         {
-
+            input_number.Text += "(";
         }
 
         private void ParenthesesEnd_Click(object sender, EventArgs e)
         {
-
+            input_number.Text += ")";   
         }
 
         private void Percent_Click(object sender, EventArgs e)
         {
-
+            if (input_number.Text.Length > 0)
+            {
+                preview.Text = input_number.Text + " % " + preview.Text;
+                input_number.Text = "";
+            }
         }
 
         private void Sharing_Click(object sender, EventArgs e)
         {
-
+            if (input_number.Text.Length > 0)
+            {
+                preview.Text = input_number.Text + " / " + preview.Text;
+                input_number.Text = "";
+            }
         }
 
         private void Multiplication_Click(object sender, EventArgs e)
         {
-
+            if (input_number.Text.Length > 0)
+            {
+                preview.Text = input_number.Text + " * " + preview.Text;
+                input_number.Text = "";
+            }
         }
 
         private void Minus_Click(object sender, EventArgs e)
         {
-
+            if (input_number.Text.Length > 0)
+            {
+                preview.Text = input_number.Text + " - " + preview.Text;
+                input_number.Text = "";
+            }
         }
 
         private void Plus_Click(object sender, EventArgs e)
         {
-
+            if (input_number.Text.Length > 0)
+            {
+                preview.Text = input_number.Text + " + " + preview.Text;
+                input_number.Text = "";
+            }
         }
 
         private void Equal_Click(object sender, EventArgs e)
         {
+            string code = preview.Text;
+            decimal result = 0;
 
+            // 연산자와 숫자 분리
+            if (code.Contains("+"))
+            {
+                var parts = code.Split('+');
+                if (parts.Length == 2)
+                {
+                    result = pc.scientificCalc.Add(UserInput(parts[0]), UserInput(input_number.Text));
+                }
+            }
+            else if (code.Contains("-"))
+            {
+                var parts = code.Split('-');
+                if (parts.Length == 2)
+                {
+                    result = pc.scientificCalc.Sub(UserInput(parts[0]), UserInput(input_number.Text));
+                }
+            }
+            else if (code.Contains("*"))
+            {
+                var parts = code.Split('*');
+                if (parts.Length == 2)
+                {
+                    result = pc.scientificCalc.Mul(UserInput(parts[0]), UserInput(input_number.Text));
+                }
+            }
+            else if (code.Contains("/"))
+            {
+                var parts = code.Split('/');
+                if (parts.Length == 2)
+                {
+                    result = pc.scientificCalc.Div(UserInput(parts[0]), UserInput(input_number.Text));
+                }
+            }
+            else if(code.Contains("<<"))
+            {
+                var parts = code.Split(new string[] { "<<" }, StringSplitOptions.None);
+                if (parts.Length == 2)
+                {
+                    result = pc.Left(int.Parse(parts[0]), int.Parse(input_number.Text));
+                }
+            }
+            else if (code.Contains(">>"))
+            {
+                var parts = code.Split(new string[] { ">>" }, StringSplitOptions.None);
+                if (parts.Length == 2)
+                {
+                    result = pc.Right(int.Parse(parts[0]), int.Parse(input_number.Text));
+                }
+            }
+            else if (code.Contains("%"))
+            {
+                var parts = code.Split('%');
+                if (parts.Length == 2)
+                {
+                    result = int.Parse(parts[0])% int.Parse(input_number.Text);
+                }
+            }
+            {
+                
+            }
+            // 결과 표시
+            input_number.Text = result.ToString();
+            preview.Text = ""; // 연산 완료 후 preview 초기화
         }
 
         private void Conversion_Click(object sender, EventArgs e)
         {
-
+            input_number.Text = input_number.Text.StartsWith("-") ? input_number.Text.Substring(1) : "-" + input_number.Text;
         }
     }
 }
