@@ -60,6 +60,8 @@
             this.button_equals = new System.Windows.Forms.Button();
             this.label_calc = new System.Windows.Forms.Label();
             this.tableLayoutPanel_menu_button = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel_menu_setting = new System.Windows.Forms.TableLayoutPanel();
+            this.button_menu_setting = new System.Windows.Forms.Button();
             this.button_menu_std = new System.Windows.Forms.Button();
             this.button_menu_sci = new System.Windows.Forms.Button();
             this.button_menu_prog = new System.Windows.Forms.Button();
@@ -69,11 +71,13 @@
             this.panel_menu.SuspendLayout();
             this.tableLayoutPanel_stdcalc_button.SuspendLayout();
             this.tableLayoutPanel_menu_button.SuspendLayout();
+            this.tableLayoutPanel_menu_setting.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_menu
             // 
             this.panel_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.panel_menu.Controls.Add(this.tableLayoutPanel_menu_setting);
             this.panel_menu.Controls.Add(this.tableLayoutPanel_menu_button);
             this.panel_menu.Controls.Add(this.label_calc);
             this.panel_menu.Controls.Add(this.button_close);
@@ -579,6 +583,37 @@
             this.tableLayoutPanel_menu_button.Size = new System.Drawing.Size(220, 160);
             this.tableLayoutPanel_menu_button.TabIndex = 7;
             // 
+            // tableLayoutPanel_menu_setting
+            // 
+            this.tableLayoutPanel_menu_setting.ColumnCount = 1;
+            this.tableLayoutPanel_menu_setting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_menu_setting.Controls.Add(this.button_menu_setting, 0, 0);
+            this.tableLayoutPanel_menu_setting.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tableLayoutPanel_menu_setting.Location = new System.Drawing.Point(0, 437);
+            this.tableLayoutPanel_menu_setting.Name = "tableLayoutPanel_menu_setting";
+            this.tableLayoutPanel_menu_setting.RowCount = 1;
+            this.tableLayoutPanel_menu_setting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_menu_setting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel_menu_setting.Size = new System.Drawing.Size(220, 49);
+            this.tableLayoutPanel_menu_setting.TabIndex = 8;
+            // 
+            // button_menu_setting
+            // 
+            this.button_menu_setting.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_menu_setting.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.button_menu_setting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_menu_setting.Image = global::WinCalcPro.Properties.Resources.setting;
+            this.button_menu_setting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_menu_setting.Location = new System.Drawing.Point(3, 3);
+            this.button_menu_setting.Name = "button_menu_setting";
+            this.button_menu_setting.Padding = new System.Windows.Forms.Padding(15, 2, 2, 2);
+            this.button_menu_setting.Size = new System.Drawing.Size(214, 43);
+            this.button_menu_setting.TabIndex = 0;
+            this.button_menu_setting.Text = "    설정";
+            this.button_menu_setting.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_menu_setting.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_menu_setting.UseVisualStyleBackColor = true;
+            // 
             // button_menu_std
             // 
             this.button_menu_std.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -703,6 +738,7 @@
             this.panel_menu.PerformLayout();
             this.tableLayoutPanel_stdcalc_button.ResumeLayout(false);
             this.tableLayoutPanel_menu_button.ResumeLayout(false);
+            this.tableLayoutPanel_menu_setting.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -747,5 +783,7 @@
         private System.Windows.Forms.Button button_menu_sci;
         private System.Windows.Forms.Button button_menu_prog;
         private System.Windows.Forms.Button button_menu_date;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_menu_setting;
+        private System.Windows.Forms.Button button_menu_setting;
     }
 }
