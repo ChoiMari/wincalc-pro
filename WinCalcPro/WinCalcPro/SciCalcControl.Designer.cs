@@ -64,6 +64,8 @@
             this.button_0 = new System.Windows.Forms.Button();
             this.button_decimalPoint = new System.Windows.Forms.Button();
             this.btn_equal = new System.Windows.Forms.Button();
+            this.textBox_input = new System.Windows.Forms.TextBox();
+            this.textBox_preview = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel_scicalc.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -121,6 +123,7 @@
             this.tableLayoutPanel_scicalc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel_scicalc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
             this.tableLayoutPanel_scicalc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel_scicalc.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
             this.tableLayoutPanel_scicalc.Size = new System.Drawing.Size(318, 260);
             this.tableLayoutPanel_scicalc.TabIndex = 0;
             // 
@@ -685,16 +688,43 @@
             this.btn_equal.Text = "=";
             this.btn_equal.UseVisualStyleBackColor = false;
             // 
+            // textBox_input
+            // 
+            this.textBox_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
+            this.textBox_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_input.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox_input.Location = new System.Drawing.Point(11, 75);
+            this.textBox_input.Name = "textBox_input";
+            this.textBox_input.Size = new System.Drawing.Size(300, 32);
+            this.textBox_input.TabIndex = 1;
+            this.textBox_input.Text = "0";
+            this.textBox_input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBox_preview
+            // 
+            this.textBox_preview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
+            this.textBox_preview.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_preview.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox_preview.ForeColor = System.Drawing.SystemColors.GrayText;
+            this.textBox_preview.Location = new System.Drawing.Point(11, 49);
+            this.textBox_preview.Name = "textBox_preview";
+            this.textBox_preview.Size = new System.Drawing.Size(300, 19);
+            this.textBox_preview.TabIndex = 2;
+            this.textBox_preview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // SciCalcControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
+            this.Controls.Add(this.textBox_preview);
+            this.Controls.Add(this.textBox_input);
             this.Controls.Add(this.tableLayoutPanel_scicalc);
             this.Name = "SciCalcControl";
             this.Size = new System.Drawing.Size(324, 455);
             this.tableLayoutPanel_scicalc.ResumeLayout(false);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -736,5 +766,7 @@
         private System.Windows.Forms.Button button_0;
         private System.Windows.Forms.Button button_decimalPoint;
         private System.Windows.Forms.Button btn_equal;
+        private System.Windows.Forms.TextBox textBox_input;
+        private System.Windows.Forms.TextBox textBox_preview;
     }
 }
