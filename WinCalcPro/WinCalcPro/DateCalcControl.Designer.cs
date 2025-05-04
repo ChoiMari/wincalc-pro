@@ -202,6 +202,7 @@
             // radioBtn_panel1_add
             // 
             this.radioBtn_panel1_add.AutoSize = true;
+            this.radioBtn_panel1_add.Checked = true;
             this.radioBtn_panel1_add.Font = new System.Drawing.Font("함초롬돋움", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.radioBtn_panel1_add.Location = new System.Drawing.Point(24, 105);
             this.radioBtn_panel1_add.Name = "radioBtn_panel1_add";
