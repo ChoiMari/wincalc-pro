@@ -60,10 +60,10 @@
             this.button_equals = new System.Windows.Forms.Button();
             this.label_calc = new System.Windows.Forms.Label();
             this.tableLayoutPanel_menu_button = new System.Windows.Forms.TableLayoutPanel();
-            this.button_menu_date = new System.Windows.Forms.Button();
             this.button_menu_std = new System.Windows.Forms.Button();
             this.button_menu_sci = new System.Windows.Forms.Button();
             this.button_menu_prog = new System.Windows.Forms.Button();
+            this.button_menu_date = new System.Windows.Forms.Button();
             this.button_close = new System.Windows.Forms.Button();
             this.button_menu = new System.Windows.Forms.Button();
             this.panel_menu.SuspendLayout();
@@ -559,7 +559,6 @@
             this.label_calc.Size = new System.Drawing.Size(54, 19);
             this.label_calc.TabIndex = 6;
             this.label_calc.Text = "계산기";
-            this.label_calc.Visible = false;
             this.label_calc.Click += new System.EventHandler(this.label_calc_Click);
             // 
             // tableLayoutPanel_menu_button
@@ -579,25 +578,6 @@
             this.tableLayoutPanel_menu_button.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel_menu_button.Size = new System.Drawing.Size(220, 160);
             this.tableLayoutPanel_menu_button.TabIndex = 7;
-            // 
-            // button_menu_date
-            // 
-            this.button_menu_date.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_menu_date.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.button_menu_date.FlatAppearance.BorderSize = 0;
-            this.button_menu_date.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_menu_date.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_menu_date.Image = global::WinCalcPro.Properties.Resources.dateImg;
-            this.button_menu_date.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_menu_date.Location = new System.Drawing.Point(3, 123);
-            this.button_menu_date.Name = "button_menu_date";
-            this.button_menu_date.Padding = new System.Windows.Forms.Padding(15, 2, 2, 2);
-            this.button_menu_date.Size = new System.Drawing.Size(214, 34);
-            this.button_menu_date.TabIndex = 3;
-            this.button_menu_date.Text = "    날짜 계산";
-            this.button_menu_date.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button_menu_date.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button_menu_date.UseVisualStyleBackColor = true;
             // 
             // button_menu_std
             // 
@@ -655,6 +635,25 @@
             this.button_menu_prog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_menu_prog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_menu_prog.UseVisualStyleBackColor = true;
+            // 
+            // button_menu_date
+            // 
+            this.button_menu_date.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_menu_date.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.button_menu_date.FlatAppearance.BorderSize = 0;
+            this.button_menu_date.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_menu_date.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_menu_date.Image = global::WinCalcPro.Properties.Resources.dateImg;
+            this.button_menu_date.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_menu_date.Location = new System.Drawing.Point(3, 123);
+            this.button_menu_date.Name = "button_menu_date";
+            this.button_menu_date.Padding = new System.Windows.Forms.Padding(15, 2, 2, 2);
+            this.button_menu_date.Size = new System.Drawing.Size(214, 34);
+            this.button_menu_date.TabIndex = 3;
+            this.button_menu_date.Text = "    날짜 계산";
+            this.button_menu_date.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_menu_date.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_menu_date.UseVisualStyleBackColor = true;
             // 
             // button_close
             // 

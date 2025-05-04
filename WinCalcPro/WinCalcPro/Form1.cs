@@ -38,8 +38,6 @@ namespace WinCalcPro
             timer.Tick += Timer_Tick; // 이벤트 핸들러를 메서드로 연결
             timer.Start();
 
-            label_calc.Visible = true; // 레이블 표시 
-
         }
 
         /// <summary>
