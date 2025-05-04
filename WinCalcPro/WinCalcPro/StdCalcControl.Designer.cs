@@ -52,7 +52,7 @@
             this.button_PM = new System.Windows.Forms.Button();
             this.button_0 = new System.Windows.Forms.Button();
             this.button_decipoint = new System.Windows.Forms.Button();
-            this.button_equals = new System.Windows.Forms.Button();
+            this.button_equal = new System.Windows.Forms.Button();
             this.textBox_preview = new System.Windows.Forms.TextBox();
             this.textBox_result = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel_stdcalc_button.SuspendLayout();
@@ -88,7 +88,7 @@
             this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_PM, 0, 5);
             this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_0, 1, 5);
             this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_decipoint, 2, 5);
-            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_equals, 3, 5);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_equal, 3, 5);
             this.tableLayoutPanel_stdcalc_button.Cursor = System.Windows.Forms.Cursors.Hand;
             this.tableLayoutPanel_stdcalc_button.Location = new System.Drawing.Point(0, 143);
             this.tableLayoutPanel_stdcalc_button.Name = "tableLayoutPanel_stdcalc_button";
@@ -472,22 +472,22 @@
             this.button_decipoint.Text = ".";
             this.button_decipoint.UseVisualStyleBackColor = false;
             // 
-            // button_equals
+            // button_equal
             // 
-            this.button_equals.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(192)))));
-            this.button_equals.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.button_equals.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
-            this.button_equals.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(117)))), ((int)(((byte)(196)))));
-            this.button_equals.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_equals.Font = new System.Drawing.Font("돋움", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_equals.ForeColor = System.Drawing.Color.White;
-            this.button_equals.Location = new System.Drawing.Point(240, 256);
-            this.button_equals.Margin = new System.Windows.Forms.Padding(1);
-            this.button_equals.Name = "button_equals";
-            this.button_equals.Size = new System.Drawing.Size(78, 50);
-            this.button_equals.TabIndex = 23;
-            this.button_equals.Text = "=";
-            this.button_equals.UseVisualStyleBackColor = false;
+            this.button_equal.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(103)))), ((int)(((byte)(192)))));
+            this.button_equal.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_equal.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.button_equal.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(117)))), ((int)(((byte)(196)))));
+            this.button_equal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_equal.Font = new System.Drawing.Font("돋움", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_equal.ForeColor = System.Drawing.Color.White;
+            this.button_equal.Location = new System.Drawing.Point(240, 256);
+            this.button_equal.Margin = new System.Windows.Forms.Padding(1);
+            this.button_equal.Name = "button_equal";
+            this.button_equal.Size = new System.Drawing.Size(78, 50);
+            this.button_equal.TabIndex = 23;
+            this.button_equal.Text = "=";
+            this.button_equal.UseVisualStyleBackColor = false;
             // 
             // textBox_preview
             // 
@@ -557,7 +557,7 @@
         private System.Windows.Forms.Button button_PM;
         private System.Windows.Forms.Button button_0;
         private System.Windows.Forms.Button button_decipoint;
-        private System.Windows.Forms.Button button_equals;
+        private System.Windows.Forms.Button button_equal;
         private System.Windows.Forms.TextBox textBox_preview;
         private System.Windows.Forms.TextBox textBox_result;
     }
