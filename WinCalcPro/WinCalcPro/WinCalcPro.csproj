@@ -124,6 +124,7 @@
     <Content Include="Resources\calc.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\trigonometryImg.png" />
     <None Include="Resources\setting.png" />
     <None Include="Resources\dateImg.png" />
     <Content Include="Resources\menuImg.png">

@@ -66,7 +66,19 @@
             this.btn_equal = new System.Windows.Forms.Button();
             this.textBox_input = new System.Windows.Forms.TextBox();
             this.textBox_preview = new System.Windows.Forms.TextBox();
+            this.toolStrip_trigonometry = new System.Windows.Forms.ToolStrip();
+            this.toolStripSplitButton = new System.Windows.Forms.ToolStripSplitButton();
+            this.ToolStripMenuItem_2nd = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_sin = new System.Windows.Forms.ToolStripMenuItem();
+            this.panel_hr = new System.Windows.Forms.Panel();
+            this.ToolStripMenuItem_cos = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_tan = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_hyp = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_sec = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_csc = new System.Windows.Forms.ToolStripMenuItem();
+            this.ToolStripMenuItem_cot = new System.Windows.Forms.ToolStripMenuItem();
             this.tableLayoutPanel_scicalc.SuspendLayout();
+            this.toolStrip_trigonometry.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel_scicalc
@@ -712,17 +724,108 @@
             this.textBox_preview.TabIndex = 2;
             this.textBox_preview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // toolStrip_trigonometry
+            // 
+            this.toolStrip_trigonometry.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
+            this.toolStrip_trigonometry.Dock = System.Windows.Forms.DockStyle.None;
+            this.toolStrip_trigonometry.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip_trigonometry.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripSplitButton});
+            this.toolStrip_trigonometry.Location = new System.Drawing.Point(6, 161);
+            this.toolStrip_trigonometry.Name = "toolStrip_trigonometry";
+            this.toolStrip_trigonometry.Size = new System.Drawing.Size(96, 25);
+            this.toolStrip_trigonometry.TabIndex = 3;
+            // 
+            // toolStripSplitButton
+            // 
+            this.toolStripSplitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
+            this.toolStripSplitButton.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ToolStripMenuItem_2nd,
+            this.ToolStripMenuItem_sin,
+            this.ToolStripMenuItem_cos,
+            this.ToolStripMenuItem_tan,
+            this.ToolStripMenuItem_hyp,
+            this.ToolStripMenuItem_sec,
+            this.ToolStripMenuItem_csc,
+            this.ToolStripMenuItem_cot});
+            this.toolStripSplitButton.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.toolStripSplitButton.Image = global::WinCalcPro.Properties.Resources.trigonometryImg;
+            this.toolStripSplitButton.ImageTransparentColor = System.Drawing.Color.Transparent;
+            this.toolStripSplitButton.Name = "toolStripSplitButton";
+            this.toolStripSplitButton.Size = new System.Drawing.Size(79, 22);
+            this.toolStripSplitButton.Text = "삼각법";
+            // 
+            // ToolStripMenuItem_2nd
+            // 
+            this.ToolStripMenuItem_2nd.Name = "ToolStripMenuItem_2nd";
+            this.ToolStripMenuItem_2nd.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_2nd.Text = "2ⁿᵈ";
+            // 
+            // ToolStripMenuItem_sin
+            // 
+            this.ToolStripMenuItem_sin.Name = "ToolStripMenuItem_sin";
+            this.ToolStripMenuItem_sin.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_sin.Text = "sin";
+            // 
+            // panel_hr
+            // 
+            this.panel_hr.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel_hr.Location = new System.Drawing.Point(0, 153);
+            this.panel_hr.Name = "panel_hr";
+            this.panel_hr.Size = new System.Drawing.Size(324, 1);
+            this.panel_hr.TabIndex = 4;
+            // 
+            // ToolStripMenuItem_cos
+            // 
+            this.ToolStripMenuItem_cos.Name = "ToolStripMenuItem_cos";
+            this.ToolStripMenuItem_cos.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_cos.Text = "cos";
+            // 
+            // ToolStripMenuItem_tan
+            // 
+            this.ToolStripMenuItem_tan.Name = "ToolStripMenuItem_tan";
+            this.ToolStripMenuItem_tan.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_tan.Text = "tan";
+            // 
+            // ToolStripMenuItem_hyp
+            // 
+            this.ToolStripMenuItem_hyp.Name = "ToolStripMenuItem_hyp";
+            this.ToolStripMenuItem_hyp.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_hyp.Text = "hyp";
+            // 
+            // ToolStripMenuItem_sec
+            // 
+            this.ToolStripMenuItem_sec.Name = "ToolStripMenuItem_sec";
+            this.ToolStripMenuItem_sec.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_sec.Text = "sec";
+            // 
+            // ToolStripMenuItem_csc
+            // 
+            this.ToolStripMenuItem_csc.Name = "ToolStripMenuItem_csc";
+            this.ToolStripMenuItem_csc.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_csc.Text = "csc";
+            // 
+            // ToolStripMenuItem_cot
+            // 
+            this.ToolStripMenuItem_cot.Name = "ToolStripMenuItem_cot";
+            this.ToolStripMenuItem_cot.Size = new System.Drawing.Size(180, 22);
+            this.ToolStripMenuItem_cot.Text = "cot";
+            // 
             // SciCalcControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
+            this.Controls.Add(this.panel_hr);
+            this.Controls.Add(this.toolStrip_trigonometry);
             this.Controls.Add(this.textBox_preview);
             this.Controls.Add(this.textBox_input);
             this.Controls.Add(this.tableLayoutPanel_scicalc);
             this.Name = "SciCalcControl";
             this.Size = new System.Drawing.Size(324, 455);
             this.tableLayoutPanel_scicalc.ResumeLayout(false);
+            this.toolStrip_trigonometry.ResumeLayout(false);
+            this.toolStrip_trigonometry.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -768,5 +871,16 @@
         private System.Windows.Forms.Button btn_equal;
         private System.Windows.Forms.TextBox textBox_input;
         private System.Windows.Forms.TextBox textBox_preview;
+        private System.Windows.Forms.ToolStrip toolStrip_trigonometry;
+        private System.Windows.Forms.ToolStripSplitButton toolStripSplitButton;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_2nd;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_sin;
+        private System.Windows.Forms.Panel panel_hr;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_cos;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_tan;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_hyp;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_sec;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_csc;
+        private System.Windows.Forms.ToolStripMenuItem ToolStripMenuItem_cot;
     }
 }
