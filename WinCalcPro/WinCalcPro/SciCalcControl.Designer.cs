@@ -704,10 +704,10 @@
             // 
             this.textBox_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
             this.textBox_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_input.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox_input.Location = new System.Drawing.Point(11, 75);
+            this.textBox_input.Font = new System.Drawing.Font("굴림", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox_input.Location = new System.Drawing.Point(11, 67);
             this.textBox_input.Name = "textBox_input";
-            this.textBox_input.Size = new System.Drawing.Size(300, 32);
+            this.textBox_input.Size = new System.Drawing.Size(300, 34);
             this.textBox_input.TabIndex = 1;
             this.textBox_input.Text = "0";
             this.textBox_input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -718,7 +718,7 @@
             this.textBox_preview.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox_preview.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox_preview.ForeColor = System.Drawing.SystemColors.GrayText;
-            this.textBox_preview.Location = new System.Drawing.Point(11, 49);
+            this.textBox_preview.Location = new System.Drawing.Point(11, 41);
             this.textBox_preview.Name = "textBox_preview";
             this.textBox_preview.Size = new System.Drawing.Size(300, 19);
             this.textBox_preview.TabIndex = 2;
@@ -733,7 +733,7 @@
             this.toolStripSplitButton});
             this.toolStrip_trigonometry.Location = new System.Drawing.Point(6, 161);
             this.toolStrip_trigonometry.Name = "toolStrip_trigonometry";
-            this.toolStrip_trigonometry.Size = new System.Drawing.Size(96, 25);
+            this.toolStrip_trigonometry.Size = new System.Drawing.Size(82, 25);
             this.toolStrip_trigonometry.TabIndex = 3;
             // 
             // toolStripSplitButton
