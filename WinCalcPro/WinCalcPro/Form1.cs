@@ -27,16 +27,19 @@ namespace WinCalcPro
         /// 메뉴를 보여주는 메서드
         /// </summary>
         private void ShowMenu() {
-            panel_menu.BringToFront();
+            isMenuOpen = true; // 메뉴 열림 상태로 변경
+            panel_menu.BringToFront();// 패널을 앞면으로 가져옴
             button_menu.Visible = false; // 햄버거 버튼은 숨기기
             button_close.Visible = true; // 닫기 버튼 보이게
-            isMenuOpen = true; // 메뉴 열림 상태로 변경
-            
+
             // 타이머를 사용하여 메뉴 펼치기
             Timer timer = new Timer();
             timer.Interval = 10; // 타이머 간격
             timer.Tick += Timer_Tick; // 이벤트 핸들러를 메서드로 연결
             timer.Start();
+
+            label_calc.Visible = true; // 레이블 표시 
+
         }
 
         /// <summary>
@@ -101,6 +104,11 @@ namespace WinCalcPro
         private void button_close_Click(object sender, EventArgs e)
         {
             HideMenu();
+        }
+
+        private void label_calc_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

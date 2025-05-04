@@ -103,9 +103,13 @@
     <Content Include="Resources\calc.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\dateImg.png" />
     <Content Include="Resources\menuImg.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\prog.png" />
+    <None Include="Resources\sci.png" />
+    <None Include="Resources\stdImg.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

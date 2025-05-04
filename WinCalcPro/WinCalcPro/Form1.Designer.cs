@@ -30,12 +30,10 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel_menu = new System.Windows.Forms.Panel();
-            this.button_close = new System.Windows.Forms.Button();
-            this.button_menu = new System.Windows.Forms.Button();
             this.label_title = new System.Windows.Forms.Label();
             this.textBox_result = new System.Windows.Forms.TextBox();
             this.textBox_preview = new System.Windows.Forms.TextBox();
-            this.tableLayoutPanel = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel_stdcalc_button = new System.Windows.Forms.TableLayoutPanel();
             this.button_percent = new System.Windows.Forms.Button();
             this.button_CE = new System.Windows.Forms.Button();
             this.button_C = new System.Windows.Forms.Button();
@@ -60,46 +58,30 @@
             this.button_0 = new System.Windows.Forms.Button();
             this.button_decipoint = new System.Windows.Forms.Button();
             this.button_equals = new System.Windows.Forms.Button();
+            this.label_calc = new System.Windows.Forms.Label();
+            this.tableLayoutPanel_menu_button = new System.Windows.Forms.TableLayoutPanel();
+            this.button_menu_date = new System.Windows.Forms.Button();
+            this.button_menu_std = new System.Windows.Forms.Button();
+            this.button_menu_sci = new System.Windows.Forms.Button();
+            this.button_menu_prog = new System.Windows.Forms.Button();
+            this.button_close = new System.Windows.Forms.Button();
+            this.button_menu = new System.Windows.Forms.Button();
             this.panel_menu.SuspendLayout();
-            this.tableLayoutPanel.SuspendLayout();
+            this.tableLayoutPanel_stdcalc_button.SuspendLayout();
+            this.tableLayoutPanel_menu_button.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel_menu
             // 
             this.panel_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.panel_menu.Controls.Add(this.tableLayoutPanel_menu_button);
+            this.panel_menu.Controls.Add(this.label_calc);
             this.panel_menu.Controls.Add(this.button_close);
             this.panel_menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_menu.Location = new System.Drawing.Point(0, 0);
             this.panel_menu.Name = "panel_menu";
             this.panel_menu.Size = new System.Drawing.Size(0, 501);
             this.panel_menu.TabIndex = 1;
-            // 
-            // button_close
-            // 
-            this.button_close.FlatAppearance.BorderSize = 0;
-            this.button_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_close.Image = global::WinCalcPro.Properties.Resources.menuImg;
-            this.button_close.Location = new System.Drawing.Point(13, 13);
-            this.button_close.Name = "button_close";
-            this.button_close.Size = new System.Drawing.Size(35, 35);
-            this.button_close.TabIndex = 0;
-            this.button_close.UseVisualStyleBackColor = true;
-            this.button_close.Visible = false;
-            this.button_close.Click += new System.EventHandler(this.button_close_Click);
-            // 
-            // button_menu
-            // 
-            this.button_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
-            this.button_menu.FlatAppearance.BorderSize = 0;
-            this.button_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_menu.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.button_menu.Image = global::WinCalcPro.Properties.Resources.menuImg;
-            this.button_menu.Location = new System.Drawing.Point(13, 13);
-            this.button_menu.Name = "button_menu";
-            this.button_menu.Size = new System.Drawing.Size(35, 35);
-            this.button_menu.TabIndex = 0;
-            this.button_menu.UseVisualStyleBackColor = false;
-            this.button_menu.Click += new System.EventHandler(this.button_menu_Click);
             // 
             // label_title
             // 
@@ -137,50 +119,50 @@
             this.textBox_preview.TabIndex = 4;
             this.textBox_preview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // tableLayoutPanel
+            // tableLayoutPanel_stdcalc_button
             // 
-            this.tableLayoutPanel.ColumnCount = 4;
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel.Controls.Add(this.button_percent, 0, 0);
-            this.tableLayoutPanel.Controls.Add(this.button_CE, 1, 0);
-            this.tableLayoutPanel.Controls.Add(this.button_C, 2, 0);
-            this.tableLayoutPanel.Controls.Add(this.button_back, 3, 0);
-            this.tableLayoutPanel.Controls.Add(this.button_recip, 0, 1);
-            this.tableLayoutPanel.Controls.Add(this.button_square, 1, 1);
-            this.tableLayoutPanel.Controls.Add(this.button_sqrt, 2, 1);
-            this.tableLayoutPanel.Controls.Add(this.button_division, 3, 1);
-            this.tableLayoutPanel.Controls.Add(this.button_7, 0, 2);
-            this.tableLayoutPanel.Controls.Add(this.button_8, 1, 2);
-            this.tableLayoutPanel.Controls.Add(this.button_9, 2, 2);
-            this.tableLayoutPanel.Controls.Add(this.button_multip, 3, 2);
-            this.tableLayoutPanel.Controls.Add(this.button_4, 0, 3);
-            this.tableLayoutPanel.Controls.Add(this.button_5, 1, 3);
-            this.tableLayoutPanel.Controls.Add(this.button_6, 2, 3);
-            this.tableLayoutPanel.Controls.Add(this.button_subtrac, 3, 3);
-            this.tableLayoutPanel.Controls.Add(this.button_1, 0, 4);
-            this.tableLayoutPanel.Controls.Add(this.button_2, 1, 4);
-            this.tableLayoutPanel.Controls.Add(this.button_3, 2, 4);
-            this.tableLayoutPanel.Controls.Add(this.button_add, 3, 4);
-            this.tableLayoutPanel.Controls.Add(this.button_PM, 0, 5);
-            this.tableLayoutPanel.Controls.Add(this.button_0, 1, 5);
-            this.tableLayoutPanel.Controls.Add(this.button_decipoint, 2, 5);
-            this.tableLayoutPanel.Controls.Add(this.button_equals, 3, 5);
-            this.tableLayoutPanel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tableLayoutPanel.Location = new System.Drawing.Point(0, 189);
-            this.tableLayoutPanel.Name = "tableLayoutPanel";
-            this.tableLayoutPanel.Padding = new System.Windows.Forms.Padding(5);
-            this.tableLayoutPanel.RowCount = 6;
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.tableLayoutPanel.Size = new System.Drawing.Size(324, 312);
-            this.tableLayoutPanel.TabIndex = 5;
+            this.tableLayoutPanel_stdcalc_button.ColumnCount = 4;
+            this.tableLayoutPanel_stdcalc_button.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_stdcalc_button.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_stdcalc_button.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_stdcalc_button.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_percent, 0, 0);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_CE, 1, 0);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_C, 2, 0);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_back, 3, 0);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_recip, 0, 1);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_square, 1, 1);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_sqrt, 2, 1);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_division, 3, 1);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_7, 0, 2);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_8, 1, 2);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_9, 2, 2);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_multip, 3, 2);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_4, 0, 3);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_5, 1, 3);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_6, 2, 3);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_subtrac, 3, 3);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_1, 0, 4);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_2, 1, 4);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_3, 2, 4);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_add, 3, 4);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_PM, 0, 5);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_0, 1, 5);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_decipoint, 2, 5);
+            this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_equals, 3, 5);
+            this.tableLayoutPanel_stdcalc_button.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.tableLayoutPanel_stdcalc_button.Location = new System.Drawing.Point(0, 189);
+            this.tableLayoutPanel_stdcalc_button.Name = "tableLayoutPanel_stdcalc_button";
+            this.tableLayoutPanel_stdcalc_button.Padding = new System.Windows.Forms.Padding(5);
+            this.tableLayoutPanel_stdcalc_button.RowCount = 6;
+            this.tableLayoutPanel_stdcalc_button.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel_stdcalc_button.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel_stdcalc_button.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel_stdcalc_button.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel_stdcalc_button.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel_stdcalc_button.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.tableLayoutPanel_stdcalc_button.Size = new System.Drawing.Size(324, 312);
+            this.tableLayoutPanel_stdcalc_button.TabIndex = 5;
             // 
             // button_percent
             // 
@@ -567,13 +549,147 @@
             this.button_equals.Text = "=";
             this.button_equals.UseVisualStyleBackColor = false;
             // 
+            // label_calc
+            // 
+            this.label_calc.AutoSize = true;
+            this.label_calc.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label_calc.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label_calc.Location = new System.Drawing.Point(17, 60);
+            this.label_calc.Name = "label_calc";
+            this.label_calc.Size = new System.Drawing.Size(54, 19);
+            this.label_calc.TabIndex = 6;
+            this.label_calc.Text = "계산기";
+            this.label_calc.Visible = false;
+            this.label_calc.Click += new System.EventHandler(this.label_calc_Click);
+            // 
+            // tableLayoutPanel_menu_button
+            // 
+            this.tableLayoutPanel_menu_button.ColumnCount = 1;
+            this.tableLayoutPanel_menu_button.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel_menu_button.Controls.Add(this.button_menu_std, 0, 0);
+            this.tableLayoutPanel_menu_button.Controls.Add(this.button_menu_sci, 0, 1);
+            this.tableLayoutPanel_menu_button.Controls.Add(this.button_menu_prog, 0, 2);
+            this.tableLayoutPanel_menu_button.Controls.Add(this.button_menu_date, 0, 3);
+            this.tableLayoutPanel_menu_button.Location = new System.Drawing.Point(0, 86);
+            this.tableLayoutPanel_menu_button.Name = "tableLayoutPanel_menu_button";
+            this.tableLayoutPanel_menu_button.RowCount = 4;
+            this.tableLayoutPanel_menu_button.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_menu_button.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_menu_button.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_menu_button.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
+            this.tableLayoutPanel_menu_button.Size = new System.Drawing.Size(220, 160);
+            this.tableLayoutPanel_menu_button.TabIndex = 7;
+            // 
+            // button_menu_date
+            // 
+            this.button_menu_date.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_menu_date.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.button_menu_date.FlatAppearance.BorderSize = 0;
+            this.button_menu_date.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_menu_date.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_menu_date.Image = global::WinCalcPro.Properties.Resources.dateImg;
+            this.button_menu_date.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_menu_date.Location = new System.Drawing.Point(3, 123);
+            this.button_menu_date.Name = "button_menu_date";
+            this.button_menu_date.Padding = new System.Windows.Forms.Padding(15, 2, 2, 2);
+            this.button_menu_date.Size = new System.Drawing.Size(214, 34);
+            this.button_menu_date.TabIndex = 3;
+            this.button_menu_date.Text = "    날짜 계산";
+            this.button_menu_date.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_menu_date.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_menu_date.UseVisualStyleBackColor = true;
+            // 
+            // button_menu_std
+            // 
+            this.button_menu_std.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_menu_std.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.button_menu_std.FlatAppearance.BorderSize = 0;
+            this.button_menu_std.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_menu_std.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_menu_std.Image = global::WinCalcPro.Properties.Resources.stdImg;
+            this.button_menu_std.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_menu_std.Location = new System.Drawing.Point(3, 3);
+            this.button_menu_std.Name = "button_menu_std";
+            this.button_menu_std.Padding = new System.Windows.Forms.Padding(15, 2, 2, 2);
+            this.button_menu_std.Size = new System.Drawing.Size(214, 34);
+            this.button_menu_std.TabIndex = 0;
+            this.button_menu_std.Text = "    표준";
+            this.button_menu_std.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button_menu_std.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_menu_std.UseVisualStyleBackColor = true;
+            // 
+            // button_menu_sci
+            // 
+            this.button_menu_sci.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_menu_sci.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.button_menu_sci.FlatAppearance.BorderSize = 0;
+            this.button_menu_sci.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_menu_sci.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_menu_sci.Image = global::WinCalcPro.Properties.Resources.sci;
+            this.button_menu_sci.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_menu_sci.Location = new System.Drawing.Point(3, 43);
+            this.button_menu_sci.Name = "button_menu_sci";
+            this.button_menu_sci.Padding = new System.Windows.Forms.Padding(15, 2, 2, 2);
+            this.button_menu_sci.Size = new System.Drawing.Size(214, 34);
+            this.button_menu_sci.TabIndex = 1;
+            this.button_menu_sci.Text = "    공학용";
+            this.button_menu_sci.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_menu_sci.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_menu_sci.UseVisualStyleBackColor = true;
+            // 
+            // button_menu_prog
+            // 
+            this.button_menu_prog.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.button_menu_prog.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.button_menu_prog.FlatAppearance.BorderSize = 0;
+            this.button_menu_prog.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_menu_prog.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_menu_prog.Image = global::WinCalcPro.Properties.Resources.prog;
+            this.button_menu_prog.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_menu_prog.Location = new System.Drawing.Point(3, 83);
+            this.button_menu_prog.Name = "button_menu_prog";
+            this.button_menu_prog.Padding = new System.Windows.Forms.Padding(15, 2, 2, 2);
+            this.button_menu_prog.Size = new System.Drawing.Size(214, 34);
+            this.button_menu_prog.TabIndex = 2;
+            this.button_menu_prog.Text = "    프로그래머";
+            this.button_menu_prog.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button_menu_prog.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button_menu_prog.UseVisualStyleBackColor = true;
+            // 
+            // button_close
+            // 
+            this.button_close.FlatAppearance.BorderSize = 0;
+            this.button_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_close.Image = global::WinCalcPro.Properties.Resources.menuImg;
+            this.button_close.Location = new System.Drawing.Point(13, 13);
+            this.button_close.Name = "button_close";
+            this.button_close.Size = new System.Drawing.Size(35, 35);
+            this.button_close.TabIndex = 0;
+            this.button_close.UseVisualStyleBackColor = true;
+            this.button_close.Visible = false;
+            this.button_close.Click += new System.EventHandler(this.button_close_Click);
+            // 
+            // button_menu
+            // 
+            this.button_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
+            this.button_menu.FlatAppearance.BorderSize = 0;
+            this.button_menu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_menu.Font = new System.Drawing.Font("굴림", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.button_menu.Image = global::WinCalcPro.Properties.Resources.menuImg;
+            this.button_menu.Location = new System.Drawing.Point(13, 13);
+            this.button_menu.Name = "button_menu";
+            this.button_menu.Size = new System.Drawing.Size(35, 35);
+            this.button_menu.TabIndex = 0;
+            this.button_menu.UseVisualStyleBackColor = false;
+            this.button_menu.Click += new System.EventHandler(this.button_menu_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
             this.ClientSize = new System.Drawing.Size(324, 501);
-            this.Controls.Add(this.tableLayoutPanel);
+            this.Controls.Add(this.tableLayoutPanel_stdcalc_button);
             this.Controls.Add(this.textBox_preview);
             this.Controls.Add(this.textBox_result);
             this.Controls.Add(this.label_title);
@@ -585,7 +701,9 @@
             this.Name = "Form1";
             this.Text = "계산기";
             this.panel_menu.ResumeLayout(false);
-            this.tableLayoutPanel.ResumeLayout(false);
+            this.panel_menu.PerformLayout();
+            this.tableLayoutPanel_stdcalc_button.ResumeLayout(false);
+            this.tableLayoutPanel_menu_button.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -599,7 +717,7 @@
         private System.Windows.Forms.Label label_title;
         private System.Windows.Forms.TextBox textBox_result;
         private System.Windows.Forms.TextBox textBox_preview;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_stdcalc_button;
         private System.Windows.Forms.Button button_percent;
         private System.Windows.Forms.Button button_CE;
         private System.Windows.Forms.Button button_C;
@@ -624,5 +742,11 @@
         private System.Windows.Forms.Button button_0;
         private System.Windows.Forms.Button button_decipoint;
         private System.Windows.Forms.Button button_equals;
+        private System.Windows.Forms.Label label_calc;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_menu_button;
+        private System.Windows.Forms.Button button_menu_std;
+        private System.Windows.Forms.Button button_menu_sci;
+        private System.Windows.Forms.Button button_menu_prog;
+        private System.Windows.Forms.Button button_menu_date;
     }
 }
