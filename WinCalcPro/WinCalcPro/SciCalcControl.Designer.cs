@@ -1,6 +1,6 @@
 ﻿namespace WinCalcPro
 {
-    partial class StandardUI
+    partial class SciCalcControl
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -28,8 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
+            this.SuspendLayout();
+            // 
+            // SciCalcControl
+            // 
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
+            this.Name = "SciCalcControl";
+            this.Size = new System.Drawing.Size(325, 500);
+            this.ResumeLayout(false);
+
         }
 
         #endregion

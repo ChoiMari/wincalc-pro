@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace WinCalcPro
 {
-    public partial class StandardUI : UserControl
+    public partial class SciCalcControl : UserControl
     {
-        public StandardUI()
+        public SciCalcControl()
         {
             InitializeComponent();
         }

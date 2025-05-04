@@ -23,6 +23,9 @@ namespace WinCalcPro
         /// </summary>
         private bool isMenuOpen = false;
 
+        private SciCalcControl sciControl; // 공학 계산기 컨트롤 객체를 저장할 변수
+
+        // 메서드 선언
         /// <summary>
         /// 메뉴를 보여주는 메서드
         /// </summary>
@@ -95,18 +98,52 @@ namespace WinCalcPro
         // 메뉴 버튼 클릭 이벤트 핸들러
         private void button_menu_Click(object sender, EventArgs e)
         {
-            ShowMenu();
+            ShowMenu(); // 햄버거 메뉴 보여주기
         }
 
         // 메뉴 닫기 버튼 클릭 이벤트 핸들러
         private void button_close_Click(object sender, EventArgs e)
         {
-            HideMenu();
+            HideMenu(); // 햄버거 메뉴 감추기
         }
 
         private void label_calc_Click(object sender, EventArgs e)
         {
 
+        }
+
+        // 공학 계산기 버튼 클릭 이벤트 핸들러
+        private void button_menu_sci_Click(object sender, EventArgs e)
+        {
+            // 표준 계산기 패널 숨김
+            panel_stdcalc.Visible = false;
+            
+            // 공학 계산기 패널 보임
+            if (sciControl == null) // 공학 계산기 컨트롤이 없다면
+            {
+                sciControl = new SciCalcControl(); // 공학 계산기 컨트롤 객체 생성
+                sciControl.Dock = DockStyle.Fill; // 컨트롤을 패널에 맞게 채움
+                this.Controls.Add(sciControl);  // Form1(this)에 SciCalcControl 추가
+            }
+
+            // SciCalcControl을 맨 위로 가져오고 보이게 설정
+            sciControl.BringToFront(); //맨 앞으로 표시
+            sciControl.Visible = true; // 보이게 함
+            button_menu.BringToFront(); // 햄버거 메뉴를 맨 앞으로 가져옴
+
+            HideMenu();// 햄버거 메뉴 감추기
+
+        }
+
+        private void button_menu_std_Click(object sender, EventArgs e)
+        {
+            sciControl.Visible = false; // SciCalcControl 숨기기
+          
+            // 표준 계산기 패널 보임
+            panel_stdcalc.Visible = true;
+            panel_stdcalc.BringToFront(); // panel_srdcalc을 맨 앞으로 가져오기
+            button_menu.BringToFront(); // 햄버거 메뉴를 맨 앞으로 가져옴
+            HideMenu();// 햄버거 메뉴 감추기
         }
     }
 }
