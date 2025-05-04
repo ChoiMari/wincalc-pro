@@ -246,6 +246,7 @@
             this.button_menu_date.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button_menu_date.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.button_menu_date.UseVisualStyleBackColor = true;
+            this.button_menu_date.Click += new System.EventHandler(this.button_menu_date_Click);
             // 
             // button_menu
             // 
