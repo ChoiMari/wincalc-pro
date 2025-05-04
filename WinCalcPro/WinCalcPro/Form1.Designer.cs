@@ -68,6 +68,7 @@
             this.button_menu_date = new System.Windows.Forms.Button();
             this.button_close = new System.Windows.Forms.Button();
             this.button_menu = new System.Windows.Forms.Button();
+            this.panel_hr = new System.Windows.Forms.Panel();
             this.panel_menu.SuspendLayout();
             this.tableLayoutPanel_stdcalc_button.SuspendLayout();
             this.tableLayoutPanel_menu_button.SuspendLayout();
@@ -77,6 +78,7 @@
             // panel_menu
             // 
             this.panel_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.panel_menu.Controls.Add(this.panel_hr);
             this.panel_menu.Controls.Add(this.tableLayoutPanel_menu_setting);
             this.panel_menu.Controls.Add(this.tableLayoutPanel_menu_button);
             this.panel_menu.Controls.Add(this.label_calc);
@@ -589,7 +591,7 @@
             this.tableLayoutPanel_menu_setting.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel_menu_setting.Controls.Add(this.button_menu_setting, 0, 0);
             this.tableLayoutPanel_menu_setting.Font = new System.Drawing.Font("함초롬돋움", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tableLayoutPanel_menu_setting.Location = new System.Drawing.Point(0, 437);
+            this.tableLayoutPanel_menu_setting.Location = new System.Drawing.Point(0, 447);
             this.tableLayoutPanel_menu_setting.Name = "tableLayoutPanel_menu_setting";
             this.tableLayoutPanel_menu_setting.RowCount = 1;
             this.tableLayoutPanel_menu_setting.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -717,6 +719,14 @@
             this.button_menu.UseVisualStyleBackColor = false;
             this.button_menu.Click += new System.EventHandler(this.button_menu_Click);
             // 
+            // panel_hr
+            // 
+            this.panel_hr.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel_hr.Location = new System.Drawing.Point(0, 444);
+            this.panel_hr.Name = "panel_hr";
+            this.panel_hr.Size = new System.Drawing.Size(220, 1);
+            this.panel_hr.TabIndex = 9;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -785,5 +795,6 @@
         private System.Windows.Forms.Button button_menu_date;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_menu_setting;
         private System.Windows.Forms.Button button_menu_setting;
+        private System.Windows.Forms.Panel panel_hr;
     }
 }
