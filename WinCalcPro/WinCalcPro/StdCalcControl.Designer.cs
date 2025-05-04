@@ -54,7 +54,7 @@
             this.button_decipoint = new System.Windows.Forms.Button();
             this.button_equal = new System.Windows.Forms.Button();
             this.textBox_preview = new System.Windows.Forms.TextBox();
-            this.textBox_result = new System.Windows.Forms.TextBox();
+            this.textBox_input = new System.Windows.Forms.TextBox();
             this.tableLayoutPanel_stdcalc_button.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -493,27 +493,27 @@
             // 
             this.textBox_preview.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
             this.textBox_preview.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_preview.Font = new System.Drawing.Font("굴림", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox_preview.Font = new System.Drawing.Font("굴림", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.textBox_preview.ForeColor = System.Drawing.SystemColors.GrayText;
             this.textBox_preview.Location = new System.Drawing.Point(12, 11);
             this.textBox_preview.Name = "textBox_preview";
             this.textBox_preview.ReadOnly = true;
-            this.textBox_preview.Size = new System.Drawing.Size(300, 25);
+            this.textBox_preview.Size = new System.Drawing.Size(300, 19);
             this.textBox_preview.TabIndex = 9;
             this.textBox_preview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // textBox_result
+            // textBox_input
             // 
-            this.textBox_result.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
-            this.textBox_result.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox_result.Font = new System.Drawing.Font("굴림", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox_result.Location = new System.Drawing.Point(12, 42);
-            this.textBox_result.Name = "textBox_result";
-            this.textBox_result.ReadOnly = true;
-            this.textBox_result.Size = new System.Drawing.Size(300, 52);
-            this.textBox_result.TabIndex = 8;
-            this.textBox_result.Text = "0";
-            this.textBox_result.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox_input.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
+            this.textBox_input.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox_input.Font = new System.Drawing.Font("굴림", 33.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.textBox_input.Location = new System.Drawing.Point(12, 42);
+            this.textBox_input.Name = "textBox_input";
+            this.textBox_input.ReadOnly = true;
+            this.textBox_input.Size = new System.Drawing.Size(300, 52);
+            this.textBox_input.TabIndex = 8;
+            this.textBox_input.Text = "0";
+            this.textBox_input.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // StdCalcControl
             // 
@@ -522,7 +522,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
             this.Controls.Add(this.tableLayoutPanel_stdcalc_button);
             this.Controls.Add(this.textBox_preview);
-            this.Controls.Add(this.textBox_result);
+            this.Controls.Add(this.textBox_input);
             this.Name = "StdCalcControl";
             this.Size = new System.Drawing.Size(324, 455);
             this.tableLayoutPanel_stdcalc_button.ResumeLayout(false);
@@ -559,6 +559,6 @@
         private System.Windows.Forms.Button button_decipoint;
         private System.Windows.Forms.Button button_equal;
         private System.Windows.Forms.TextBox textBox_preview;
-        private System.Windows.Forms.TextBox textBox_result;
+        private System.Windows.Forms.TextBox textBox_input;
     }
 }
