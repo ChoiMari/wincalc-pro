@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.input_number = new System.Windows.Forms.TextBox();
             this.Hex = new System.Windows.Forms.Button();
             this.Dec = new System.Windows.Forms.Button();
             this.Oct = new System.Windows.Forms.Button();
             this.Bin = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.textHex = new System.Windows.Forms.TextBox();
+            this.textDec = new System.Windows.Forms.TextBox();
+            this.textOct = new System.Windows.Forms.TextBox();
+            this.textBin = new System.Windows.Forms.TextBox();
             this.ABtn = new System.Windows.Forms.Button();
             this.BBtn = new System.Windows.Forms.Button();
             this.CBtn = new System.Windows.Forms.Button();
@@ -66,16 +66,17 @@
             this.Multiplication = new System.Windows.Forms.Button();
             this.Sharing = new System.Windows.Forms.Button();
             this.Back = new System.Windows.Forms.Button();
+            this.Privew = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // textBox1
+            // input_number
             // 
-            this.textBox1.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(12, 105);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(400, 42);
-            this.textBox1.TabIndex = 0;
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.input_number.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.input_number.Location = new System.Drawing.Point(12, 105);
+            this.input_number.Name = "input_number";
+            this.input_number.Size = new System.Drawing.Size(400, 42);
+            this.input_number.TabIndex = 0;
+            this.input_number.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Hex
             // 
@@ -85,6 +86,7 @@
             this.Hex.TabIndex = 1;
             this.Hex.Text = "HEX";
             this.Hex.UseVisualStyleBackColor = true;
+            this.Hex.Click += new System.EventHandler(this.Hex_Click);
             // 
             // Dec
             // 
@@ -94,6 +96,7 @@
             this.Dec.TabIndex = 2;
             this.Dec.Text = "DEC";
             this.Dec.UseVisualStyleBackColor = true;
+            this.Dec.Click += new System.EventHandler(this.Dec_Click);
             // 
             // Oct
             // 
@@ -103,6 +106,7 @@
             this.Oct.TabIndex = 3;
             this.Oct.Text = "OCT";
             this.Oct.UseVisualStyleBackColor = true;
+            this.Oct.Click += new System.EventHandler(this.Oct_Click);
             // 
             // Bin
             // 
@@ -112,42 +116,43 @@
             this.Bin.TabIndex = 4;
             this.Bin.Text = "BIN";
             this.Bin.UseVisualStyleBackColor = true;
+            this.Bin.Click += new System.EventHandler(this.Bin_Click);
             // 
-            // textBox2
+            // textHex
             // 
-            this.textBox2.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox2.Location = new System.Drawing.Point(95, 161);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.ReadOnly = true;
-            this.textBox2.Size = new System.Drawing.Size(317, 25);
-            this.textBox2.TabIndex = 5;
+            this.textHex.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textHex.Location = new System.Drawing.Point(95, 161);
+            this.textHex.Name = "textHex";
+            this.textHex.ReadOnly = true;
+            this.textHex.Size = new System.Drawing.Size(317, 25);
+            this.textHex.TabIndex = 5;
             // 
-            // textBox3
+            // textDec
             // 
-            this.textBox3.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox3.Location = new System.Drawing.Point(95, 191);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.Size = new System.Drawing.Size(317, 25);
-            this.textBox3.TabIndex = 6;
+            this.textDec.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textDec.Location = new System.Drawing.Point(95, 191);
+            this.textDec.Name = "textDec";
+            this.textDec.ReadOnly = true;
+            this.textDec.Size = new System.Drawing.Size(317, 25);
+            this.textDec.TabIndex = 6;
             // 
-            // textBox4
+            // textOct
             // 
-            this.textBox4.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox4.Location = new System.Drawing.Point(95, 223);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(317, 25);
-            this.textBox4.TabIndex = 7;
+            this.textOct.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textOct.Location = new System.Drawing.Point(95, 223);
+            this.textOct.Name = "textOct";
+            this.textOct.ReadOnly = true;
+            this.textOct.Size = new System.Drawing.Size(317, 25);
+            this.textOct.TabIndex = 7;
             // 
-            // textBox5
+            // textBin
             // 
-            this.textBox5.ForeColor = System.Drawing.SystemColors.WindowFrame;
-            this.textBox5.Location = new System.Drawing.Point(95, 254);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(317, 25);
-            this.textBox5.TabIndex = 8;
+            this.textBin.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.textBin.Location = new System.Drawing.Point(95, 254);
+            this.textBin.Name = "textBin";
+            this.textBin.ReadOnly = true;
+            this.textBin.Size = new System.Drawing.Size(317, 25);
+            this.textBin.TabIndex = 8;
             // 
             // ABtn
             // 
@@ -158,6 +163,7 @@
             this.ABtn.TabIndex = 9;
             this.ABtn.Text = "A";
             this.ABtn.UseVisualStyleBackColor = true;
+            this.ABtn.Click += new System.EventHandler(this.ABtn_Click);
             // 
             // BBtn
             // 
@@ -168,6 +174,7 @@
             this.BBtn.TabIndex = 10;
             this.BBtn.Text = "B";
             this.BBtn.UseVisualStyleBackColor = true;
+            this.BBtn.Click += new System.EventHandler(this.BBtn_Click);
             // 
             // CBtn
             // 
@@ -178,6 +185,7 @@
             this.CBtn.TabIndex = 11;
             this.CBtn.Text = "C";
             this.CBtn.UseVisualStyleBackColor = true;
+            this.CBtn.Click += new System.EventHandler(this.CBtn_Click);
             // 
             // DBtn
             // 
@@ -188,6 +196,7 @@
             this.DBtn.TabIndex = 12;
             this.DBtn.Text = "D";
             this.DBtn.UseVisualStyleBackColor = true;
+            this.DBtn.Click += new System.EventHandler(this.DBtn_Click);
             // 
             // EBtn
             // 
@@ -198,6 +207,7 @@
             this.EBtn.TabIndex = 13;
             this.EBtn.Text = "E";
             this.EBtn.UseVisualStyleBackColor = true;
+            this.EBtn.Click += new System.EventHandler(this.EBtn_Click);
             // 
             // FBtn
             // 
@@ -208,6 +218,7 @@
             this.FBtn.TabIndex = 14;
             this.FBtn.Text = "F";
             this.FBtn.UseVisualStyleBackColor = true;
+            this.FBtn.Click += new System.EventHandler(this.FBtn_Click);
             // 
             // Conversion
             // 
@@ -218,6 +229,7 @@
             this.Conversion.TabIndex = 20;
             this.Conversion.Text = "+/-";
             this.Conversion.UseVisualStyleBackColor = true;
+            this.Conversion.Click += new System.EventHandler(this.Conversion_Click);
             // 
             // Number_1
             // 
@@ -228,6 +240,7 @@
             this.Number_1.TabIndex = 19;
             this.Number_1.Text = "1";
             this.Number_1.UseVisualStyleBackColor = true;
+            this.Number_1.Click += new System.EventHandler(this.Number_1_Click);
             // 
             // Number_4
             // 
@@ -238,6 +251,7 @@
             this.Number_4.TabIndex = 18;
             this.Number_4.Text = "4";
             this.Number_4.UseVisualStyleBackColor = true;
+            this.Number_4.Click += new System.EventHandler(this.Number_4_Click);
             // 
             // Number_7
             // 
@@ -248,6 +262,7 @@
             this.Number_7.TabIndex = 17;
             this.Number_7.Text = "7";
             this.Number_7.UseVisualStyleBackColor = true;
+            this.Number_7.Click += new System.EventHandler(this.Number_7_Click);
             // 
             // Parentheses
             // 
@@ -258,6 +273,7 @@
             this.Parentheses.TabIndex = 16;
             this.Parentheses.Text = "(";
             this.Parentheses.UseVisualStyleBackColor = true;
+            this.Parentheses.Click += new System.EventHandler(this.Parentheses_Click);
             // 
             // Left
             // 
@@ -268,6 +284,7 @@
             this.Left.TabIndex = 15;
             this.Left.Text = "<<";
             this.Left.UseVisualStyleBackColor = true;
+            this.Left.Click += new System.EventHandler(this.Left_Click);
             // 
             // Number_0
             // 
@@ -278,6 +295,7 @@
             this.Number_0.TabIndex = 26;
             this.Number_0.Text = "0";
             this.Number_0.UseVisualStyleBackColor = true;
+            this.Number_0.Click += new System.EventHandler(this.Number_0_Click);
             // 
             // Number_2
             // 
@@ -288,6 +306,7 @@
             this.Number_2.TabIndex = 25;
             this.Number_2.Text = "2";
             this.Number_2.UseVisualStyleBackColor = true;
+            this.Number_2.Click += new System.EventHandler(this.Number_2_Click);
             // 
             // Number_5
             // 
@@ -298,6 +317,7 @@
             this.Number_5.TabIndex = 24;
             this.Number_5.Text = "5";
             this.Number_5.UseVisualStyleBackColor = true;
+            this.Number_5.Click += new System.EventHandler(this.Number_5_Click);
             // 
             // Number_8
             // 
@@ -308,6 +328,7 @@
             this.Number_8.TabIndex = 23;
             this.Number_8.Text = "8";
             this.Number_8.UseVisualStyleBackColor = true;
+            this.Number_8.Click += new System.EventHandler(this.Number_8_Click);
             // 
             // ParenthesesEnd
             // 
@@ -318,6 +339,7 @@
             this.ParenthesesEnd.TabIndex = 22;
             this.ParenthesesEnd.Text = ")";
             this.ParenthesesEnd.UseVisualStyleBackColor = true;
+            this.ParenthesesEnd.Click += new System.EventHandler(this.ParenthesesEnd_Click);
             // 
             // Right
             // 
@@ -328,6 +350,7 @@
             this.Right.TabIndex = 21;
             this.Right.Text = ">>";
             this.Right.UseVisualStyleBackColor = true;
+            this.Right.Click += new System.EventHandler(this.Right_Click);
             // 
             // Number_3
             // 
@@ -338,6 +361,7 @@
             this.Number_3.TabIndex = 31;
             this.Number_3.Text = "3";
             this.Number_3.UseVisualStyleBackColor = true;
+            this.Number_3.Click += new System.EventHandler(this.Number_3_Click);
             // 
             // Number_6
             // 
@@ -348,6 +372,7 @@
             this.Number_6.TabIndex = 30;
             this.Number_6.Text = "6";
             this.Number_6.UseVisualStyleBackColor = true;
+            this.Number_6.Click += new System.EventHandler(this.Number_6_Click);
             // 
             // Number_9
             // 
@@ -358,6 +383,7 @@
             this.Number_9.TabIndex = 29;
             this.Number_9.Text = "9";
             this.Number_9.UseVisualStyleBackColor = true;
+            this.Number_9.Click += new System.EventHandler(this.Number_9_Click);
             // 
             // Percent
             // 
@@ -368,6 +394,7 @@
             this.Percent.TabIndex = 28;
             this.Percent.Text = "%";
             this.Percent.UseVisualStyleBackColor = true;
+            this.Percent.Click += new System.EventHandler(this.Percent_Click);
             // 
             // CEBtn
             // 
@@ -378,6 +405,7 @@
             this.CEBtn.TabIndex = 27;
             this.CEBtn.Text = "CE";
             this.CEBtn.UseVisualStyleBackColor = true;
+            this.CEBtn.Click += new System.EventHandler(this.CEBtn_Click);
             // 
             // Equal
             // 
@@ -388,6 +416,7 @@
             this.Equal.TabIndex = 38;
             this.Equal.Text = "=";
             this.Equal.UseVisualStyleBackColor = true;
+            this.Equal.Click += new System.EventHandler(this.Equal_Click);
             // 
             // Plus
             // 
@@ -398,6 +427,7 @@
             this.Plus.TabIndex = 37;
             this.Plus.Text = "+";
             this.Plus.UseVisualStyleBackColor = true;
+            this.Plus.Click += new System.EventHandler(this.Plus_Click);
             // 
             // Minus
             // 
@@ -408,6 +438,7 @@
             this.Minus.TabIndex = 36;
             this.Minus.Text = "-";
             this.Minus.UseVisualStyleBackColor = true;
+            this.Minus.Click += new System.EventHandler(this.Minus_Click);
             // 
             // Multiplication
             // 
@@ -418,6 +449,7 @@
             this.Multiplication.TabIndex = 35;
             this.Multiplication.Text = "X";
             this.Multiplication.UseVisualStyleBackColor = true;
+            this.Multiplication.Click += new System.EventHandler(this.Multiplication_Click);
             // 
             // Sharing
             // 
@@ -428,6 +460,7 @@
             this.Sharing.TabIndex = 34;
             this.Sharing.Text = "÷";
             this.Sharing.UseVisualStyleBackColor = true;
+            this.Sharing.Click += new System.EventHandler(this.Sharing_Click);
             // 
             // Back
             // 
@@ -438,12 +471,24 @@
             this.Back.TabIndex = 33;
             this.Back.Text = "<-";
             this.Back.UseVisualStyleBackColor = true;
+            this.Back.Click += new System.EventHandler(this.Back_Click);
+            // 
+            // Privew
+            // 
+            this.Privew.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Privew.ForeColor = System.Drawing.SystemColors.WindowFrame;
+            this.Privew.Location = new System.Drawing.Point(13, 57);
+            this.Privew.Name = "Privew";
+            this.Privew.Size = new System.Drawing.Size(400, 42);
+            this.Privew.TabIndex = 39;
+            this.Privew.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(424, 682);
+            this.Controls.Add(this.Privew);
             this.Controls.Add(this.Equal);
             this.Controls.Add(this.Plus);
             this.Controls.Add(this.Minus);
@@ -473,15 +518,15 @@
             this.Controls.Add(this.CBtn);
             this.Controls.Add(this.BBtn);
             this.Controls.Add(this.ABtn);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.textBin);
+            this.Controls.Add(this.textOct);
+            this.Controls.Add(this.textDec);
+            this.Controls.Add(this.textHex);
             this.Controls.Add(this.Bin);
             this.Controls.Add(this.Oct);
             this.Controls.Add(this.Dec);
             this.Controls.Add(this.Hex);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.input_number);
             this.Name = "Form3";
             this.Text = "Form3";
             this.ResumeLayout(false);
@@ -491,15 +536,15 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox input_number;
         private System.Windows.Forms.Button Hex;
         private System.Windows.Forms.Button Dec;
         private System.Windows.Forms.Button Oct;
         private System.Windows.Forms.Button Bin;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox textHex;
+        private System.Windows.Forms.TextBox textDec;
+        private System.Windows.Forms.TextBox textOct;
+        private System.Windows.Forms.TextBox textBin;
         private System.Windows.Forms.Button ABtn;
         private System.Windows.Forms.Button BBtn;
         private System.Windows.Forms.Button CBtn;
@@ -529,5 +574,6 @@
         private System.Windows.Forms.Button Multiplication;
         private System.Windows.Forms.Button Sharing;
         private System.Windows.Forms.Button Back;
+        private System.Windows.Forms.TextBox Privew;
     }
 }
