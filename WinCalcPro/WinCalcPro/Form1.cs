@@ -144,9 +144,16 @@ namespace WinCalcPro
         // 햄버거 메뉴의 공학 계산기 버튼 클릭 이벤트 핸들러
         private void button_menu_sci_Click(object sender, EventArgs e)
         {
-            HideMenu();
+            HideMenu();// 햄버거 메뉴 감추기
             SciCalcControl sciCalcControl = new SciCalcControl();
             LoadUserControl(sciCalcControl, "공학용");
+        }
+
+        private void button_menu_prog_Click(object sender, EventArgs e)
+        {
+            HideMenu();// 햄버거 메뉴 감추기
+            ProgCalcControl progCalcControl = new ProgCalcControl();
+            LoadUserControl(progCalcControl, "프로그래머");
         }
     }
 }
