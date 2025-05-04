@@ -17,133 +17,30 @@ namespace WinCalcPro
             InitializeComponent();
         } // Form1 끝
 
-        // 전역 변수(필드) 선언
+        
+        // -------------------메서드 선언 ------------------
         /// <summary>
-        /// 메뉴 상태를 추적하는 변수 (true: 열림, false: 닫힘)
+        /// 사용자 컨트롤 로드 메서드
         /// </summary>
-        private bool isMenuOpen = false;
-
-        private SciCalcControl sciControl; // 공학 계산기 컨트롤 객체를 저장할 변수
-
-        // 메서드 선언
-        /// <summary>
-        /// 메뉴를 보여주는 메서드
-        /// </summary>
-        private void ShowMenu() {
-            isMenuOpen = true; // 메뉴 열림 상태로 변경
-            panel_menu.BringToFront();// 패널을 앞면으로 가져옴
-            button_menu.Visible = false; // 햄버거 버튼은 숨기기
-            button_close.Visible = true; // 닫기 버튼 보이게
-
-            // 타이머를 사용하여 메뉴 펼치기
-            Timer timer = new Timer();
-            timer.Interval = 10; // 타이머 간격
-            timer.Tick += Timer_Tick; // 이벤트 핸들러를 메서드로 연결
-            timer.Start();
-
+        /// <param name="control">form1에 삽입 시킬 컨트롤</param>
+        private void LoadUserControl(UserControl control)
+        {
+            panel_main.Controls.Clear();      // 기존 컨트롤 제거
+            control.Dock = DockStyle.Fill;   // 채우기
+            panel_main.Controls.Add(control); // 새 컨트롤 추가
         }
+
 
         /// <summary>
-        /// 메뉴를 숨기는 메서드
+        /// Form1이 로드될 때 호출되는 이벤트 핸들러 : 
+        /// 표준 계산기 컨트롤을 삽입
         /// </summary>
-        private void HideMenu() {
-            button_close.Visible = false;// 닫기 버튼 숨기기
-            button_menu.Visible = true; // 햄버거 버튼 보이게
-            isMenuOpen = false; // 메뉴 닫힘 상태로 변경
-            
-            // 타이머를 사용하여 메뉴 닫기
-            Timer timer = new Timer();
-            timer.Interval = 10; // 타이머 간격
-            timer.Tick += Timer_Tick; // 이벤트 핸들러를 메서드로 연결
-            timer.Start();
-        }
-
-        /// <summary>
-        /// 타이머 이벤트 핸들러
-        /// </summary>
-        /// <param name="sender">이벤트를 발생시킨 객체</param>
-        /// <param name="e">이벤트 관련 데이터</param>
-        private void Timer_Tick(object sender, EventArgs e)
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form1_Load(object sender, EventArgs e)
         {
-            if (isMenuOpen) // 메뉴가 열려있다면
-            {
-                // 메뉴 펼치기(너비를 늘리는 애니메이션)
-                if (panel_menu.Width < 220) // 원하는 최종 너비 미만이면 실행됨
-                {
-                    panel_menu.Width += 10; // 패널 크기 조금씩 늘림
-                }
-                else
-                {
-                    // 메뉴가 최대로 펼쳐졌으면 타이머 멈춤
-                    Timer timer = sender as Timer;
-                    timer.Stop();
-                }
-            }
-            else // 메뉴가 닫혀있다면
-            {
-                // 메뉴 접기 (너비를 줄이는 애니메이션)
-                if (panel_menu.Width > 0)  // 원하는 최소 너비 이상이면 실행(0이 될때까지 실행된다는 뜻)
-                {
-                    panel_menu.Width -= 25; // 패널 크기 조금씩 줄임
-                }
-                else
-                {
-                    // 메뉴가 완전히 접혔으면 타이머 멈춤
-                    Timer timer = sender as Timer;
-                    timer.Stop();
-                }
-            }
-        }
-
-        // 메뉴 버튼 클릭 이벤트 핸들러
-        private void button_menu_Click(object sender, EventArgs e)
-        {
-            ShowMenu(); // 햄버거 메뉴 보여주기
-        }
-
-        // 메뉴 닫기 버튼 클릭 이벤트 핸들러
-        private void button_close_Click(object sender, EventArgs e)
-        {
-            HideMenu(); // 햄버거 메뉴 감추기
-        }
-
-        private void label_calc_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        // 공학 계산기 버튼 클릭 이벤트 핸들러
-        private void button_menu_sci_Click(object sender, EventArgs e)
-        {
-            // 표준 계산기 패널 숨김
-            panel_stdcalc.Visible = false;
-            
-            // 공학 계산기 패널 보임
-            if (sciControl == null) // 공학 계산기 컨트롤이 없다면
-            {
-                sciControl = new SciCalcControl(); // 공학 계산기 컨트롤 객체 생성
-                sciControl.Dock = DockStyle.Fill; // 컨트롤을 패널에 맞게 채움
-                this.Controls.Add(sciControl);  // Form1(this)에 SciCalcControl 추가
-            }
-
-            // SciCalcControl을 맨 위로 가져오고 보이게 설정
-            sciControl.BringToFront(); //맨 앞으로 표시
-            sciControl.Visible = true; // 보이게 함
-            button_menu.BringToFront(); // 햄버거 메뉴를 맨 앞으로 가져옴
-
-            HideMenu();// 햄버거 메뉴 감추기
-
-        }
-
-        private void button_menu_std_Click(object sender, EventArgs e)
-        {
-            sciControl.Visible = false; // SciCalcControl 숨기기
-          
-            // 표준 계산기 패널 보임
-            panel_stdcalc.Visible = true;
-            panel_stdcalc.BringToFront(); // panel_srdcalc을 맨 앞으로 가져오기
-            button_menu.BringToFront(); // 햄버거 메뉴를 맨 앞으로 가져옴
-            HideMenu();// 햄버거 메뉴 감추기
+            StdCalcControl stdCalcControl = new StdCalcControl();
+            LoadUserControl(stdCalcControl);
         }
     }
 }

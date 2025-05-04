@@ -67,7 +67,7 @@
             this.button_menu_prog = new System.Windows.Forms.Button();
             this.button_menu_date = new System.Windows.Forms.Button();
             this.label_calc = new System.Windows.Forms.Label();
-            this.button_close = new System.Windows.Forms.Button();
+            this.button_menu_close = new System.Windows.Forms.Button();
             this.tableLayoutPanel_stdcalc_button.SuspendLayout();
             this.panel_menu.SuspendLayout();
             this.tableLayoutPanel_menu_setting.SuspendLayout();
@@ -106,7 +106,7 @@
             this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_decipoint, 2, 5);
             this.tableLayoutPanel_stdcalc_button.Controls.Add(this.button_equals, 3, 5);
             this.tableLayoutPanel_stdcalc_button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.tableLayoutPanel_stdcalc_button.Location = new System.Drawing.Point(0, 182);
+            this.tableLayoutPanel_stdcalc_button.Location = new System.Drawing.Point(0, 189);
             this.tableLayoutPanel_stdcalc_button.Name = "tableLayoutPanel_stdcalc_button";
             this.tableLayoutPanel_stdcalc_button.Padding = new System.Windows.Forms.Padding(5);
             this.tableLayoutPanel_stdcalc_button.RowCount = 6;
@@ -553,11 +553,12 @@
             this.button_menu.Size = new System.Drawing.Size(35, 35);
             this.button_menu.TabIndex = 6;
             this.button_menu.UseVisualStyleBackColor = false;
+            this.button_menu.Click += new System.EventHandler(this.button_menu_Click);
             // 
             // panel_menu
             // 
             this.panel_menu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
-            this.panel_menu.Controls.Add(this.button_close);
+            this.panel_menu.Controls.Add(this.button_menu_close);
             this.panel_menu.Controls.Add(this.panel_hr);
             this.panel_menu.Controls.Add(this.tableLayoutPanel_menu_setting);
             this.panel_menu.Controls.Add(this.tableLayoutPanel_menu_button);
@@ -565,7 +566,7 @@
             this.panel_menu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel_menu.Location = new System.Drawing.Point(0, 0);
             this.panel_menu.Name = "panel_menu";
-            this.panel_menu.Size = new System.Drawing.Size(220, 500);
+            this.panel_menu.Size = new System.Drawing.Size(0, 510);
             this.panel_menu.TabIndex = 11;
             // 
             // panel_hr
@@ -712,17 +713,18 @@
             this.label_calc.TabIndex = 6;
             this.label_calc.Text = "계산기";
             // 
-            // button_close
+            // button_menu_close
             // 
-            this.button_close.FlatAppearance.BorderSize = 0;
-            this.button_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button_close.Image = global::WinCalcPro.Properties.Resources.menuImg;
-            this.button_close.Location = new System.Drawing.Point(13, 13);
-            this.button_close.Name = "button_close";
-            this.button_close.Size = new System.Drawing.Size(35, 35);
-            this.button_close.TabIndex = 0;
-            this.button_close.UseVisualStyleBackColor = true;
-            this.button_close.Visible = false;
+            this.button_menu_close.FlatAppearance.BorderSize = 0;
+            this.button_menu_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button_menu_close.Image = global::WinCalcPro.Properties.Resources.menuImg;
+            this.button_menu_close.Location = new System.Drawing.Point(13, 6);
+            this.button_menu_close.Name = "button_menu_close";
+            this.button_menu_close.Size = new System.Drawing.Size(35, 35);
+            this.button_menu_close.TabIndex = 0;
+            this.button_menu_close.UseVisualStyleBackColor = true;
+            this.button_menu_close.Visible = false;
+            this.button_menu_close.Click += new System.EventHandler(this.button_menu_close_Click);
             // 
             // StdCalcControl
             // 
@@ -736,7 +738,7 @@
             this.Controls.Add(this.label_title);
             this.Controls.Add(this.button_menu);
             this.Name = "StdCalcControl";
-            this.Size = new System.Drawing.Size(325, 500);
+            this.Size = new System.Drawing.Size(325, 510);
             this.tableLayoutPanel_stdcalc_button.ResumeLayout(false);
             this.panel_menu.ResumeLayout(false);
             this.panel_menu.PerformLayout();
@@ -779,7 +781,7 @@
         private System.Windows.Forms.Label label_title;
         private System.Windows.Forms.Button button_menu;
         private System.Windows.Forms.Panel panel_menu;
-        private System.Windows.Forms.Button button_close;
+        private System.Windows.Forms.Button button_menu_close;
         private System.Windows.Forms.Panel panel_hr;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel_menu_setting;
         private System.Windows.Forms.Button button_menu_setting;
