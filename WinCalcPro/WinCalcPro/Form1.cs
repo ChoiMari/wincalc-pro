@@ -155,5 +155,12 @@ namespace WinCalcPro
             ProgCalcControl progCalcControl = new ProgCalcControl();
             LoadUserControl(progCalcControl, "프로그래머");
         }
+
+        private void button_menu_date_Click(object sender, EventArgs e)
+        {
+            HideMenu();// 햄버거 메뉴 감추기
+            DateCalcControl dateCalcControl = new DateCalcControl();
+            LoadUserControl(dateCalcControl, "날짜 계산");
+        }
     }
 }
