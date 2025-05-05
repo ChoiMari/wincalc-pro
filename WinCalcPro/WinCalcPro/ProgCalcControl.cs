@@ -36,7 +36,7 @@ namespace WinCalcPro
                     textBox_OCT.Text = Convert.ToString(number, 8);           // 8진수
                     textBox_BIN.Text = Convert.ToString(number, 2);           // 2진수
                     // C를 CE로 변경
-                    btn_clearAll.Name = "CE";
+                    btn_clearAll.Text = "CE";
                 }
                 else
                 {
@@ -189,12 +189,12 @@ namespace WinCalcPro
 
         private void btn_clearAll_Click(object sender, EventArgs e)
         {
-            if (textBox_input.Text.Length > 0 || textBox_preview.Text.Length > 0)
+            if (textBox_input.Text.Length > 0 && textBox_preview.Text.Length > 0)
             {
                 textBox_input.Text = "";
-                btn_clearAll.Name = "C";
+                btn_clearAll.Text = "C";
             }
-            else if (btn_clearAll.Name == "C")
+            else if (btn_clearAll.Text == "C")
             {
                 textBox_input.Text = "";
                 textBox_preview.Text = "";

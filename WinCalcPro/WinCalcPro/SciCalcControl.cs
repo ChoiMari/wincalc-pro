@@ -10,7 +10,15 @@ namespace WinCalcPro
             InitializeComponent();
             textBox_input.KeyPress += new KeyPressEventHandler(textBox_input_KeyPress);
             // 숫자만 입력받도록 이벤트 핸들러 추가
+
+            textBox_input.TextChanged += textBox_input_TextChanged;
         }
+
+        private void textBox_input_TextChanged(object sender, EventArgs e)
+        {
+            btn_ce.Text = "CE";
+        }
+
         /// <summary>
         /// 키보드 숫자만 입력 받도록 설정
         /// </summary>
@@ -30,7 +38,7 @@ namespace WinCalcPro
                 // 예: 계산 수행
                 btn_equal_Click(sender, e);
             }
-            btn_ce.Name = "CE";
+            
 
         }
         ScientificCalc sc = new ScientificCalc();
@@ -72,12 +80,12 @@ namespace WinCalcPro
 
         private void btn_ce_Click(object sender, EventArgs e)
         {
-            if (textBox_input.Text.Length > 0 || textBox_preview.Text.Length > 0)
+            if (textBox_input.Text.Length > 0 && textBox_preview.Text.Length > 0)
             {
                 textBox_input.Text = "";
-                btn_ce.Name = "C";
+                btn_ce.Text = "C";
             }
-            else if (btn_ce.Name == "C")
+            else if (btn_ce.Text == "C")
             {
                 textBox_input.Text = "";
                 textBox_preview.Text = "";
