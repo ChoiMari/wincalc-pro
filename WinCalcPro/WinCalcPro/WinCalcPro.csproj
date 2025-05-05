@@ -87,6 +87,12 @@
       <DependentUpon>SciCalcControl.cs</DependentUpon>
     </Compile>
     <Compile Include="ScientificCalc.cs" />
+    <Compile Include="SettingControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SettingControl.Designer.cs">
+      <DependentUpon>SettingControl.cs</DependentUpon>
+    </Compile>
     <Compile Include="StandardCalc.cs" />
     <Compile Include="StdCalcControl.cs">
       <SubType>UserControl</SubType>
@@ -121,6 +127,9 @@
     </Compile>
     <EmbeddedResource Include="SciCalcControl.resx">
       <DependentUpon>SciCalcControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SettingControl.resx">
+      <DependentUpon>SettingControl.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StdCalcControl.resx">
       <DependentUpon>StdCalcControl.cs</DependentUpon>
