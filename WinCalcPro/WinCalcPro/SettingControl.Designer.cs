@@ -34,6 +34,10 @@
             this.label_copyright = new System.Windows.Forms.Label();
             this.linkLabel_icon_copyright = new System.Windows.Forms.LinkLabel();
             this.label_icon_copyright = new System.Windows.Forms.Label();
+            this.panel_theme = new System.Windows.Forms.Panel();
+            this.radioButton_light = new System.Windows.Forms.RadioButton();
+            this.radioButton_dark = new System.Windows.Forms.RadioButton();
+            this.panel_theme.SuspendLayout();
             this.SuspendLayout();
             // 
             // label_shape
@@ -99,11 +103,47 @@
             this.label_icon_copyright.TabIndex = 4;
             this.label_icon_copyright.Text = "아이콘 출처 :";
             // 
+            // panel_theme
+            // 
+            this.panel_theme.BackColor = System.Drawing.Color.White;
+            this.panel_theme.Controls.Add(this.radioButton_dark);
+            this.panel_theme.Controls.Add(this.radioButton_light);
+            this.panel_theme.Location = new System.Drawing.Point(33, 74);
+            this.panel_theme.Name = "panel_theme";
+            this.panel_theme.Size = new System.Drawing.Size(248, 100);
+            this.panel_theme.TabIndex = 5;
+            // 
+            // radioButton_light
+            // 
+            this.radioButton_light.AutoSize = true;
+            this.radioButton_light.Checked = true;
+            this.radioButton_light.Font = new System.Drawing.Font("한컴 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.radioButton_light.Location = new System.Drawing.Point(17, 22);
+            this.radioButton_light.Name = "radioButton_light";
+            this.radioButton_light.Size = new System.Drawing.Size(62, 23);
+            this.radioButton_light.TabIndex = 0;
+            this.radioButton_light.TabStop = true;
+            this.radioButton_light.Text = "Light";
+            this.radioButton_light.UseVisualStyleBackColor = true;
+            // 
+            // radioButton_dark
+            // 
+            this.radioButton_dark.AutoSize = true;
+            this.radioButton_dark.Font = new System.Drawing.Font("한컴 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.radioButton_dark.Location = new System.Drawing.Point(17, 61);
+            this.radioButton_dark.Name = "radioButton_dark";
+            this.radioButton_dark.Size = new System.Drawing.Size(60, 23);
+            this.radioButton_dark.TabIndex = 0;
+            this.radioButton_dark.TabStop = true;
+            this.radioButton_dark.Text = "Dark";
+            this.radioButton_dark.UseVisualStyleBackColor = true;
+            // 
             // SettingControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
+            this.Controls.Add(this.panel_theme);
             this.Controls.Add(this.label_icon_copyright);
             this.Controls.Add(this.linkLabel_icon_copyright);
             this.Controls.Add(this.label_copyright);
@@ -113,6 +153,8 @@
             this.Name = "SettingControl";
             this.Size = new System.Drawing.Size(324, 455);
             this.Load += new System.EventHandler(this.SettingControl_Load);
+            this.panel_theme.ResumeLayout(false);
+            this.panel_theme.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -126,5 +168,8 @@
         private System.Windows.Forms.Label label_copyright;
         private System.Windows.Forms.LinkLabel linkLabel_icon_copyright;
         private System.Windows.Forms.Label label_icon_copyright;
+        private System.Windows.Forms.Panel panel_theme;
+        private System.Windows.Forms.RadioButton radioButton_light;
+        private System.Windows.Forms.RadioButton radioButton_dark;
     }
 }
