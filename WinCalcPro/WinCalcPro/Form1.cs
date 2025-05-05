@@ -17,20 +17,48 @@ namespace WinCalcPro
             InitializeComponent();
         } // Form1 끝
 
-        // 전역 변수(필드) 선언
+        //-------------- 전역 변수(필드) 선언 --------------
         /// <summary>
         /// 메뉴 상태를 추적하는 변수 (true: 열림, false: 닫힘)
         /// </summary>
         private bool isMenuOpen = false;
 
+
+        //------------------- 메서드 선언 ------------------
+        /// <summary>
+        /// 사용자 컨트롤 삽입 메서드
+        /// </summary>
+        /// <param name="control">form1에 삽입 시킬 컨트롤</param>
+        private void LoadUserControl(UserControl control, String title)
+        {
+            panel_main.Controls.Clear();      // 기존 컨트롤 제거
+            control.Dock = DockStyle.Fill;   // 채우기
+            panel_main.Controls.Add(control); // 새 컨트롤 삽입(추가)
+            label_title.Text = title; // 레이블 제목 변경
+        }
+
+
+        /// <summary>
+        /// Form1이 로드될 때 호출되는 이벤트 핸들러 : 
+        /// 표준 계산기 컨트롤을 삽입
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            StdCalcControl stdCalcControl = new StdCalcControl();
+            LoadUserControl(stdCalcControl, "표준");
+        }
+
         /// <summary>
         /// 메뉴를 보여주는 메서드
         /// </summary>
-        private void ShowMenu() {
+        private void ShowMenu()
+        {
             isMenuOpen = true; // 메뉴 열림 상태로 변경
             panel_menu.BringToFront();// 패널을 앞면으로 가져옴
             button_menu.Visible = false; // 햄버거 버튼은 숨기기
-            button_close.Visible = true; // 닫기 버튼 보이게
+            button_menu_close.Visible = true; // 닫기 버튼 보이게
 
             // 타이머를 사용하여 메뉴 펼치기
             Timer timer = new Timer();
@@ -43,11 +71,12 @@ namespace WinCalcPro
         /// <summary>
         /// 메뉴를 숨기는 메서드
         /// </summary>
-        private void HideMenu() {
-            button_close.Visible = false;// 닫기 버튼 숨기기
+        private void HideMenu()
+        {
+            button_menu_close.Visible = false;// 닫기 버튼 숨기기
             button_menu.Visible = true; // 햄버거 버튼 보이게
             isMenuOpen = false; // 메뉴 닫힘 상태로 변경
-            
+
             // 타이머를 사용하여 메뉴 닫기
             Timer timer = new Timer();
             timer.Interval = 10; // 타이머 간격
@@ -56,7 +85,7 @@ namespace WinCalcPro
         }
 
         /// <summary>
-        /// 타이머 이벤트 핸들러
+        /// 타이머 이벤트 핸들러(햄버거메뉴 애니메이션에 이용)
         /// </summary>
         /// <param name="sender">이벤트를 발생시킨 객체</param>
         /// <param name="e">이벤트 관련 데이터</param>
@@ -95,18 +124,29 @@ namespace WinCalcPro
         // 메뉴 버튼 클릭 이벤트 핸들러
         private void button_menu_Click(object sender, EventArgs e)
         {
-            ShowMenu();
+            ShowMenu(); // 햄버거 메뉴 보여주기
         }
 
         // 메뉴 닫기 버튼 클릭 이벤트 핸들러
-        private void button_close_Click(object sender, EventArgs e)
+        private void button_menu_close_Click(object sender, EventArgs e)
         {
-            HideMenu();
+            HideMenu(); // 햄버거 메뉴 감추기
         }
 
-        private void label_calc_Click(object sender, EventArgs e)
+        // 햄버거 메뉴의 표준 계산기 버튼 클릭 이벤트 핸들러 
+        private void button_menu_std_Click(object sender, EventArgs e)
         {
+            HideMenu(); // 햄버거 메뉴 감추기
+            StdCalcControl stdCalcControl = new StdCalcControl();
+            LoadUserControl(stdCalcControl, "표준");
+        }
 
+        // 햄버거 메뉴의 공학 계산기 버튼 클릭 이벤트 핸들러
+        private void button_menu_sci_Click(object sender, EventArgs e)
+        {
+            HideMenu();
+            SciCalcControl sciCalcControl = new SciCalcControl();
+            LoadUserControl(sciCalcControl, "공학용");
         }
     }
 }
