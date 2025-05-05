@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WinCalcPro
 {
@@ -12,17 +13,17 @@ namespace WinCalcPro
         /// <<
         /// </summary>
         /// 
-        public long Left(long value)
+        public long Left(long value,int count)
         {
-            return value << 1;
+            return value << count;
         }
         /// <summary>
         /// >>
         /// </summary>
         /// 
-        public long Right(long value)
+        public long Right(long value,int count)
         {
-            return value >> 1;
+            return value >> count;
         }
 
         ///<summary>
@@ -33,5 +34,6 @@ namespace WinCalcPro
         {
             return value / 100;
         }
+        public ScientificCalc scientificCalc = new ScientificCalc();
     }
 }
