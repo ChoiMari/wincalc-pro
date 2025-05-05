@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.input_number = new System.Windows.Forms.TextBox();
             this.Hex = new System.Windows.Forms.Button();
             this.Dec = new System.Windows.Forms.Button();
             this.Oct = new System.Windows.Forms.Button();
@@ -67,16 +66,8 @@
             this.Sharing = new System.Windows.Forms.Button();
             this.Back = new System.Windows.Forms.Button();
             this.preview = new System.Windows.Forms.TextBox();
+            this.input_number = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // input_number
-            // 
-            this.input_number.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.input_number.Location = new System.Drawing.Point(12, 105);
-            this.input_number.Name = "input_number";
-            this.input_number.Size = new System.Drawing.Size(400, 42);
-            this.input_number.TabIndex = 0;
-            this.input_number.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // Hex
             // 
@@ -403,7 +394,7 @@
             this.CEBtn.Name = "CEBtn";
             this.CEBtn.Size = new System.Drawing.Size(75, 53);
             this.CEBtn.TabIndex = 27;
-            this.CEBtn.Text = "CE";
+            this.CEBtn.Text = "C";
             this.CEBtn.UseVisualStyleBackColor = true;
             this.CEBtn.Click += new System.EventHandler(this.CEBtn_Click);
             // 
@@ -483,6 +474,15 @@
             this.preview.TabIndex = 39;
             this.preview.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
+            // input_number
+            // 
+            this.input_number.Font = new System.Drawing.Font("굴림", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.input_number.Location = new System.Drawing.Point(12, 105);
+            this.input_number.Name = "input_number";
+            this.input_number.Size = new System.Drawing.Size(400, 42);
+            this.input_number.TabIndex = 0;
+            this.input_number.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
             // Form3
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -535,8 +535,6 @@
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox input_number;
         private System.Windows.Forms.Button Hex;
         private System.Windows.Forms.Button Dec;
         private System.Windows.Forms.Button Oct;
@@ -575,5 +573,6 @@
         private System.Windows.Forms.Button Sharing;
         private System.Windows.Forms.Button Back;
         private System.Windows.Forms.TextBox preview;
+        private System.Windows.Forms.TextBox input_number;
     }
 }

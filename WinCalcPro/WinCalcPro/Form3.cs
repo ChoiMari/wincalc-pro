@@ -41,13 +41,15 @@ namespace WinCalcPro
             try
             {
                 // 입력값이 유효한 정수인지 확인
-                if (int.TryParse(input_number.Text, out int number))
+                if (long.TryParse(input_number.Text, out long number))
                 {
                     // 각 진수로 변환하여 텍스트 박스에 표시
                     textHex.Text = Convert.ToString(number, 16).ToUpper(); // 16진수
                     textDec.Text = Convert.ToString(number, 10);          // 10진수
                     textOct.Text = Convert.ToString(number, 8);           // 8진수
                     textBin.Text = Convert.ToString(number, 2);           // 2진수
+                    // C를 CE로 변경
+                    CEBtn.Name = "CE";
                 }
                 else
                 {
@@ -255,8 +257,16 @@ namespace WinCalcPro
 
         private void CEBtn_Click(object sender, EventArgs e)
         {
-            input_number.Text = "";
-            preview.Text = "";
+            if (input_number.Text.Length > 0 || preview.Text.Length > 0)
+            {
+                input_number.Text = "";
+                CEBtn.Name = "C";
+            }
+            else if(CEBtn.Name == "C")
+            {
+                input_number.Text = "";
+                preview.Text = "";
+            }
         }
 
         private void Back_Click(object sender, EventArgs e)
@@ -275,7 +285,7 @@ namespace WinCalcPro
 
         private void ParenthesesEnd_Click(object sender, EventArgs e)
         {
-            input_number.Text += ")";   
+            input_number.Text += ")";
         }
 
         private void Percent_Click(object sender, EventArgs e)
@@ -325,6 +335,18 @@ namespace WinCalcPro
 
         private void Equal_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string expression = input_number.Text;
+                decimal result1 = EvaluateExpression(expression);
+                input_number.Text = result1.ToString();
+                preview.Text = ""; // 연산 완료 후 preview 초기화
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"오류 발생: {ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             string code = preview.Text;
             decimal result = 0;
 
@@ -396,6 +418,125 @@ namespace WinCalcPro
         private void Conversion_Click(object sender, EventArgs e)
         {
             input_number.Text = input_number.Text.StartsWith("-") ? input_number.Text.Substring(1) : "-" + input_number.Text;
+        }
+        private decimal CalculatePostfix(List<string> postfix)
+        {
+            var stack = new Stack<decimal>();
+
+            foreach (var token in postfix)
+            {
+                if (decimal.TryParse(token, out decimal number)) // 숫자
+                {
+                    stack.Push(number);
+                }
+                else // 연산자
+                {
+                    var b = stack.Pop();
+                    var a = stack.Pop();
+
+                    switch (token)
+                    {
+                        case "+": stack.Push(a + b); break;
+                        case "-": stack.Push(a - b); break;
+                        case "*": stack.Push(a * b); break;
+                        case "/": stack.Push(a / b); break;
+                        default: throw new InvalidOperationException($"알 수 없는 연산자: {token}");
+                    }
+                }
+            }
+
+            return stack.Pop();
+        }
+        private List<string> ConvertToPostfix(List<string> tokens)
+        {
+            var output = new List<string>();
+            var operators = new Stack<string>();
+
+            var precedence = new Dictionary<string, int>
+            {
+                { "+", 1 }, { "-", 1 },
+                { "*", 2 }, { "/", 2 },
+                { "(", 0 } // '('는 우선순위가 가장 낮음
+            };
+
+            foreach (var token in tokens)
+            {
+                if (decimal.TryParse(token, out _)) // 숫자
+                {
+                    output.Add(token);
+                }
+                else if (token == "(")
+                {
+                    operators.Push(token);
+                }
+                else if (token == ")")
+                {
+                    while (operators.Peek() != "(")
+                    {
+                        output.Add(operators.Pop());
+                    }
+                    operators.Pop(); // '(' 제거
+                }
+                else // 연산자
+                {
+                    while (operators.Count > 0 && precedence[operators.Peek()] >= precedence[token])
+                    {
+                        output.Add(operators.Pop());
+                    }
+                    operators.Push(token);
+                }
+            }
+
+            while (operators.Count > 0)
+            {
+                output.Add(operators.Pop());
+            }
+
+            return output;
+        }
+        private List<string> TokenizeExpression(string expression)
+        {
+            var tokens = new List<string>();
+            var number = new StringBuilder();
+
+            foreach (char c in expression)
+            {
+                if (char.IsDigit(c) || c == '.') // 숫자 또는 소수점
+                {
+                    number.Append(c);
+                }
+                else
+                {
+                    if (number.Length > 0)
+                    {
+                        tokens.Add(number.ToString());
+                        number.Clear();
+                    }
+
+                    if (!char.IsWhiteSpace(c)) // 연산자 또는 괄호
+                    {
+                        tokens.Add(c.ToString());
+                    }
+                }
+            }
+
+            if (number.Length > 0)
+            {
+                tokens.Add(number.ToString());
+            }
+
+            return tokens;
+        }
+        private decimal EvaluateExpression(string expression)
+        {
+            // 1. 수식을 토큰화
+            var tokens = TokenizeExpression(expression);
+
+            // 2. 중위 표기법을 후위 표기법으로 변환
+            var postfix = ConvertToPostfix(tokens);
+
+            // 3. 후위 표기법을 계산
+            return CalculatePostfix(postfix);
         }
     }
 }
