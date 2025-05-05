@@ -17,6 +17,12 @@ namespace WinCalcPro
         private void textBox_input_TextChanged(object sender, EventArgs e)
         {
             btn_ce.Text = "CE";
+
+            //앞에 0이 있으면 지우기
+            if (textBox_input.Text.Length > 1 && textBox_input.Text.StartsWith("0"))
+            {
+                textBox_input.Text = textBox_input.Text.Substring(1);
+            }
         }
 
         /// <summary>
@@ -90,7 +96,12 @@ namespace WinCalcPro
                 textBox_input.Text = "";
                 textBox_preview.Text = "";
             }
-
+            else
+            {
+                textBox_input.Text = "";
+                textBox_preview.Text = "";
+                btn_ce.Text = "C";
+            }
         }
 
         private void btn_back_Click(object sender, EventArgs e)
@@ -380,6 +391,7 @@ namespace WinCalcPro
             }
             // 결과 표시
             textBox_input.Text = result.ToString();
+            sc.AddToHistory(code + " = " + result.ToString());
             textBox_preview.Text = ""; // 연산 완료 후 textBox_preview 초기화
         }
 

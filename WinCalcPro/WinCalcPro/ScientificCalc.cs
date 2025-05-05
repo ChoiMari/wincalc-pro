@@ -260,5 +260,19 @@ namespace WinCalcPro
         {
             return (decimal)Math.Log((double)number);
         }
+
+        /// <summary>
+        /// 계산 결과 기록
+        /// </summary>
+        /// 
+        List<string> history = new List<string>();
+        public void AddToHistory(string operation)
+        {
+            history.Add(operation);
+        }
+        public List<string> GetHistory()
+        {
+            return history;
+        }
     }
 }
