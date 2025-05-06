@@ -17,11 +17,12 @@ namespace WinCalcPro
             InitializeComponent();
         } // StdCalcControl() 끝
 
-        // 상수 정의 
+        
+        // 상수 선언 
         const int MAX_LENGTH = 16; // textBoxResult 최대 자리수 지정
-
-        // 전역 변수 정의 --------------------
-
+        
+        // 전역 변수(필드) 선언 --------------------
+        StandardCalc std = new StandardCalc();
 
         // 메서드 정의 -----------------------
         /// <summary>
@@ -29,7 +30,7 @@ namespace WinCalcPro
         /// </summary>
         /// <param name="fontFamily">글꼴</param>
         /// <param name="size">글자 크기</param>
-        /// <returns>폰트사이즈를 변경한 폰트 객체를 반환</returns>
+        /// <returns>폰트 객체를 반환</returns>
         Font ChangeFont(FontFamily fontFamily, float size) {
             if (fontFamily == null || size <= 0) { //예외처리
                 return SystemFonts.DefaultFont; // 시스템기본폰트반환
@@ -53,12 +54,11 @@ namespace WinCalcPro
             Button btn = sender as Button;
 
             if (textBoxResult.Text.Replace(",", "").Length >= MAX_LENGTH)
-            {
+            {//텍스트박스 문자열의 ,를 제거해서 길이를 구함
                 return; //MAX_LENGTH 이상이면 클릭이벤트 함수 종료
             }
 
-            // 0이 눌린 상태에서는 0이 없어지고 
-            // 눌린 버튼 1개만 표시됨
+            // 0인 상태에서는 0이 없어지고 새로씀
             if (textBoxResult.Text == "0")
             {
                 textBoxResult.Text = btn.Text;
@@ -68,12 +68,13 @@ namespace WinCalcPro
 
                 textBoxResult.Text += btn.Text; //기존 문자열에 덧붙힘
                 // 눌린 버튼(btn)의 Text속성을 가져와서 기존 결과창에 덧붙임
-                // decimal타입으로 변환
+                // decimal타입으로 변환(double타입은 정밀도에 한계가 있어서 변경함)
                 decimal.TryParse(textBoxResult.Text, out decimal result);
-                textBoxResult.Text = result.ToString("N0"); 
+                textBoxResult.Text = result.ToString("N"); //천단위구분기호형식으로 출력
             }
 
-            // 입력창에 맞게 폰트 사이즈 조절
+            // 입력창에 맞게 폰트 사이즈 조절(안그럼 표시가 안되고 짤림)
+            //천단위구분쉼표를 제거하고 길이를 셈
             int lenth = textBoxResult.Text.Replace(",", "").Length;
             if (lenth >= 10 && lenth <= 12)
             { // textBoxresult의 Text속성값의 길이가 10~12일 때 실행
@@ -89,5 +90,11 @@ namespace WinCalcPro
             }
 
         }// 0~9 숫자 클릭 이벤트 끝
+
+        // 소수점(.)버튼 클릭 이벤트
+        private void btnDecipoint_Click(object sender, EventArgs e)
+        {
+            textBoxResult.Text = std.DecimalPoint(textBoxResult.Text);
+        }
     }
 }

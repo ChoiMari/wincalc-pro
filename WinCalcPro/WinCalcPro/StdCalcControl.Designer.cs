@@ -481,6 +481,7 @@
             this.btnDecipoint.TabIndex = 22;
             this.btnDecipoint.Text = ".";
             this.btnDecipoint.UseVisualStyleBackColor = false;
+            this.btnDecipoint.Click += new System.EventHandler(this.btnDecipoint_Click);
             // 
             // btnEqual
             // 
