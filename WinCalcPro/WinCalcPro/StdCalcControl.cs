@@ -39,6 +39,29 @@ namespace WinCalcPro
         }
 
         /// <summary>
+        /// 입력창에 맞게 폰트 사이즈 조절 하여 textBoxResult.Text에 저장하여(화면에 출력)
+        /// </summary>
+        /// <param name="result">textBox 객체(textBoxResult를 아규먼트로 넣길 원함)</param>
+        void DrawTextWithFontSize(TextBox result) {
+            // 입력창에 맞게 폰트 사이즈 조절(안그럼 표시가 안되고 짤림)
+            
+            //천단위구분쉼표와 소수점을 제거하고 길이를 셈
+           int lenth = result.Text.Replace(",", "").Replace(".","").Length;
+            if (lenth >= 10 && lenth <= 12)
+            { // textBoxresult의 Text속성값의 길이가 10~12일 때 실행
+                result.Font = ChangeFont(result.Font.FontFamily, 28f);
+            }
+            else if (lenth >= 13 && lenth <= 14)
+            { //13~14
+                result.Font = ChangeFont(result.Font.FontFamily, 24f);
+            }
+            else if (lenth >= 15 && lenth <= 16)
+            { // 15~16
+                result.Font = ChangeFont(result.Font.FontFamily, 21f);
+            }
+        }
+
+        /// <summary>
         /// 0~9까지의 숫자 버튼 클릭 이벤트 
         /// </summary>
         /// <param name="sender">이벤트 발생 객체, 어떤 버튼이 클릭되었는지 알려준다</param>
@@ -53,44 +76,64 @@ namespace WinCalcPro
             /// </summary>
             Button btn = sender as Button;
 
-            if (textBoxResult.Text.Replace(",", "").Length >= MAX_LENGTH)
-            {//텍스트박스 문자열의 ,를 제거해서 길이를 구함
-                return; //MAX_LENGTH 이상이면 클릭이벤트 함수 종료
-            }
-
             // 0인 상태에서는 0이 없어지고 새로씀
             if (textBoxResult.Text == "0")
             {
+
                 textBoxResult.Text = btn.Text;
+
             }
             else
             { // textBoxResult가 0이 아니면 실행
 
-                textBoxResult.Text += btn.Text; //기존 문자열에 덧붙힘
-                // 눌린 버튼(btn)의 Text속성을 가져와서 기존 결과창에 덧붙임
-                // decimal타입으로 변환(double타입은 정밀도에 한계가 있어서 변경함)
-                decimal.TryParse(textBoxResult.Text, out decimal result);
-                textBoxResult.Text = result.ToString("N"); //천단위구분기호형식으로 출력
-            }
+                // textBoxResult에 ,(천단위구분쉼표)와 .(소수점) 제거하고 길이를 셈
+                // Relace() 메서드는 바꿔줄 문자열이 없으면 원래 문자열을 반환
+                int lenth = textBoxResult.Text.Replace(",", "").Replace(".", "").Length;
+                // 입력 크기 제한(LENTH_MAX) : 정수만 입력했을 경우(MAX_LENTH까지)
+                // 정수 + 소수점 입력했을 경우(MAX_LENTH까지)
+                // 0.으로 시작하는 소수자리수만 표현했을 경우(소수점이하 MAX_LENTH까지) 전체 MAX_LENTH + 1
+                if (!(textBoxResult.Text.Contains(".")))
+                { //소수점이 없는경우(정수만 입력한 경우)
+                    if (lenth >= MAX_LENGTH)
+                    {
+                        return; // 최대 자리수 이상시 입력 불가(클릭이벤트 종료)
+                    }
+                    textBoxResult.Text += btn.Text; // textBoxResult.Text에 덧붙임
+                    // 천단위 구분 쉼표 출력 위해 decimal타입으로 변환
+                    decimal.TryParse(textBoxResult.Text, out decimal num);
+                    textBoxResult.Text = num.ToString("N0");// 천단위 구분 쉼표 형식
+                }
+                else if (textBoxResult.Text.Contains("."))
+                { // 소수점이 있는 경우(실수인 경우)
+                    //0.으로 시작하는 소수자리수만 표현했을 경우(소수점이하 MAX_LENTH까지) 전체 MAX_LENTH + 1
+                    if (textBoxResult.Text.Contains("0.") && lenth >= MAX_LENGTH + 1)
+                    {
+                        return; // 입력제한, 클릭이벤트 종료
+                    }
+                    else if (textBoxResult.Text.Contains("0.") && lenth < MAX_LENGTH + 1)
+                    {
+                        textBoxResult.Text += btn.Text; // textBoxResult.Text에 덧붙임(이경우엔 천단위 구분쉼표 안붙임)
 
-            // 입력창에 맞게 폰트 사이즈 조절(안그럼 표시가 안되고 짤림)
-            //천단위구분쉼표를 제거하고 길이를 셈
-            int lenth = textBoxResult.Text.Replace(",", "").Length;
-            if (lenth >= 10 && lenth <= 12)
-            { // textBoxresult의 Text속성값의 길이가 10~12일 때 실행
-                textBoxResult.Font = ChangeFont(textBoxResult.Font.FontFamily, 28f);
-            }
-            else if (lenth >= 13 && lenth <= 14)
-            { //13~14
-                textBoxResult.Font = ChangeFont(textBoxResult.Font.FontFamily, 24f);
-            }
-            else if (lenth >= 15 && lenth <= 16)
-            { // 15~16
-                textBoxResult.Font = ChangeFont(textBoxResult.Font.FontFamily, 21f);
-            }
+                    }
+                    else if (lenth >= MAX_LENGTH)
+                    { // 정수 + 소수점 입력했을 경우(입력제한 MAX_LENTH까지)
+                        return; // 입력제한, 클릭이벤트 종료
+                    }
+                    else
+                    { // 정수 + 실수이면서, MAX_LENTH보다 작을 경우
+                        textBoxResult.Text += btn.Text; // textBoxResult.Text에 덧붙임
+                        // 정수 부분, 실수 부분으로 나눠서(.을 기준으로) 정수 부분에는 천단위 구분 기호 표시한 다음에 합치기
+                        string[] result = textBoxResult.Text.Split('.');
+                        // result[0] : 정수 부분, result[1] : 실수 부분
+                        decimal.TryParse(result[0], out decimal num); //정수 부분에 천단위 구분기호 넣기 위해 decimal타입으로 변환
+                        result[0] = num.ToString("N0");// 천단위 구분 쉼표 형식
+                        textBoxResult.Text = result[0] + "." + result[1]; // 정수 부분과 실수 부분 합치기
+                    }
+                }
 
-        }// 0~9 숫자 클릭 이벤트 끝
-
+                DrawTextWithFontSize(textBoxResult); // 글자 크기 조절해서 화면에 출력                  
+            }// 0~9 숫자 클릭 이벤트 끝
+    }
         // 소수점(.)버튼 클릭 이벤트
         private void btnDecipoint_Click(object sender, EventArgs e)
         {
