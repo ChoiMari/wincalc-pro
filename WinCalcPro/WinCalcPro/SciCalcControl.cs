@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace WinCalcPro
@@ -484,7 +485,30 @@ namespace WinCalcPro
         //테마 ---------------------
         public void ChangeTheme(AppTheme theme)
         {
+            if (theme == AppTheme.Light)
+            {
 
+                // 테마를 적용하는 함수 호출
+                LightTheme();
+
+
+            }
+            else if (theme == AppTheme.Dark)
+            {
+
+                // 테마를 적용하는 메서드 호출
+                DarkTheme();
+            }
+        }
+
+        // 테마 적용
+        void LightTheme() { 
+        
+        }
+        void DarkTheme() { 
+            this.BackColor = Color.FromArgb(26, 34, 39);
+            textBox_input.BackColor = Color.FromArgb(26, 34, 39);
+            textBox_preview.BackColor = Color.FromArgb(26, 34, 39);
         }
     }
 }
