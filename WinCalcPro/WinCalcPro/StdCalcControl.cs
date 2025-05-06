@@ -8,6 +8,7 @@
  * 
  * 수정사항
  * 20250507 : % 연산 추가 & C, CE 버튼 textBoxExp 초기화 코드 추가
+ * 역수 수정
  *************************************/
 using System;
 using System.Collections.Generic;
@@ -405,7 +406,6 @@ namespace WinCalcPro
         {
             textBoxExp.Text = "1/(" + textBoxResult.Text + ")";
             double.TryParse(textBoxResult.Text, out double num);
-            textBoxResult.Text = std.Reciprocal(num).ToString();
             if (Double.IsNaN(std.Reciprocal(num)))
             {
                 textBoxResult.Text = "0으로 나눌 수 없습니다.";
@@ -413,6 +413,7 @@ namespace WinCalcPro
                 DisableButtons();// 비활성화 되는 버튼
                 return;
             }
+            textBoxResult.Text = std.Reciprocal(num).ToString();
             FormatWithCommaOnlyInt(textBoxResult);// 천단위 구분 기호 넣기
             DrawTextWithFontSize(textBoxResult);// 입력길이에 맞춰 font size 조절
         }
