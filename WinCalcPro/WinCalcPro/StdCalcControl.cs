@@ -331,21 +331,18 @@ namespace WinCalcPro
                         FormatWithCommaOnlyInt(textBoxResult); // 천단위 구분 기호 넣기
                         DrawTextWithFontSize(textBoxResult);// 입력길이에 맞춰 font size 조절
                         break;
-                    case "－":
-                        textBoxExp.Text += " " + num.ToString() + " = ";
+                    case "－":                  
                         textBoxResult.Text = std.Subtract(savedNum1, savedNum2).ToString();
                         FormatWithCommaOnlyInt(textBoxResult);// 천단위 구분 기호 넣기
                         DrawTextWithFontSize(textBoxResult);// 입력길이에 맞춰 font size 조절
                         break;
                     case "×":
-                        textBoxExp.Text += " " + num.ToString() + " = ";
                         textBoxResult.Text = std.Multiply(savedNum1, savedNum2).ToString();
                         FormatWithCommaOnlyInt(textBoxResult);// 천단위 구분 기호 넣기
                         DrawTextWithFontSize(textBoxResult);// 입력길이에 맞춰 font size 조절
                         break;
                     case "÷":
                         decimal? result = std.Divide(savedNum1, savedNum2);
-                        textBoxExp.Text += " " + num.ToString() + " = ";
                         if (result == null)
                         {
                             textBoxResult.Text = "0으로 나눌 수 없습니다.";
