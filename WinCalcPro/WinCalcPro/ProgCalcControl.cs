@@ -252,19 +252,14 @@ namespace WinCalcPro
 
         private void btn_openParentheses_Click(object sender, EventArgs e)
         {
-            // textBox_input.Text 끝에 기호가 없다면 * 추가
-            if (textBox_input.Text.Length > 0  && !textBox_input.Text.EndsWith("+") && !textBox_input.Text.EndsWith("-") && !textBox_input.Text.EndsWith("*") && !textBox_input.Text.EndsWith("/") && !textBox_input.Text.EndsWith("%"))
-            {
-                textBox_preview.Text = textBox_input.Text + " * " + textBox_preview.Text;
-            }
-            textBox_preview.Text = textBox_input.Text + " ( " ;
             textBox_input.Text = "";
+            textBox_preview.Text += "(";
 
         }
 
         private void btn_parenthesesEnd_Click(object sender, EventArgs e)
         {
-            textBox_preview.Text = textBox_input.Text +textBox_preview+ " ) ";
+            textBox_preview.Text += textBox_input.Text + ")";
             textBox_input.Text = "";
 
         }
@@ -282,19 +277,14 @@ namespace WinCalcPro
         private void btn_sharing_Click(object sender, EventArgs e)
         {
             // /가 있으면 연산
-            if (textBox_preview.Text.Contains("/"))
+            if (textBox_preview.Text.Contains("/") && !textBox_preview.Text.Contains("("))
             {
-                var parts = textBox_preview.Text.Split('/');
-                if (parts.Length == 2)
-                {
-                    decimal result = pc.Div(UserInput(parts[0]), UserInput(textBox_input.Text));
-                    textBox_input.Text = result.ToString();
-                    textBox_preview.Text = "";
-                }
+                btn_equal_Click(sender, e);
             }
+
             if (textBox_input.Text.Length > 0)
             {
-                textBox_preview.Text = textBox_input.Text + " / " + textBox_preview.Text;
+                textBox_preview.Text = textBox_input.Text + " / ";
                 textBox_input.Text = "";
             }
         }
@@ -325,23 +315,16 @@ namespace WinCalcPro
 
         private void btn_multiplication_Click(object sender, EventArgs e)
         {
-            // * 가 있으면 연산
-            if (textBox_preview.Text.Contains("*"))
+            // *가 있으면 연산
+            if (textBox_preview.Text.Contains("*") && !textBox_preview.Text.Contains("("))
             {
-                var parts = textBox_preview.Text.Split('*');
-                if (parts.Length == 2)
-                {
-                    decimal result = pc.Mul(UserInput(parts[0]), UserInput(textBox_input.Text));
-                    textBox_input.Text = result.ToString();
-                    textBox_preview.Text = "";
-                }
+                btn_equal_Click(sender, e);
             }
             if (textBox_input.Text.Length > 0)
             {
-                textBox_preview.Text = textBox_input.Text + " * " + textBox_preview.Text;
+                textBox_preview.Text += textBox_input.Text + " * ";
                 textBox_input.Text = "";
             }
-
         }
 
         private void btn_D_Click(object sender, EventArgs e)
@@ -370,21 +353,15 @@ namespace WinCalcPro
 
         private void btn_minus_Click(object sender, EventArgs e)
         {
-            // - 가 있으면 연산
-            if (textBox_preview.Text.Contains("-"))
+            // -가 있으면 연산
+            if (textBox_preview.Text.Contains("-") && !textBox_preview.Text.Contains("("))
             {
-                var parts = textBox_preview.Text.Split('-');
-                if (parts.Length == 2)
-                {
-                    decimal result = pc.Sub(UserInput(parts[0]), UserInput(textBox_input.Text));
-                    textBox_input.Text = result.ToString();
-                    textBox_preview.Text = "";
-                }
+                btn_equal_Click(sender, e);
             }
 
             if (textBox_input.Text.Length > 0)
             {
-                textBox_preview.Text = textBox_input.Text + " - " + textBox_preview.Text;
+                textBox_preview.Text += textBox_input.Text + " - ";
                 textBox_input.Text = "";
             }
         }
@@ -415,21 +392,14 @@ namespace WinCalcPro
 
         private void btn_plus_Click(object sender, EventArgs e)
         {
-            // + 가 있으면 연산
-            if (textBox_preview.Text.Contains("+"))
+            // +가 있으면 연산
+            if (textBox_preview.Text.Contains("+") && !textBox_preview.Text.Contains("("))
             {
-                var parts = textBox_preview.Text.Split('+');
-                if (parts.Length == 2)
-                {
-                    decimal result = pc.Add(UserInput(parts[0]), UserInput(textBox_input.Text));
-                    textBox_input.Text = result.ToString();
-                    textBox_preview.Text = "";
-                }
+                btn_equal_Click(sender, e);
             }
-
             if (textBox_input.Text.Length > 0)
             {
-                textBox_preview.Text = textBox_input.Text + " + " + textBox_preview.Text;
+                textBox_preview.Text += textBox_input.Text + " + ";
                 textBox_input.Text = "";
             }
         }
@@ -469,6 +439,19 @@ namespace WinCalcPro
 
             try
             {
+                if (code.Contains("("))
+                {
+                    result = pc.Calculate(code + textBox_input.Text);
+
+                    // 결과 표시
+                    textBox_input.Text = result.ToString();
+                    pc.AddToHistory(code + " = " + result.ToString());
+                    textBox_preview.Text = ""; // 연산 완료 후 preview 초기화
+                    return;
+                }
+
+
+
                 // 연산자와 숫자 분리
                 if (code.Contains("+"))
                 {
@@ -535,21 +518,7 @@ namespace WinCalcPro
                         result = pc.Percent(UserInput(parts[0]));
                     }
                 }
-                else if (code.Contains("("))
-                {
-                    var parts= EvaluateExpression(textBox_preview.Text+textBox_input.Text);
-                    result = parts;
-                }
-                else if (code.Contains(")"))
-                {
-                    var parts = EvaluateExpression(textBox_preview.Text + textBox_input.Text);
-                    result = parts;
-                }
-                else
-                {
-                    // 단순 숫자 연산
-                    result = UserInput(code);
-                }
+                
             }
             catch (Exception ex)
             {
@@ -563,20 +532,6 @@ namespace WinCalcPro
             pc.AddToHistory(code + " = " + result.ToString());
             textBox_preview.Text = ""; // 연산 완료 후 preview 초기화
 
-
-            //try
-            //{
-            //    string expression = textBox_preview.Text + textBox_input.Text;
-            //    decimal result = EvaluateExpression(expression);
-
-            //    // 결과 표시
-            //    textBox_input.Text = result.ToString();
-            //    textBox_preview.Text = ""; // 연산 완료 후 preview 초기화
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show($"오류 발생: {ex.Message}", "오류", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            //}
         }
 
 
@@ -585,136 +540,6 @@ namespace WinCalcPro
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-        private decimal CalculatePostfix(List<string> postfix)
-        {
-            var stack = new Stack<decimal>();
-
-            foreach (var token in postfix)
-            {
-                if (decimal.TryParse(token, out decimal number)) // 숫자
-                {
-                    stack.Push(number);
-                }
-                else // 연산자
-                {
-                    var b = stack.Pop();
-                    var a = stack.Pop();
-
-                    switch (token)
-                    {
-                        case "+": stack.Push(a + b); break;
-                        case "-": stack.Push(a - b); break;
-                        case "*": stack.Push(a * b); break;
-                        case "/": stack.Push(a / b); break;
-                        default: throw new InvalidOperationException($"알 수 없는 연산자: {token}");
-                    }
-                }
-            }
-
-            return stack.Pop();
-        }
-        private List<string> ConvertToPostfix(List<string> tokens)
-        {
-            var output = new List<string>();
-            var operators = new Stack<string>();
-
-            var precedence = new Dictionary<string, int>
-            {
-                { "+", 1 }, { "-", 1 },
-                { "*", 2 }, { "/", 2 },
-                { "(", 0 } // '('는 우선순위가 가장 낮음
-            };
-
-            foreach (var token in tokens)
-            {
-                if (decimal.TryParse(token, out _)) // 숫자
-                {
-                    output.Add(token);
-                }
-                else if (token == "(")
-                {
-                    operators.Push(token);
-                }
-                else if (token == ")")
-                {
-                    while (operators.Peek() != "(")
-                    {
-                        output.Add(operators.Pop());
-                    }
-                    operators.Pop(); // '(' 제거
-                }
-                else // 연산자
-                {
-                    while (operators.Count > 0 && precedence[operators.Peek()] >= precedence[token])
-                    {
-                        output.Add(operators.Pop());
-                    }
-                    operators.Push(token);
-                }
-            }
-
-            while (operators.Count > 0)
-            {
-                output.Add(operators.Pop());
-            }
-
-            return output;
-        }
-        private List<string> TokenizeExpression(string expression)
-        {
-            var tokens = new List<string>();
-            var number = new StringBuilder();
-
-            foreach (char c in expression)
-            {
-                if (char.IsDigit(c) || c == '.') // 숫자 또는 소수점
-                {
-                    number.Append(c);
-                }
-                else
-                {
-                    if (number.Length > 0)
-                    {
-                        tokens.Add(number.ToString());
-                        number.Clear();
-                    }
-
-                    if (!char.IsWhiteSpace(c)) // 연산자 또는 괄호
-                    {
-                        tokens.Add(c.ToString());
-                    }
-                }
-            }
-
-            if (number.Length > 0)
-            {
-                tokens.Add(number.ToString());
-            }
-
-            return tokens;
-        }
-        private decimal EvaluateExpression(string expression)
-        {
-            // 1. 수식을 토큰화
-            var tokens = TokenizeExpression(expression);
-
-            // 2. 중위 표기법을 후위 표기법으로 변환
-            var postfix = ConvertToPostfix(tokens);
-
-            // 3. 후위 표기법을 계산
-            return CalculatePostfix(postfix);
-        }
 
 
 
