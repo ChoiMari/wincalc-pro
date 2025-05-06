@@ -6,9 +6,8 @@
  * 최종 수정일 : 2025-05-07
  * 설명 : 표준 계산기 사용자 정의 컨트롤 구현
  * 
- * 수정사항 : 
- * 
- * 
+ * 수정사항
+ * 20250507 : % 연산 추가 & C, CE 버튼 textBoxExp 초기화 코드 추가
  *************************************/
 using System;
 using System.Collections.Generic;
@@ -422,6 +421,9 @@ namespace WinCalcPro
         private void btnCE_Click(object sender, EventArgs e)
         {
             textBoxResult.Text = std.ClearEntry();
+            textBoxExp.Text = ""; // textBoxExp 초기화
+            enableButtons(); // 버튼 활성화
+            DrawTextWithFontSize(textBoxResult);// 입력길이에 맞춰 font size 조절
         }
 
         // C 버튼 클릭 이벤트(모두 지우기)
@@ -433,6 +435,8 @@ namespace WinCalcPro
             savedNum2 = 0; // 저장된 피연산자 초기화
             op = ""; // 사칙연산 초기화
             isOpClicked = false; // 사칙연산 버튼 클릭 여부 초기화
+            enableButtons(); // 버튼 활성화
+            DrawTextWithFontSize(textBoxResult);// 입력길이에 맞춰 font size 조절
         }
 
         // ⌫ 버튼 클릭 이벤트(맨 뒤의 글자 하나를 지움)
