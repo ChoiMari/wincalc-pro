@@ -15,6 +15,8 @@ namespace WinCalcPro
         public SettingControl()
         {
             InitializeComponent();
+            
+
         }
 
         //테마 ---------------------
@@ -25,6 +27,7 @@ namespace WinCalcPro
                 
                 // 테마를 적용하는 함수 호출
                 LightTheme();
+                radioButton_light.Checked = true;
 
 
             }
@@ -33,6 +36,7 @@ namespace WinCalcPro
                 
                 // 테마를 적용하는 메서드 호출
                 DarkTheme();
+                radioButton_dark.Checked = true;
             }
         }
 
@@ -108,11 +112,13 @@ namespace WinCalcPro
                 {
                     selectedTheme = AppTheme.Light;
                     ChangeTheme(selectedTheme);
+                    
                 }
                 else if (rb.Text == "Dark")
                 {
                     selectedTheme= AppTheme.Dark;
                     ChangeTheme(selectedTheme);
+                    
                 }
                 else
                 {

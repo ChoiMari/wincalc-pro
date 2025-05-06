@@ -121,7 +121,6 @@
             this.radioButton_dark.Name = "radioButton_dark";
             this.radioButton_dark.Size = new System.Drawing.Size(60, 23);
             this.radioButton_dark.TabIndex = 0;
-            this.radioButton_dark.TabStop = true;
             this.radioButton_dark.Text = "Dark";
             this.radioButton_dark.UseVisualStyleBackColor = true;
             this.radioButton_dark.CheckedChanged += new System.EventHandler(this.radioButtonTheme);

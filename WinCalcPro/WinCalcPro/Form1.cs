@@ -251,6 +251,7 @@ namespace WinCalcPro
             HideMenu();// 햄버거 메뉴 감추기
             SettingControl settingControl = new SettingControl();
             LoadUserControl(settingControl, "설정");
+            settingControl.ChangeTheme(CurrentTheme);
             
         }
 
