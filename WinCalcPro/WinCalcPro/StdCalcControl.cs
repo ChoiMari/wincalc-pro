@@ -37,11 +37,11 @@ namespace WinCalcPro
         
         // 전역 변수(필드) 선언 --------------------
         StandardCalc std = new StandardCalc(); //StandardCalc에서 정의한 메서드 사용하기 위해 객체 생성
-        decimal savedNum1 = 0; //연산자 클릭 시 맨 처음 textBoxRsult에 있던 값
-        decimal savedNum2 = 0; //연산자 클릭 시 두 번째 textBoxRsult에 있던 값
+        decimal savedNum1 = 0; //= 클릭 시 맨 처음 textBoxRsult에 있던 값
+        decimal savedNum2 = 0; //= 클릭 시 두 번째 textBoxRsult에 있던 값
         string op = ""; // 사칙연산을 위한 연산자
         bool isOpClicked = false; // 사칙연산 버튼 클릭 여부 확인하기 위한 변수
-
+   
         // 메서드 정의 -----------------------
         /// <summary>
         /// 폰트(글꼴 + 글자 크기) 변경 메서드
@@ -241,6 +241,7 @@ namespace WinCalcPro
             FormatWithCommaOnlyInt(textBoxResult);
         }
 
+
         // 사칙 연산(+, -, ×, ÷) 버튼 클릭 이벤트
         private void btnOperator(object sender, EventArgs e)
         {
@@ -249,12 +250,14 @@ namespace WinCalcPro
             decimal.TryParse(textBoxResult.Text, out decimal num);
             // textBoxResult를 decimal타입으로 변환
             // decimal.TryParse() 메서드는 변환 성공 시 true, 실패 시 false 반환
+            
             savedNum1 = num; // 연산자 클릭 시 원래 textBoxRsult에 있던 값 저장
             Button btn = sender as Button; // 클릭된 버튼을 Button 타입으로 형변환
 
             // btn.Text : 클릭된 버튼의 텍스트(+, -, ×, ÷)
             // 눌린 버튼의 text속성값
-            switch (btn.Text) {
+            switch (btn.Text)
+            {
                 case "＋":
                     op = "＋";
                     break;
@@ -269,9 +272,11 @@ namespace WinCalcPro
                     break;
             }
 
-            textBoxExp.Text = savedNum1.ToString() + " " + op; 
+            textBoxExp.Text = savedNum1.ToString() + " " + op;
             // textBoxExp.Text에 연산자와 함께 저장해서 표시함
+
         }
+
 
         // = 버튼 클릭 이벤트
         private void btnEqual_Click(object sender, EventArgs e)
