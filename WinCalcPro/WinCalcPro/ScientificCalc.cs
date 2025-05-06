@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -172,6 +173,25 @@ namespace WinCalcPro
 
             }
         }
+
+        /// <summary>
+        /// ( )기능 구현
+        /// </summary>
+        /// 
+        DataTable dt = new DataTable();
+        public decimal Calculate(string expression)
+        {
+            try
+            {
+                return Convert.ToDecimal(dt.Compute(expression, string.Empty));
+            }
+            catch (EvaluateException)
+            {
+                throw new EvaluateException("잘못된 수식입니다.");
+            }
+        }
+
+
         /// <summary>
         /// sin 
         /// </summary>
