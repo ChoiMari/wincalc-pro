@@ -159,7 +159,8 @@ namespace WinCalcPro
 
         private void btn_openParentheses_Click(object sender, EventArgs e)
         {
-            textBox_input.Text += "(";
+            textBox_input.Text = "";
+            textBox_preview.Text += "(";
 
         }
 
@@ -171,31 +172,22 @@ namespace WinCalcPro
 
         private void btn_parenthesesEnd_Click(object sender, EventArgs e)
         {
-
-            textBox_input.Text += ")";
-
+            textBox_preview.Text += textBox_input.Text + ")";
+            textBox_input.Text = "";
         }
 
         private void btn_sharing_Click(object sender, EventArgs e)
         {
             // /가 있으면 연산
-            if (textBox_preview.Text.Contains("/"))
+            if (textBox_preview.Text.Contains("/")&&!textBox_preview.Text.Contains("("))
             {
-                var parts = textBox_preview.Text.Split('/');
-                if (parts.Length == 2)
-                {
-                    textBox_input.Text = sc.Div(UserInput(parts[0]), UserInput(textBox_input.Text)).ToString();
-                }
+                btn_equal_Click(sender, e);
             }
 
             if (textBox_input.Text.Length > 0)
             {
-                textBox_preview.Text = textBox_input.Text + " / " + textBox_preview.Text;
+                textBox_preview.Text = textBox_input.Text + " / " ;
                 textBox_input.Text = "";
-            }
-            else
-            {
-                textBox_input.Text = sc.Div(UserInput(textBox_preview.Text), UserInput(textBox_input.Text)).ToString();
             }
 
         }
@@ -240,17 +232,13 @@ namespace WinCalcPro
         private void btn_multiplication_Click(object sender, EventArgs e)
         {
             // *가 있으면 연산
-            if (textBox_preview.Text.Contains("*"))
+            if (textBox_preview.Text.Contains("*")&&!textBox_preview.Text.Contains("("))
             {
-                var parts = textBox_preview.Text.Split('*');
-                if (parts.Length == 2)
-                {
-                    textBox_input.Text = sc.Mul(UserInput(parts[0]), UserInput(textBox_input.Text)).ToString();
-                }
+                btn_equal_Click(sender, e);
             }
             if (textBox_input.Text.Length > 0)
             {
-                textBox_preview.Text = textBox_input.Text + " * " + textBox_preview.Text;
+                textBox_preview.Text += textBox_input.Text + " * ";
                 textBox_input.Text = "";
             }
         }
@@ -282,18 +270,14 @@ namespace WinCalcPro
         private void btn_minus_Click(object sender, EventArgs e)
         {
             // -가 있으면 연산
-            if (textBox_preview.Text.Contains("-"))
+            if (textBox_preview.Text.Contains("-")&&!textBox_preview.Text.Contains("("))
             {
-                var parts = textBox_preview.Text.Split('-');
-                if (parts.Length == 2)
-                {
-                    textBox_input.Text = sc.Sub(UserInput(parts[0]), UserInput(textBox_input.Text)).ToString();
-                }
+                btn_equal_Click(sender, e);
             }
 
             if (textBox_input.Text.Length > 0)
             {
-                textBox_preview.Text = textBox_input.Text + " - " + textBox_preview.Text;
+                textBox_preview.Text += textBox_input.Text + " - " ;
                 textBox_input.Text = "";
             }
         }
@@ -325,17 +309,13 @@ namespace WinCalcPro
         private void btn_plus_Click(object sender, EventArgs e)
         {
             // +가 있으면 연산
-            if (textBox_preview.Text.Contains("+"))
+            if (textBox_preview.Text.Contains("+")&&!textBox_preview.Text.Contains("("))
             {
-                var parts = textBox_preview.Text.Split('+');
-                if (parts.Length == 2)
-                {
-                    textBox_input.Text = sc.Add(UserInput(parts[0]), UserInput(textBox_input.Text)).ToString();
-                }
+                btn_equal_Click(sender, e);
             }
             if (textBox_input.Text.Length > 0)
             {
-                textBox_preview.Text = textBox_input.Text + " + " + textBox_preview.Text;
+                textBox_preview.Text += textBox_input.Text + " + ";
                 textBox_input.Text = "";
             }
 
@@ -384,6 +364,18 @@ namespace WinCalcPro
 
             string code = textBox_preview.Text;
             decimal result = 0;
+
+            if (code.Contains("("))
+            {
+                result = sc.Calculate(code + textBox_input.Text);
+
+                // 결과 표시
+                textBox_input.Text = result.ToString();
+                sc.AddToHistory(code + " = " + result.ToString());
+                textBox_preview.Text = ""; // 연산 완료 후 preview 초기화
+                return;
+            }
+
             // 연산자와 숫자 분리
             if (code.Contains("+"))
             {
@@ -433,6 +425,9 @@ namespace WinCalcPro
                     result = sc.Pow(UserInput(parts[0]), UserInput(textBox_input.Text));
                 }
             }
+             
+
+            
             // 결과 표시
             textBox_input.Text = result.ToString();
             sc.AddToHistory(code + " = " + result.ToString());
