@@ -178,6 +178,15 @@ namespace WinCalcPro
 
         private void btn_sharing_Click(object sender, EventArgs e)
         {
+            // /가 있으면 연산
+            if (textBox_preview.Text.Contains("/"))
+            {
+                var parts = textBox_preview.Text.Split('/');
+                if (parts.Length == 2)
+                {
+                    textBox_input.Text = sc.Div(UserInput(parts[0]), UserInput(textBox_input.Text)).ToString();
+                }
+            }
 
             if (textBox_input.Text.Length > 0)
             {
@@ -193,6 +202,15 @@ namespace WinCalcPro
 
         private void btn_power_Click(object sender, EventArgs e)
         {
+            // ^가 있으면 연산
+            if (textBox_preview.Text.Contains("^"))
+            {
+                var parts = textBox_preview.Text.Split('^');
+                if (parts.Length == 2)
+                {
+                    textBox_input.Text = sc.Pow(UserInput(parts[0]), UserInput(textBox_input.Text)).ToString();
+                }
+            }
             if (textBox_input.Text.Length > 0)
             {
                 textBox_preview.Text = textBox_input.Text + " ^ " + textBox_preview.Text;
@@ -221,7 +239,15 @@ namespace WinCalcPro
 
         private void btn_multiplication_Click(object sender, EventArgs e)
         {
-
+            // *가 있으면 연산
+            if (textBox_preview.Text.Contains("*"))
+            {
+                var parts = textBox_preview.Text.Split('*');
+                if (parts.Length == 2)
+                {
+                    textBox_input.Text = sc.Mul(UserInput(parts[0]), UserInput(textBox_input.Text)).ToString();
+                }
+            }
             if (textBox_input.Text.Length > 0)
             {
                 textBox_preview.Text = textBox_input.Text + " * " + textBox_preview.Text;
@@ -255,6 +281,15 @@ namespace WinCalcPro
 
         private void btn_minus_Click(object sender, EventArgs e)
         {
+            // -가 있으면 연산
+            if (textBox_preview.Text.Contains("-"))
+            {
+                var parts = textBox_preview.Text.Split('-');
+                if (parts.Length == 2)
+                {
+                    textBox_input.Text = sc.Sub(UserInput(parts[0]), UserInput(textBox_input.Text)).ToString();
+                }
+            }
 
             if (textBox_input.Text.Length > 0)
             {
@@ -289,6 +324,15 @@ namespace WinCalcPro
 
         private void btn_plus_Click(object sender, EventArgs e)
         {
+            // +가 있으면 연산
+            if (textBox_preview.Text.Contains("+"))
+            {
+                var parts = textBox_preview.Text.Split('+');
+                if (parts.Length == 2)
+                {
+                    textBox_input.Text = sc.Add(UserInput(parts[0]), UserInput(textBox_input.Text)).ToString();
+                }
+            }
             if (textBox_input.Text.Length > 0)
             {
                 textBox_preview.Text = textBox_input.Text + " + " + textBox_preview.Text;
