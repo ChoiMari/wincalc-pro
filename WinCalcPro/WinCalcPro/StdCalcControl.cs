@@ -3,7 +3,7 @@
  * StdCalcControl.cs
  * 작성자 : 최마리
  * 작성일 : 2025-05-06
- * 최종 수정일 : 2025-05-06
+ * 최종 수정일 : 2025-05-07
  * 설명 : 표준 계산기 사용자 정의 컨트롤 구현
  * 
  * 수정사항 : 
@@ -41,7 +41,11 @@ namespace WinCalcPro
         decimal savedNum2 = 0; //연산자 클릭 시 두 번째 textBoxRsult에 있던 값
         string op = ""; // 사칙연산을 위한 연산자
         bool isOpClicked = false; // 사칙연산 버튼 클릭 여부 확인하기 위한 변수
-   
+
+        // % 연산에 사용
+        decimal left = 0; // 왼쪽 피연산자
+        decimal right = 0; // 오른쪽 피연산자
+
         // 메서드 정의 -----------------------
         /// <summary>
         /// 폰트(글꼴 + 글자 크기) 변경 메서드
@@ -437,6 +441,48 @@ namespace WinCalcPro
              textBoxResult.Text = std.Backspace(textBoxResult.Text);
              FormatWithCommaOnlyInt(textBoxResult);// 천단위 구분 기호 넣기
              DrawTextWithFontSize(textBoxResult);// 입력길이에 맞춰 font size 조절
+
+        }
+
+        // % 버튼 클릭 이벤트
+        private void btnPercent_Click(object sender, EventArgs e)
+        {
+
+            if (left == 0)
+            {
+                decimal.TryParse(textBoxResult.Text, out left);
+                decimal.TryParse(textBoxResult.Text, out right);
+            } else if (left != 0) {
+                decimal.TryParse(textBoxResult.Text, out right);
+            }
+
+            if (textBoxExp.Text.Contains("＋"))
+            {
+                textBoxResult.Text = std.Percent(left, right, "＋").ToString();
+                textBoxExp.Text = left + " ＋ " + textBoxResult.Text;
+            }
+            else if (textBoxExp.Text.Contains("－"))
+            {
+                textBoxResult.Text = std.Percent(left, right, "－").ToString();
+                textBoxExp.Text = left + " － " + textBoxResult.Text;
+            }
+            else if (textBoxExp.Text.Contains("×"))
+            {
+                textBoxResult.Text = std.Percent(left, right, "×").ToString();
+                textBoxExp.Text = left + " × " + textBoxResult.Text;
+            }
+            else if (textBoxExp.Text.Contains("÷"))
+            {
+                textBoxResult.Text = std.Percent(left, right, "÷").ToString();
+                textBoxExp.Text = left + " ÷ " + textBoxResult.Text;
+            }
+            else
+            {
+                textBoxResult.Text = std.Percent(left, right, "default").ToString();
+                textBoxExp.Text = "0";
+            }
+            FormatWithCommaOnlyInt(textBoxResult);// 천단위 구분 기호 넣기
+            DrawTextWithFontSize(textBoxResult);// 입력길이에 맞춰 font size 조절
 
         }
     }

@@ -108,6 +108,24 @@ namespace WinCalcPro
         }
 
         // % : 퍼센트 계산(기준값이 없으면 0처리)
+        public decimal Percent(decimal left, decimal right, string op)
+        {
+            switch (op)
+            {
+                case "＋":
+                    return  (left * right / 100);
+                case "－":
+                    return (left * right / 100);
+                case "×":
+                case "*":
+                    return (right / 100);
+                case "÷":
+                case "/":
+                    return (right / 100);
+                default:
+                    return 0; // 잘못된 연산자일 경우 0 반환
+            }
+        }
 
 
         /// <summary>
