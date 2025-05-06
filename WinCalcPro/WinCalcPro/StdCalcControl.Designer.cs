@@ -448,6 +448,7 @@
             this.btnPM.TabIndex = 20;
             this.btnPM.Text = "+/-";
             this.btnPM.UseVisualStyleBackColor = false;
+            this.btnPM.Click += new System.EventHandler(this.btnPM_Click);
             // 
             // btn0
             // 

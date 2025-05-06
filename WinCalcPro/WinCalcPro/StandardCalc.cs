@@ -166,7 +166,7 @@ namespace WinCalcPro
         /// </summary>
         /// <param name="x">입력값</param>
         /// <returns>부호를 바꿔서 반환</returns>
-        public double ChangeSign(double x)
+        public decimal ChangeSign(decimal x)
         {
             return -x; // 부호를 바꿔서 반환
         }

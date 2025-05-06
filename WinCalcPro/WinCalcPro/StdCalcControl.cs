@@ -22,7 +22,7 @@ namespace WinCalcPro
         const int MAX_LENGTH = 16; // textBoxResult 최대 자리수 지정
         
         // 전역 변수(필드) 선언 --------------------
-        StandardCalc std = new StandardCalc();
+        StandardCalc std = new StandardCalc(); //StandardCalc에서 정의한 메서드 사용하기 위해 객체 생성
 
         // 메서드 정의 -----------------------
         /// <summary>
@@ -59,6 +59,27 @@ namespace WinCalcPro
             { // 15~16
                 result.Font = ChangeFont(result.Font.FontFamily, 21f);
             }
+        }
+
+        /// <summary>
+        /// 정수 부분에만 천단위 구분 기호를 넣는 메서드
+        /// .(소수점)을 기준으로 정수 부분과 소수점이하 부분으로 나눔
+        /// </summary>
+        /// <param name="tb">textBox 객체</param>
+        void FormatWithCommaOnlyInt(TextBox tb) {
+            
+            string[] result = tb.Text.Split('.');
+            // result[0] : 정수 부분, result[1] : 실수 부분
+            
+            if (result.Length == 1) { // 정수 부분만 있는 경우 
+                decimal.TryParse(result[0], out decimal num1); //정수 부분에 천단위 구분기호 넣기 위해 decimal타입으로 변환
+                result[0] = num1.ToString("N0");// 천단위 구분 쉼표 형식
+                tb.Text = result[0];
+                return; // 정수 부분만 있는 경우는 여기서 끝
+            }
+            decimal.TryParse(result[0], out decimal num2); //정수 부분에 천단위 구분기호 넣기 위해 decimal타입으로 변환
+            result[0] = num2.ToString("N0");// 천단위 구분 쉼표 형식
+            tb.Text = result[0] + "." + result[1]; // 정수 부분과 실수 부분 합치기
         }
 
         /// <summary>
@@ -138,6 +159,17 @@ namespace WinCalcPro
         private void btnDecipoint_Click(object sender, EventArgs e)
         {
             textBoxResult.Text = std.DecimalPoint(textBoxResult.Text);
+        }
+
+        // +/- 버튼 클릭 이벤트
+        private void btnPM_Click(object sender, EventArgs e)
+        {
+            // textBoxResult를 decimal타입으로 변환
+            decimal.TryParse(textBoxResult.Text, out decimal num);
+            textBoxResult.Text = std.ChangeSign(num).ToString(); // 부호를 바꿔서 textBoxResult에 저장
+            
+            //정수 + 소수점이하로 나눠서 정수부분에만 천단위 구분 기호 표시
+            FormatWithCommaOnlyInt(textBoxResult);
         }
     }
 }
