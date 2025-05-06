@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace WinCalcPro
 {
-    internal class ProgrammerCalc
+    internal class ProgrammerCalc: ScientificCalc
     {
         /// <summary>
         /// <<
@@ -34,6 +34,5 @@ namespace WinCalcPro
         {
             return value / 100;
         }
-        public ScientificCalc scientificCalc = new ScientificCalc();
     }
 }
