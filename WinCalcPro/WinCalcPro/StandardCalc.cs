@@ -119,11 +119,6 @@ namespace WinCalcPro
             return result;
         }
 
-        // C : 지금 입력하고 있는 값 + 모든 값을 0으로 한다.(전체 지우기)
-        public string ClearAll() {
-            string result = "0"; // 현재 입력값을 0으로 초기화
-            return result;
-        }
 
         /// <summary>
         /// 백스페이스(⌫) : 맨 뒤의 한 글자를 지운다.

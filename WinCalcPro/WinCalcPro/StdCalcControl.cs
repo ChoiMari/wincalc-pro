@@ -414,6 +414,30 @@ namespace WinCalcPro
             DrawTextWithFontSize(textBoxResult);// 입력길이에 맞춰 font size 조절
         }
 
-        
+        //CE 버튼 클릭 이벤트(현재 입력창 지우기)
+        private void btnCE_Click(object sender, EventArgs e)
+        {
+            textBoxResult.Text = std.ClearEntry();
+        }
+
+        // C 버튼 클릭 이벤트(모두 지우기)
+        private void btnC_Click(object sender, EventArgs e)
+        {
+            textBoxResult.Text = std.ClearEntry(); // textBoxResult 초기화
+            textBoxExp.Text = ""; // textBoxExp 초기화
+            savedNum1 = 0; // 저장된 피연산자 초기화
+            savedNum2 = 0; // 저장된 피연산자 초기화
+            op = ""; // 사칙연산 초기화
+            isOpClicked = false; // 사칙연산 버튼 클릭 여부 초기화
+        }
+
+        // ⌫ 버튼 클릭 이벤트(맨 뒤의 글자 하나를 지움)
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+             textBoxResult.Text = std.Backspace(textBoxResult.Text);
+             FormatWithCommaOnlyInt(textBoxResult);// 천단위 구분 기호 넣기
+             DrawTextWithFontSize(textBoxResult);// 입력길이에 맞춰 font size 조절
+
+        }
     }
 }
