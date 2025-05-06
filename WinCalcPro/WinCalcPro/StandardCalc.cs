@@ -73,7 +73,7 @@ namespace WinCalcPro
         public double Sqrt(double x) {
 
             if (x < 0) { // 음수는 제곱근을 구할 수 없음
-                return double.NaN;
+                return double.NaN; // Not a Number, Double.IsNaN()으로 확인 가능
             }
 
             double result = Math.Sqrt(x);

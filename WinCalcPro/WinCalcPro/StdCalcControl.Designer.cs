@@ -194,6 +194,7 @@
             this.btnRecip.TabIndex = 4;
             this.btnRecip.Text = "1/x";
             this.btnRecip.UseVisualStyleBackColor = false;
+            this.btnRecip.Click += new System.EventHandler(this.btnRecip_Click);
             // 
             // btnSquare
             // 
@@ -212,6 +213,7 @@
             this.btnSquare.TabIndex = 5;
             this.btnSquare.Text = "x²";
             this.btnSquare.UseVisualStyleBackColor = false;
+            this.btnSquare.Click += new System.EventHandler(this.btnSquare_Click);
             // 
             // btnSqrt
             // 
@@ -230,6 +232,7 @@
             this.btnSqrt.TabIndex = 6;
             this.btnSqrt.Text = "²√x";
             this.btnSqrt.UseVisualStyleBackColor = false;
+            this.btnSqrt.Click += new System.EventHandler(this.btnSqrt_Click);
             // 
             // btnDivision
             // 

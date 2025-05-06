@@ -37,8 +37,8 @@ namespace WinCalcPro
         
         // 전역 변수(필드) 선언 --------------------
         StandardCalc std = new StandardCalc(); //StandardCalc에서 정의한 메서드 사용하기 위해 객체 생성
-        decimal savedNum1 = 0; //= 클릭 시 맨 처음 textBoxRsult에 있던 값
-        decimal savedNum2 = 0; //= 클릭 시 두 번째 textBoxRsult에 있던 값
+        decimal savedNum1 = 0; //연산자 클릭 시 맨 처음 textBoxRsult에 있던 값
+        decimal savedNum2 = 0; //연산자 클릭 시 두 번째 textBoxRsult에 있던 값
         string op = ""; // 사칙연산을 위한 연산자
         bool isOpClicked = false; // 사칙연산 버튼 클릭 여부 확인하기 위한 변수
    
@@ -80,6 +80,9 @@ namespace WinCalcPro
             else if (lenth >= 15 && lenth <= 16)
             { // 15~16
                 result.Font = ChangeFont(result.Font.FontFamily, 20f);
+            }
+            else if(lenth >= 17) {
+                result.Font = ChangeFont(result.Font.FontFamily, 15f);
             }
         }
 
@@ -161,7 +164,10 @@ namespace WinCalcPro
             // 0인 상태에서는 0이 없어지고 새로씀 또는 사칙연산 버튼이 클릭된 직후에는 새로씀
             if (textBoxResult.Text == "0" || isOpClicked == true 
                 || textBoxResult.Text == "0으로 나눌 수 없습니다."
-                || textBoxExp.Text.Contains("="))
+                || textBoxExp.Text.Contains("=")
+                || textBoxExp.Text.Contains("sqr")
+                || textBoxExp.Text.Contains("√")
+                || textBoxExp.Text.Contains("/("))
             {
                 if (textBoxResult.Text == "0으로 나눌 수 없습니다." || textBoxExp.Text.Contains("=")) {
                     textBoxExp.Text = ""; // textBoxExp 초기화
@@ -364,5 +370,50 @@ namespace WinCalcPro
             }
 
         } // btnEqual_Click 이벤트 끝
+
+
+        //루트 버튼 클릭 이벤트
+        private void btnSqrt_Click(object sender, EventArgs e)
+        {
+            textBoxExp.Text = "√(" + textBoxResult.Text + ")";
+            double.TryParse(textBoxResult.Text, out double num);
+            if (Double.IsNaN(std.Sqrt(num))) { 
+                textBoxResult.Text = "음수의 제곱근은 구할 수 없습니다.";
+                DrawTextWithFontSize(textBoxResult);// 입력길이에 맞춰 font size 조절
+                return;
+            }
+            textBoxResult.Text = std.Sqrt(num).ToString();
+            FormatWithCommaOnlyInt(textBoxResult);// 천단위 구분 기호 넣기
+            DrawTextWithFontSize(textBoxResult);// 입력길이에 맞춰 font size 조절
+        }
+
+        //제곱 버튼 이벤트
+        private void btnSquare_Click(object sender, EventArgs e)
+        {
+            textBoxExp.Text = "sqr(" + textBoxResult.Text + ")";
+            double.TryParse(textBoxResult.Text, out double num);
+            textBoxResult.Text = std.Square(num).ToString();
+            FormatWithCommaOnlyInt(textBoxResult);// 천단위 구분 기호 넣기
+            DrawTextWithFontSize(textBoxResult);// 입력길이에 맞춰 font size 조절
+        }
+
+        // 역수 버튼 클릭 이벤트
+        private void btnRecip_Click(object sender, EventArgs e)
+        {
+            textBoxExp.Text = "1/(" + textBoxResult.Text + ")";
+            double.TryParse(textBoxResult.Text, out double num);
+            textBoxResult.Text = std.Reciprocal(num).ToString();
+            if (Double.IsNaN(std.Reciprocal(num)))
+            {
+                textBoxResult.Text = "0으로 나눌 수 없습니다.";
+                DrawTextWithFontSize(textBoxResult);// 입력길이에 맞춰 font size 조절
+                DisableButtons();// 비활성화 되는 버튼
+                return;
+            }
+            FormatWithCommaOnlyInt(textBoxResult);// 천단위 구분 기호 넣기
+            DrawTextWithFontSize(textBoxResult);// 입력길이에 맞춰 font size 조절
+        }
+
+        
     }
 }
