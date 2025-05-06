@@ -90,7 +90,7 @@
             this.tableLayoutPanelStdcalcBtn.Controls.Add(this.btnDecipoint, 2, 5);
             this.tableLayoutPanelStdcalcBtn.Controls.Add(this.btnEqual, 3, 5);
             this.tableLayoutPanelStdcalcBtn.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.tableLayoutPanelStdcalcBtn.ForeColor = System.Drawing.Color.LightGray;
+            this.tableLayoutPanelStdcalcBtn.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.tableLayoutPanelStdcalcBtn.Location = new System.Drawing.Point(0, 143);
             this.tableLayoutPanelStdcalcBtn.Name = "tableLayoutPanelStdcalcBtn";
             this.tableLayoutPanelStdcalcBtn.Padding = new System.Windows.Forms.Padding(5);
@@ -107,10 +107,11 @@
             // 
             // btnPercent
             // 
-            this.btnPercent.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnPercent.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnPercent.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPercent.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnPercent.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnPercent.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnPercent.FlatAppearance.BorderSize = 0;
             this.btnPercent.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnPercent.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPercent.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -126,10 +127,11 @@
             // 
             // btnCE
             // 
-            this.btnCE.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnCE.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnCE.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCE.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnCE.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnCE.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnCE.FlatAppearance.BorderSize = 0;
             this.btnCE.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnCE.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCE.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -145,10 +147,11 @@
             // 
             // btnC
             // 
-            this.btnC.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnC.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnC.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnC.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnC.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnC.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnC.FlatAppearance.BorderSize = 0;
             this.btnC.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnC.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnC.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -164,10 +167,11 @@
             // 
             // btnBack
             // 
-            this.btnBack.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnBack.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnBack.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnBack.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnBack.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnBack.FlatAppearance.BorderSize = 0;
             this.btnBack.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnBack.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBack.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -183,10 +187,11 @@
             // 
             // btnRecip
             // 
-            this.btnRecip.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnRecip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnRecip.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnRecip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecip.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnRecip.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnRecip.FlatAppearance.BorderSize = 0;
             this.btnRecip.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnRecip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRecip.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -202,10 +207,11 @@
             // 
             // btnSquare
             // 
-            this.btnSquare.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSquare.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnSquare.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSquare.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSquare.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSquare.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnSquare.FlatAppearance.BorderSize = 0;
             this.btnSquare.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnSquare.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSquare.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -221,10 +227,11 @@
             // 
             // btnSqrt
             // 
-            this.btnSqrt.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSqrt.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnSqrt.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSqrt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSqrt.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSqrt.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnSqrt.FlatAppearance.BorderSize = 0;
             this.btnSqrt.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnSqrt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSqrt.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -240,10 +247,11 @@
             // 
             // btnDivision
             // 
-            this.btnDivision.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnDivision.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnDivision.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDivision.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnDivision.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnDivision.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnDivision.FlatAppearance.BorderSize = 0;
             this.btnDivision.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnDivision.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDivision.Font = new System.Drawing.Font("돋움", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -263,6 +271,7 @@
             this.btn7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn7.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn7.FlatAppearance.BorderSize = 0;
             this.btn7.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btn7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn7.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -282,6 +291,7 @@
             this.btn8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn8.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn8.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn8.FlatAppearance.BorderSize = 0;
             this.btn8.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btn8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn8.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -301,6 +311,7 @@
             this.btn9.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn9.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn9.FlatAppearance.BorderSize = 0;
             this.btn9.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btn9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn9.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -316,10 +327,11 @@
             // 
             // btnMultip
             // 
-            this.btnMultip.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnMultip.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnMultip.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMultip.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMultip.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnMultip.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnMultip.FlatAppearance.BorderSize = 0;
             this.btnMultip.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnMultip.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnMultip.Font = new System.Drawing.Font("돋움", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -339,6 +351,7 @@
             this.btn4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn4.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn4.FlatAppearance.BorderSize = 0;
             this.btn4.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btn4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn4.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -358,6 +371,7 @@
             this.btn5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn5.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn5.FlatAppearance.BorderSize = 0;
             this.btn5.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btn5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn5.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -377,6 +391,7 @@
             this.btn6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn6.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn6.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn6.FlatAppearance.BorderSize = 0;
             this.btn6.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btn6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn6.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -392,10 +407,11 @@
             // 
             // btnSubtrac
             // 
-            this.btnSubtrac.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnSubtrac.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnSubtrac.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnSubtrac.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnSubtrac.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnSubtrac.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnSubtrac.FlatAppearance.BorderSize = 0;
             this.btnSubtrac.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnSubtrac.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSubtrac.Font = new System.Drawing.Font("돋움", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -415,6 +431,7 @@
             this.btn1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn1.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn1.FlatAppearance.BorderSize = 0;
             this.btn1.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btn1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn1.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -434,6 +451,7 @@
             this.btn2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn2.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn2.FlatAppearance.BorderSize = 0;
             this.btn2.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btn2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn2.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -453,6 +471,7 @@
             this.btn3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn3.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn3.FlatAppearance.BorderSize = 0;
             this.btn3.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btn3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn3.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -468,10 +487,11 @@
             // 
             // btnAdd
             // 
-            this.btnAdd.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.btnAdd.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.btnAdd.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.btnAdd.FlatAppearance.BorderColor = System.Drawing.Color.Silver;
+            this.btnAdd.FlatAppearance.BorderSize = 0;
             this.btnAdd.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnAdd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAdd.Font = new System.Drawing.Font("돋움", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -491,6 +511,7 @@
             this.btnPM.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnPM.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnPM.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btnPM.FlatAppearance.BorderSize = 0;
             this.btnPM.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnPM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnPM.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -510,6 +531,7 @@
             this.btn0.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btn0.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btn0.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btn0.FlatAppearance.BorderSize = 0;
             this.btn0.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btn0.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btn0.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -529,6 +551,7 @@
             this.btnDecipoint.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDecipoint.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnDecipoint.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btnDecipoint.FlatAppearance.BorderSize = 0;
             this.btnDecipoint.FlatAppearance.MouseOverBackColor = System.Drawing.SystemColors.ControlLight;
             this.btnDecipoint.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnDecipoint.Font = new System.Drawing.Font("한컴 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -548,6 +571,7 @@
             this.btnEqual.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEqual.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnEqual.FlatAppearance.BorderColor = System.Drawing.Color.LightGray;
+            this.btnEqual.FlatAppearance.BorderSize = 0;
             this.btnEqual.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(117)))), ((int)(((byte)(196)))));
             this.btnEqual.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEqual.Font = new System.Drawing.Font("돋움", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));

@@ -538,7 +538,11 @@ namespace WinCalcPro
 
 
 
+        //테마 ---------------------
+        public void ChangeTheme(AppTheme theme)
+        {
 
+        }
 
 
 

@@ -39,5 +39,11 @@ namespace WinCalcPro
                     break;
             }
         }
+
+        //테마 ---------------------
+        public void ChangeTheme(AppTheme theme)
+        {
+
+        }
     }
 }

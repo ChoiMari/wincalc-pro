@@ -8,7 +8,7 @@
  * 
  * 수정사항
  * 20250507 : % 연산 추가 & C, CE 버튼 textBoxExp 초기화 코드 추가
- * 역수 수정
+
  *************************************/
 using System;
 using System.Collections.Generic;
@@ -488,6 +488,119 @@ namespace WinCalcPro
             }
             FormatWithCommaOnlyInt(textBoxResult);// 천단위 구분 기호 넣기
             DrawTextWithFontSize(textBoxResult);// 입력길이에 맞춰 font size 조절
+
+        }
+
+        //테마 --------------------------------
+        public void ChangeTheme(AppTheme theme) {
+            if (theme == AppTheme.Light)
+            {
+
+                // 테마를 적용하는 함수 호출
+                LightTheme();
+
+
+            }
+            else if (theme == AppTheme.Dark)
+            {
+
+                // 테마를 적용하는 메서드 호출
+                DarkTheme();
+            }
+
+        }
+
+        //테마 적용 -------------------------
+        void LightTheme() { 
+        
+        }
+
+        void DarkTheme() { 
+            this.BackColor = Color.FromArgb(26, 34, 39);
+            textBoxResult.BackColor = Color.FromArgb(26, 34, 39);
+            textBoxExp.BackColor = Color.FromArgb(26, 34, 39);
+
+            textBoxResult.ForeColor = Color.White;
+            textBoxExp.ForeColor = Color.White;
+
+            btnAdd.BackColor = Color.FromArgb(56, 48, 49);
+            btnSubtrac.BackColor = Color.FromArgb(56, 48, 49);
+            btnMultip.BackColor = Color.FromArgb(56, 48, 49);
+            btnDivision.BackColor = Color.FromArgb(56, 48, 49);
+            btnBack.BackColor = Color.FromArgb(56, 48, 49);
+            btnC.BackColor = Color.FromArgb(56, 48, 49);
+            btnCE.BackColor = Color.FromArgb(56, 48, 49);
+            btnPercent.BackColor = Color.FromArgb(56, 48, 49);
+            btnRecip.BackColor = Color.FromArgb(56, 48, 49); 
+            btnSquare.BackColor = Color.FromArgb(56, 48, 49);
+            btnSqrt.BackColor = Color.FromArgb(56, 48, 49);
+            
+            btn0.BackColor = Color.FromArgb(81, 78, 78);
+            btn1.BackColor = Color.FromArgb(81, 78, 78);
+            btn2.BackColor = Color.FromArgb(81, 78, 78);
+            btn3.BackColor = Color.FromArgb(81, 78, 78);
+            btn4.BackColor = Color.FromArgb(81, 78, 78);
+            btn5.BackColor = Color.FromArgb(81, 78, 78);
+            btn6.BackColor = Color.FromArgb(81, 78, 78);
+            btn7.BackColor = Color.FromArgb(81, 78, 78);
+            btn8.BackColor = Color.FromArgb(81, 78, 78);
+            btn9.BackColor = Color.FromArgb(81, 78, 78);
+            btnPM.BackColor = Color.FromArgb(81, 78, 78);
+            btnDecipoint.BackColor = Color.FromArgb(81, 78, 78);
+
+            btnEqual.BackColor = Color.FromArgb(76, 194, 255);
+
+            btnAdd.ForeColor = Color.White;
+            btnSubtrac.ForeColor = Color.White;
+            btnMultip.ForeColor = Color.White;
+            btnDivision.ForeColor = Color.White;
+            btnBack.ForeColor = Color.White;
+            btnC.ForeColor = Color.White;
+            btnCE.ForeColor = Color.White;
+            btnPercent.ForeColor = Color.White;
+            btnRecip.ForeColor = Color.White;
+            btnSquare.ForeColor = Color.White;
+            btnSqrt.ForeColor = Color.White;
+
+            btn0.ForeColor = Color.White;
+            btn1.ForeColor = Color.White;
+            btn2.ForeColor = Color.White;
+            btn3.ForeColor = Color.White;
+            btn4.ForeColor = Color.White;
+            btn5.ForeColor = Color.White;
+            btn6.ForeColor = Color.White;
+            btn7.ForeColor = Color.White;
+            btn8.ForeColor = Color.White;
+            btn9.ForeColor = Color.White;
+            btnPM.ForeColor = Color.White;
+            btnDecipoint.ForeColor = Color.White;
+
+            btn0.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn1.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn2.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn3.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn4.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn5.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn6.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn7.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn8.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn9.FlatAppearance.MouseOverBackColor = Color.Brown;
+
+            btnAdd.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btnSubtrac.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btnMultip.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btnDivision.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btnDecipoint.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btnBack.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btnC.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btnCE.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btnPercent.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btnRecip.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btnSquare.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btnSqrt.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btnPM.FlatAppearance.MouseOverBackColor = Color.Brown;
+
+            btnEqual.FlatAppearance.MouseOverBackColor = Color.FromArgb(19, 174, 255);
 
         }
     }

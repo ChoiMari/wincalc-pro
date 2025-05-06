@@ -124,6 +124,7 @@
             this.radioButton_dark.TabStop = true;
             this.radioButton_dark.Text = "Dark";
             this.radioButton_dark.UseVisualStyleBackColor = true;
+            this.radioButton_dark.CheckedChanged += new System.EventHandler(this.radioButtonTheme);
             // 
             // radioButton_light
             // 
@@ -137,6 +138,7 @@
             this.radioButton_light.TabStop = true;
             this.radioButton_light.Text = "Light";
             this.radioButton_light.UseVisualStyleBackColor = true;
+            this.radioButton_light.CheckedChanged += new System.EventHandler(this.radioButtonTheme);
             // 
             // SettingControl
             // 

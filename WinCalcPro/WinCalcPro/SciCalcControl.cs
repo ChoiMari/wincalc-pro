@@ -480,5 +480,11 @@ namespace WinCalcPro
             textBox_input.Text = sc.Cot(UserInput(textBox_input.Text)).ToString();
 
         }
+
+        //테마 ---------------------
+        public void ChangeTheme(AppTheme theme)
+        {
+
+        }
     }
 }
