@@ -26,7 +26,7 @@ namespace WinCalcPro
         /// <param name="x">첫 번째 피연산자</param>
         /// <param name="y">두 번째 피연산자</param>
         /// <returns>x와 y를 더한 결과</returns>
-        public double Add(double x, double y) {
+        public decimal Add(decimal x, decimal y) {
             return x + y;
         }
 
@@ -36,7 +36,7 @@ namespace WinCalcPro
         /// <param name="x">첫 번째 피연산자</param>
         /// <param name="y">두 번째 피연산자</param>
         /// <returns>x에서 y를 뺀 결과</returns>
-        public double Subtract(double x, double y) {
+        public decimal Subtract(decimal x, decimal y) {
             return x - y; 
         }
 
@@ -46,7 +46,7 @@ namespace WinCalcPro
         /// <param name="x">첫 번째 피연산자</param>
         /// <param name="y">두 번째 피연산자</param>
         /// <returns>x와 y를 곱한 결과</returns>
-        public double Multiply(double x, double y) {
+        public decimal Multiply(decimal x, decimal y) {
             return x * y;
         }
 
@@ -55,11 +55,11 @@ namespace WinCalcPro
         /// </summary>
         /// <param name="x">피제수(나눠지는 수)</param>
         /// <param name="y">제수(나누는 수)</param>
-        /// <returns>x를 y로 나눈 결과(단, y가 0이면 double.NaN을 반환함)</returns>
-        public double Divide(double x, double y) {
-
+        /// <returns>x를 y로 나눈 결과(단, y가 0이면 null 반환함)</returns>
+        public decimal? Divide(decimal x, decimal y) {
+            //decimal?은 nullable decimal, 즉 "널을 담을 수 있는 decimal 타입"
             if (y == 0) { // 0으로는 나눌 수 없음 
-                return double.NaN;
+                return null;
             }
 
             return x / y;
