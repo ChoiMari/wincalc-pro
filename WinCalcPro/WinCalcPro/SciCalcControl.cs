@@ -621,6 +621,7 @@ namespace WinCalcPro
             btn_log.FlatAppearance.MouseOverBackColor = Color.Brown;
             but_in.FlatAppearance.MouseOverBackColor = Color.Brown;
             btn_square.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_reciprocal.FlatAppearance.MouseOverBackColor = Color.Brown;
 
         }
     }

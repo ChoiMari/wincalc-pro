@@ -548,7 +548,7 @@ namespace WinCalcPro
             btnPM.BackColor = Color.FromArgb(81, 78, 78);
             btnDecipoint.BackColor = Color.FromArgb(81, 78, 78);
 
-            btnEqual.BackColor = Color.FromArgb(76, 194, 255);
+            btnEqual.BackColor = Color.FromArgb(0, 103, 192);
 
             btnAdd.ForeColor = Color.White;
             btnSubtrac.ForeColor = Color.White;
@@ -600,7 +600,7 @@ namespace WinCalcPro
             btnSqrt.FlatAppearance.MouseOverBackColor = Color.Brown;
             btnPM.FlatAppearance.MouseOverBackColor = Color.Brown;
 
-            btnEqual.FlatAppearance.MouseOverBackColor = Color.FromArgb(19, 174, 255);
+            btnEqual.FlatAppearance.MouseOverBackColor = Color.FromArgb(25, 117, 196);
 
         }
     }
