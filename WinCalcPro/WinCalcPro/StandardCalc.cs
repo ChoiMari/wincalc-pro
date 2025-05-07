@@ -26,7 +26,7 @@ namespace WinCalcPro
         /// <param name="x">첫 번째 피연산자</param>
         /// <param name="y">두 번째 피연산자</param>
         /// <returns>x와 y를 더한 결과</returns>
-        public double Add(double x, double y) {
+        public decimal Add(decimal x, decimal y) {
             return x + y;
         }
 
@@ -36,7 +36,7 @@ namespace WinCalcPro
         /// <param name="x">첫 번째 피연산자</param>
         /// <param name="y">두 번째 피연산자</param>
         /// <returns>x에서 y를 뺀 결과</returns>
-        public double Subtract(double x, double y) {
+        public decimal Subtract(decimal x, decimal y) {
             return x - y; 
         }
 
@@ -46,7 +46,7 @@ namespace WinCalcPro
         /// <param name="x">첫 번째 피연산자</param>
         /// <param name="y">두 번째 피연산자</param>
         /// <returns>x와 y를 곱한 결과</returns>
-        public double Multiply(double x, double y) {
+        public decimal Multiply(decimal x, decimal y) {
             return x * y;
         }
 
@@ -55,11 +55,11 @@ namespace WinCalcPro
         /// </summary>
         /// <param name="x">피제수(나눠지는 수)</param>
         /// <param name="y">제수(나누는 수)</param>
-        /// <returns>x를 y로 나눈 결과(단, y가 0이면 double.NaN을 반환함)</returns>
-        public double Divide(double x, double y) {
-
+        /// <returns>x를 y로 나눈 결과(단, y가 0이면 null 반환함)</returns>
+        public decimal? Divide(decimal x, decimal y) {
+            //decimal?은 nullable decimal, 즉 "널을 담을 수 있는 decimal 타입"
             if (y == 0) { // 0으로는 나눌 수 없음 
-                return double.NaN;
+                return null;
             }
 
             return x / y;
@@ -73,7 +73,7 @@ namespace WinCalcPro
         public double Sqrt(double x) {
 
             if (x < 0) { // 음수는 제곱근을 구할 수 없음
-                return double.NaN;
+                return double.NaN; // Not a Number, Double.IsNaN()으로 확인 가능
             }
 
             double result = Math.Sqrt(x);
@@ -108,6 +108,24 @@ namespace WinCalcPro
         }
 
         // % : 퍼센트 계산(기준값이 없으면 0처리)
+        public decimal Percent(decimal left, decimal right, string op)
+        {
+            switch (op)
+            {
+                case "＋":
+                    return  (left * right / 100);
+                case "－":
+                    return (left * right / 100);
+                case "×":
+                case "*":
+                    return (right / 100);
+                case "÷":
+                case "/":
+                    return (right / 100);
+                default:
+                    return 0; // 잘못된 연산자일 경우 0 반환
+            }
+        }
 
 
         /// <summary>
@@ -119,11 +137,6 @@ namespace WinCalcPro
             return result;
         }
 
-        // C : 지금 입력하고 있는 값 + 모든 값을 0으로 한다.(전체 지우기)
-        public string ClearAll() {
-            string result = "0"; // 현재 입력값을 0으로 초기화
-            return result;
-        }
 
         /// <summary>
         /// 백스페이스(⌫) : 맨 뒤의 한 글자를 지운다.
@@ -166,7 +179,7 @@ namespace WinCalcPro
         /// </summary>
         /// <param name="x">입력값</param>
         /// <returns>부호를 바꿔서 반환</returns>
-        public double ChangeSign(double x)
+        public decimal ChangeSign(decimal x)
         {
             return -x; // 부호를 바꿔서 반환
         }

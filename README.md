@@ -1,2 +1,17 @@
-# windows-calculator
-Mini project) A Windows Calculator clone built with C# and Windows Forms by a 2-member team 
+# 🧮 WinCalcPro – C# WinForms 학습용 계산기
+
+
+## 📌 프로젝트 소개
+WinCalcPro는 Windows 계산기를 참고하여 만든 **학습용 C# WinForms 계산기**입니다.  
+표준 계산기부터 공학용, 프로그래머, 날짜 계산기까지 다양한 기능을 갖춘 데스크탑 애플리케이션으로,  
+폼 전환, 사용자 정의 컨트롤, 이벤트 처리, 레이아웃 관리 등 WinForms 핵심 개념을 실습하고 학습하는 데 중점을 두었습니다.
+
+
+⚠️ 본 프로젝트는 Microsoft 공식 계산기와는 관련이 없으며, **상업적 목적 없이 개인 학습용으로 제작**되었습니다.  
+> This project is not affiliated with the official Microsoft Calculator and was created solely for personal educational purposes without any commercial intent.
+
+
+## 🔒 라이선스 및 주의사항
+
+- 본 프로젝트는 오직 **개인 포트폴리오 및 학습용**으로만 사용됩니다.
+- 원작 소프트웨어의 상표 및 저작권은 Microsoft에 귀속됩니다.

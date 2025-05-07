@@ -35,8 +35,8 @@
             this.linkLabel_icon_copyright = new System.Windows.Forms.LinkLabel();
             this.label_icon_copyright = new System.Windows.Forms.Label();
             this.panel_theme = new System.Windows.Forms.Panel();
-            this.radioButton_light = new System.Windows.Forms.RadioButton();
             this.radioButton_dark = new System.Windows.Forms.RadioButton();
+            this.radioButton_light = new System.Windows.Forms.RadioButton();
             this.panel_theme.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,7 +44,7 @@
             // 
             this.label_shape.AutoSize = true;
             this.label_shape.Font = new System.Drawing.Font("한컴 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label_shape.Location = new System.Drawing.Point(29, 38);
+            this.label_shape.Location = new System.Drawing.Point(29, 40);
             this.label_shape.Name = "label_shape";
             this.label_shape.Size = new System.Drawing.Size(37, 19);
             this.label_shape.TabIndex = 0;
@@ -54,7 +54,7 @@
             // 
             this.label_information.AutoSize = true;
             this.label_information.Font = new System.Drawing.Font("한컴 고딕", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label_information.Location = new System.Drawing.Point(29, 191);
+            this.label_information.Location = new System.Drawing.Point(29, 193);
             this.label_information.Name = "label_information";
             this.label_information.Size = new System.Drawing.Size(37, 19);
             this.label_information.TabIndex = 0;
@@ -113,6 +113,18 @@
             this.panel_theme.Size = new System.Drawing.Size(248, 100);
             this.panel_theme.TabIndex = 5;
             // 
+            // radioButton_dark
+            // 
+            this.radioButton_dark.AutoSize = true;
+            this.radioButton_dark.Font = new System.Drawing.Font("한컴 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.radioButton_dark.Location = new System.Drawing.Point(17, 61);
+            this.radioButton_dark.Name = "radioButton_dark";
+            this.radioButton_dark.Size = new System.Drawing.Size(60, 23);
+            this.radioButton_dark.TabIndex = 0;
+            this.radioButton_dark.TabStop = true;
+            this.radioButton_dark.Text = "Dark";
+            this.radioButton_dark.UseVisualStyleBackColor = true;
+            // 
             // radioButton_light
             // 
             this.radioButton_light.AutoSize = true;
@@ -125,18 +137,6 @@
             this.radioButton_light.TabStop = true;
             this.radioButton_light.Text = "Light";
             this.radioButton_light.UseVisualStyleBackColor = true;
-            // 
-            // radioButton_dark
-            // 
-            this.radioButton_dark.AutoSize = true;
-            this.radioButton_dark.Font = new System.Drawing.Font("한컴 고딕", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButton_dark.Location = new System.Drawing.Point(17, 61);
-            this.radioButton_dark.Name = "radioButton_dark";
-            this.radioButton_dark.Size = new System.Drawing.Size(60, 23);
-            this.radioButton_dark.TabIndex = 0;
-            this.radioButton_dark.TabStop = true;
-            this.radioButton_dark.Text = "Dark";
-            this.radioButton_dark.UseVisualStyleBackColor = true;
             // 
             // SettingControl
             // 
