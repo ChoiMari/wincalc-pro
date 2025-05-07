@@ -139,4 +139,25 @@
   <data name="trigonometryImg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\trigonometryImg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="dateImg_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\dateImg-dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="menuImg_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\menuImg-dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="prog_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\prog-dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="sci_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\sci-dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="setting_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\setting-dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="stdImg_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\stdImg-dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="trigonometryImg_dark" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\trigonometryImg-dark.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>

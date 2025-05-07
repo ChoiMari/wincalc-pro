@@ -79,6 +79,14 @@ namespace WinCalcPro
         // DarkTheme()로 바꾸는 메서드
         void DarkTheme()
         {
+            button_menu.Image = Properties.Resources.menuImg_dark;
+            button_menu_close.Image = Properties.Resources.menuImg_dark;
+            button_menu_date.Image = Properties.Resources.dateImg_dark;
+            button_menu_prog.Image = Properties.Resources.prog_dark;
+            button_menu_sci.Image = Properties.Resources.sci_dark;
+            button_menu_setting.Image = Properties.Resources.setting_dark;
+            button_menu_std.Image = Properties.Resources.stdImg_dark;
+
             panel_header.BackColor = Color.FromArgb(26, 34, 39);
             panel_main.BackColor = Color.FromArgb(26, 34, 39);
             panel_menu.BackColor = Color.FromArgb(40, 46, 51);
