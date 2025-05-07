@@ -95,7 +95,7 @@
             // 
             // panel_hr
             // 
-            this.panel_hr.BackColor = System.Drawing.SystemColors.ControlLight;
+            this.panel_hr.BackColor = System.Drawing.Color.Gainsboro;
             this.panel_hr.Location = new System.Drawing.Point(0, 444);
             this.panel_hr.Name = "panel_hr";
             this.panel_hr.Size = new System.Drawing.Size(220, 1);
@@ -119,6 +119,7 @@
             // 
             this.button_menu_setting.Dock = System.Windows.Forms.DockStyle.Fill;
             this.button_menu_setting.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(250)))), ((int)(((byte)(248)))), ((int)(((byte)(252)))));
+            this.button_menu_setting.FlatAppearance.BorderSize = 0;
             this.button_menu_setting.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button_menu_setting.Image = global::WinCalcPro.Properties.Resources.setting;
             this.button_menu_setting.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
@@ -244,9 +245,9 @@
             // 
             // panel_main
             // 
-            this.panel_main.Location = new System.Drawing.Point(0, 46);
+            this.panel_main.Location = new System.Drawing.Point(0, 40);
             this.panel_main.Name = "panel_main";
-            this.panel_main.Size = new System.Drawing.Size(324, 455);
+            this.panel_main.Size = new System.Drawing.Size(324, 461);
             this.panel_main.TabIndex = 13;
             // 
             // button_menu
