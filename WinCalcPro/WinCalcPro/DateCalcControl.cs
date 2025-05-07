@@ -43,7 +43,48 @@ namespace WinCalcPro
         //테마 ---------------------
         public void ChangeTheme(AppTheme theme)
         {
+            if (theme == AppTheme.Light)
+            {
+
+                // 테마를 적용하는 함수 호출
+                LightTheme();
+
+
+            }
+            else if (theme == AppTheme.Dark)
+            {
+
+                // 테마를 적용하는 메서드 호출
+                DarkTheme();
+            }
+        }
+
+        void LightTheme() { 
+        
+        }
+        void DarkTheme() {
+            this.BackColor = Color.FromArgb(26, 34, 39);
+            panel_date0.BackColor = Color.FromArgb(26, 34, 39);
+            panel_date1.BackColor = Color.FromArgb(26, 34, 39);
+            
+            radioBtn_panel1_add.BackColor = Color.FromArgb(26, 34, 39);
+            radioBtn_panel1_minus.BackColor = Color.FromArgb(26, 34, 39);
+            radioBtn_panel1_add.ForeColor = Color.White;
+            radioBtn_panel1_minus.ForeColor = Color.White;
+            label_diff.ForeColor = Color.White;
+            label_end.ForeColor = Color.White;
+            label_panel1_date.ForeColor = Color.White;
+            label_panel1_day.ForeColor = Color.White;
+            label_panel1_month.ForeColor = Color.White;
+            label_panel1_result.ForeColor = Color.White;
+            label_panel1_start.ForeColor = Color.White;
+            label_panel1_year.ForeColor = Color.White;
+            label_result.ForeColor = Color.White;
+            label_start.ForeColor = Color.White;
+
+            
 
         }
+
     }
 }
