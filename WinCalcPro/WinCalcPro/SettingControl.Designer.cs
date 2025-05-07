@@ -44,9 +44,9 @@
             // 
             this.label_shape.AutoSize = true;
             this.label_shape.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label_shape.Location = new System.Drawing.Point(33, 50);
+            this.label_shape.Location = new System.Drawing.Point(29, 40);
             this.label_shape.Name = "label_shape";
-            this.label_shape.Size = new System.Drawing.Size(40, 24);
+            this.label_shape.Size = new System.Drawing.Size(34, 18);
             this.label_shape.TabIndex = 0;
             this.label_shape.Text = "모양";
             // 
@@ -54,9 +54,9 @@
             // 
             this.label_information.AutoSize = true;
             this.label_information.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label_information.Location = new System.Drawing.Point(33, 245);
+            this.label_information.Location = new System.Drawing.Point(29, 196);
             this.label_information.Name = "label_information";
-            this.label_information.Size = new System.Drawing.Size(40, 24);
+            this.label_information.Size = new System.Drawing.Size(34, 18);
             this.label_information.TabIndex = 0;
             this.label_information.Text = "정보";
             // 
@@ -65,9 +65,9 @@
             this.label_info_content.AutoSize = true;
             this.label_info_content.BackColor = System.Drawing.Color.White;
             this.label_info_content.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label_info_content.Location = new System.Drawing.Point(39, 284);
+            this.label_info_content.Location = new System.Drawing.Point(34, 227);
             this.label_info_content.Name = "label_info_content";
-            this.label_info_content.Size = new System.Drawing.Size(0, 24);
+            this.label_info_content.Size = new System.Drawing.Size(0, 18);
             this.label_info_content.TabIndex = 1;
             // 
             // label_copyright
@@ -75,18 +75,18 @@
             this.label_copyright.AutoSize = true;
             this.label_copyright.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label_copyright.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_copyright.Location = new System.Drawing.Point(38, 400);
+            this.label_copyright.Location = new System.Drawing.Point(33, 320);
             this.label_copyright.Name = "label_copyright";
-            this.label_copyright.Size = new System.Drawing.Size(0, 17);
+            this.label_copyright.Size = new System.Drawing.Size(0, 13);
             this.label_copyright.TabIndex = 2;
             // 
             // linkLabel_icon_copyright
             // 
             this.linkLabel_icon_copyright.AutoSize = true;
             this.linkLabel_icon_copyright.LinkColor = System.Drawing.Color.Navy;
-            this.linkLabel_icon_copyright.Location = new System.Drawing.Point(117, 475);
+            this.linkLabel_icon_copyright.Location = new System.Drawing.Point(108, 380);
             this.linkLabel_icon_copyright.Name = "linkLabel_icon_copyright";
-            this.linkLabel_icon_copyright.Size = new System.Drawing.Size(87, 15);
+            this.linkLabel_icon_copyright.Size = new System.Drawing.Size(74, 12);
             this.linkLabel_icon_copyright.TabIndex = 3;
             this.linkLabel_icon_copyright.TabStop = true;
             this.linkLabel_icon_copyright.Text = "flaticon.com";
@@ -97,9 +97,9 @@
             this.label_icon_copyright.AutoSize = true;
             this.label_icon_copyright.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.249999F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label_icon_copyright.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label_icon_copyright.Location = new System.Drawing.Point(40, 474);
+            this.label_icon_copyright.Location = new System.Drawing.Point(35, 379);
             this.label_icon_copyright.Name = "label_icon_copyright";
-            this.label_icon_copyright.Size = new System.Drawing.Size(80, 17);
+            this.label_icon_copyright.Size = new System.Drawing.Size(71, 13);
             this.label_icon_copyright.TabIndex = 4;
             this.label_icon_copyright.Text = "아이콘 출처 :";
             // 
@@ -108,20 +108,18 @@
             this.panel_theme.BackColor = System.Drawing.Color.White;
             this.panel_theme.Controls.Add(this.radioButton_dark);
             this.panel_theme.Controls.Add(this.radioButton_light);
-            this.panel_theme.Location = new System.Drawing.Point(38, 88);
-            this.panel_theme.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel_theme.Location = new System.Drawing.Point(33, 70);
             this.panel_theme.Name = "panel_theme";
-            this.panel_theme.Size = new System.Drawing.Size(279, 129);
+            this.panel_theme.Size = new System.Drawing.Size(244, 103);
             this.panel_theme.TabIndex = 5;
             // 
             // radioButton_dark
             // 
             this.radioButton_dark.AutoSize = true;
             this.radioButton_dark.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButton_dark.Location = new System.Drawing.Point(19, 74);
-            this.radioButton_dark.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButton_dark.Location = new System.Drawing.Point(17, 59);
             this.radioButton_dark.Name = "radioButton_dark";
-            this.radioButton_dark.Size = new System.Drawing.Size(69, 28);
+            this.radioButton_dark.Size = new System.Drawing.Size(58, 22);
             this.radioButton_dark.TabIndex = 0;
             this.radioButton_dark.Text = "Dark";
             this.radioButton_dark.UseVisualStyleBackColor = true;
@@ -132,10 +130,9 @@
             this.radioButton_light.AutoSize = true;
             this.radioButton_light.Checked = true;
             this.radioButton_light.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.radioButton_light.Location = new System.Drawing.Point(19, 26);
-            this.radioButton_light.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.radioButton_light.Location = new System.Drawing.Point(17, 21);
             this.radioButton_light.Name = "radioButton_light";
-            this.radioButton_light.Size = new System.Drawing.Size(71, 28);
+            this.radioButton_light.Size = new System.Drawing.Size(57, 22);
             this.radioButton_light.TabIndex = 0;
             this.radioButton_light.TabStop = true;
             this.radioButton_light.Text = "Light";
@@ -144,7 +141,7 @@
             // 
             // SettingControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(243)))), ((int)(((byte)(242)))), ((int)(((byte)(249)))));
             this.Controls.Add(this.panel_theme);
@@ -154,9 +151,8 @@
             this.Controls.Add(this.label_info_content);
             this.Controls.Add(this.label_information);
             this.Controls.Add(this.label_shape);
-            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "SettingControl";
-            this.Size = new System.Drawing.Size(370, 569);
+            this.Size = new System.Drawing.Size(324, 455);
             this.Load += new System.EventHandler(this.SettingControl_Load);
             this.panel_theme.ResumeLayout(false);
             this.panel_theme.PerformLayout();
