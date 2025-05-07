@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WinCalcPro
 {
@@ -280,6 +281,7 @@ namespace WinCalcPro
         {
             return (decimal)Math.Log((double)number);
         }
+
 
         /// <summary>
         /// 계산 결과 기록
