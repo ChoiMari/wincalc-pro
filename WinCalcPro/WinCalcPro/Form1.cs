@@ -12,10 +12,14 @@ namespace WinCalcPro
 {
     public partial class Form1 : Form
     {
+        private AppTheme CurrentTheme;
+
         public Form1()
         {
             InitializeComponent();
+            CurrentTheme = AppTheme.Light;
         } // Form1 끝
+
 
         //-------------- 전역 변수(필드) 선언 --------------
         /// <summary>
@@ -25,6 +29,81 @@ namespace WinCalcPro
 
 
         //------------------- 메서드 선언 ------------------
+
+        //테마 ---------------------
+        public void ChangeTheme(AppTheme theme)
+        {
+            if (theme == AppTheme.Light)
+            {
+                CurrentTheme = AppTheme.Light;
+                // 테마를 적용하는 함수 호출
+                LightTheme();
+
+
+            }
+            else if (theme == AppTheme.Dark) 
+            {
+                CurrentTheme = AppTheme.Dark;
+                // 테마를 적용하는 메서드 호출
+                DarkTheme();
+            }
+        }
+
+        // LightTheme()로 바꾸는 메서드
+        void LightTheme() { 
+            panel_header.BackColor = Color.FromArgb(243, 242, 249);
+            panel_main.BackColor = Color.FromArgb(243, 242, 249);
+            panel_menu.BackColor = Color.FromArgb(250, 248, 252);
+            tableLayoutPanel_menu_button.BackColor = Color.FromArgb(250, 248, 252);
+            tableLayoutPanel_menu_setting.BackColor = Color.FromArgb(250, 248, 252);
+            button_menu.BackColor = Color.FromArgb(243, 242, 249);
+            button_menu_close.BackColor = Color.FromArgb(250, 248, 252);
+            button_menu_date.BackColor = Color.FromArgb(250, 248, 252);
+            button_menu_date.ForeColor = Color.Black;
+            button_menu_prog.BackColor = Color.FromArgb(250, 248, 252);
+            button_menu_prog.ForeColor = Color.Black;
+            button_menu_sci.BackColor = Color.FromArgb(250, 248, 252);
+            button_menu_sci.ForeColor = Color.Black;
+            button_menu_setting.BackColor = Color.FromArgb(250, 248, 252);
+            button_menu_setting.ForeColor = Color.Black;
+            button_menu_date.ForeColor = Color.Black;
+            button_menu_std.BackColor = Color.FromArgb(250, 248, 252);
+            button_menu_std.ForeColor = Color.Black;
+            label_calc.BackColor = Color.FromArgb(250, 248, 252);
+            label_calc.ForeColor = Color.Black;
+            label_title.BackColor = Color.FromArgb(243, 242, 249);
+            label_title.ForeColor = Color.Black;
+            panel_hr.BackColor = Color.Gainsboro;
+        }
+
+        // DarkTheme()로 바꾸는 메서드
+        void DarkTheme()
+        {
+            panel_header.BackColor = Color.FromArgb(26, 34, 39);
+            panel_main.BackColor = Color.FromArgb(26, 34, 39);
+            panel_menu.BackColor = Color.FromArgb(40, 46, 51);
+            tableLayoutPanel_menu_button.BackColor = Color.FromArgb(40, 46, 51);
+            tableLayoutPanel_menu_setting.BackColor = Color.FromArgb(40, 46, 51);
+            button_menu.BackColor = Color.FromArgb(26, 34, 39);
+            button_menu_close.BackColor = Color.FromArgb(40, 46, 51);
+            button_menu_date.BackColor = Color.FromArgb(40, 46, 51);
+            button_menu_date.ForeColor = Color.White;
+            button_menu_prog.BackColor = Color.FromArgb(40, 46, 51);
+            button_menu_prog.ForeColor = Color.White;
+            button_menu_sci.BackColor = Color.FromArgb(40, 46, 51);
+            button_menu_sci.ForeColor = Color.White;
+            button_menu_setting.BackColor= Color.FromArgb(40, 46, 51);
+            button_menu_setting.ForeColor = Color.White;
+            button_menu_std.BackColor = Color.FromArgb(40, 46, 51);
+            button_menu_std.ForeColor = Color.White;
+            label_calc.BackColor = Color.FromArgb(40, 46, 51);
+            label_calc.ForeColor = Color.White;
+            label_title.BackColor = Color.FromArgb(26, 34, 39);
+            label_title.ForeColor = Color.White;
+            panel_hr.BackColor = Color.DimGray;
+   
+        }
+
         /// <summary>
         /// 사용자 컨트롤 삽입 메서드
         /// </summary>
@@ -139,6 +218,7 @@ namespace WinCalcPro
             HideMenu(); // 햄버거 메뉴 감추기
             StdCalcControl stdCalcControl = new StdCalcControl();
             LoadUserControl(stdCalcControl, "표준");
+            stdCalcControl.ChangeTheme(CurrentTheme);
         }
 
         // 햄버거 메뉴의 공학 계산기 버튼 클릭 이벤트 핸들러
@@ -147,6 +227,7 @@ namespace WinCalcPro
             HideMenu();// 햄버거 메뉴 감추기
             SciCalcControl sciCalcControl = new SciCalcControl();
             LoadUserControl(sciCalcControl, "공학용");
+            sciCalcControl.ChangeTheme(CurrentTheme);
         }
 
         private void button_menu_prog_Click(object sender, EventArgs e)
@@ -154,6 +235,7 @@ namespace WinCalcPro
             HideMenu();// 햄버거 메뉴 감추기
             ProgCalcControl progCalcControl = new ProgCalcControl();
             LoadUserControl(progCalcControl, "프로그래머");
+            progCalcControl.ChangeTheme(CurrentTheme);
         }
 
         private void button_menu_date_Click(object sender, EventArgs e)
@@ -161,6 +243,7 @@ namespace WinCalcPro
             HideMenu();// 햄버거 메뉴 감추기
             DateCalcControl dateCalcControl = new DateCalcControl();
             LoadUserControl(dateCalcControl, "날짜 계산");
+            dateCalcControl.ChangeTheme(CurrentTheme);
         }
 
         private void button_menu_setting_Click(object sender, EventArgs e)
@@ -168,6 +251,10 @@ namespace WinCalcPro
             HideMenu();// 햄버거 메뉴 감추기
             SettingControl settingControl = new SettingControl();
             LoadUserControl(settingControl, "설정");
+            settingControl.ChangeTheme(CurrentTheme);
+            
         }
+
+
     }
 }

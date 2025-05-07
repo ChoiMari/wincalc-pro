@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using System.Windows.Forms;
 
 namespace WinCalcPro
@@ -478,6 +479,149 @@ namespace WinCalcPro
         private void ToolStripMenuItem_cot_Click(object sender, EventArgs e)
         {
             textBox_input.Text = sc.Cot(UserInput(textBox_input.Text)).ToString();
+
+        }
+
+        //테마 ---------------------
+        public void ChangeTheme(AppTheme theme)
+        {
+            if (theme == AppTheme.Light)
+            {
+
+                // 테마를 적용하는 함수 호출
+                LightTheme();
+
+
+            }
+            else if (theme == AppTheme.Dark)
+            {
+
+                // 테마를 적용하는 메서드 호출
+                DarkTheme();
+            }
+        }
+
+        // 테마 적용
+        void LightTheme() { 
+        
+        }
+        void DarkTheme() { 
+            this.BackColor = Color.FromArgb(26, 34, 39);
+            textBox_input.BackColor = Color.FromArgb(26, 34, 39);
+            textBox_preview.BackColor = Color.FromArgb(26, 34, 39);
+            toolStrip_trigonometry.BackColor = Color.FromArgb(26, 34, 39);
+            toolStripSplitButton.BackColor = Color.FromArgb(26, 34, 39);
+            panel_hr.BackColor = Color.FromArgb(26, 34, 39);
+            btn_0.BackColor = Color.FromArgb(81, 78, 78);
+            btn_1.BackColor = Color.FromArgb(81, 78, 78);
+            btn_2.BackColor = Color.FromArgb(81, 78, 78);
+            btn_3.BackColor = Color.FromArgb(81, 78, 78);
+            btn_4.BackColor = Color.FromArgb(81, 78, 78);
+            btn_5.BackColor = Color.FromArgb(81, 78, 78);
+            btn_6.BackColor = Color.FromArgb(81, 78, 78);
+            btn_7.BackColor = Color.FromArgb(81, 78, 78);
+            btn_8.BackColor = Color.FromArgb(81, 78, 78);
+            btn_9.BackColor = Color.FromArgb(81, 78, 78);
+            btn_decimalPoint.BackColor = Color.FromArgb(81, 78, 78);
+            btn_conversion.BackColor = Color.FromArgb(81, 78, 78);
+
+            btn_abs.BackColor = Color.FromArgb(56, 48, 49);
+            btn_plus.BackColor = Color.FromArgb(56, 48, 49);
+            btn_minus.BackColor = Color.FromArgb(56, 48, 49);
+            btn_multiplication.BackColor = Color.FromArgb(56, 48, 49);
+            btn_sharing.BackColor = Color.FromArgb(56, 48, 49);
+            btn_mod.BackColor = Color.FromArgb(56, 48, 49);
+            btn_back.BackColor = Color.FromArgb(56, 48, 49);
+            btn_ce.BackColor = Color.FromArgb(56, 48, 49);
+            btn_e.BackColor = Color.FromArgb(56, 48, 49);
+            btn_pi.BackColor = Color.FromArgb(56, 48, 49);
+            btn_nd2.BackColor = Color.FromArgb(56, 48, 49);
+            btn_square.BackColor = Color.FromArgb(56, 48, 49);
+            btn_reciprocal.BackColor = Color.FromArgb(56, 48, 49);
+            btn_exp.BackColor = Color.FromArgb(56, 48, 49);
+            btn_squareRoot.BackColor = Color.FromArgb(56, 48, 49);
+            btn_parenthesesEnd.BackColor = Color.FromArgb(56, 48, 49);
+            btn_pow10.BackColor = Color.FromArgb(56, 48, 49);
+            btn_openParentheses.BackColor = Color.FromArgb(56, 48, 49);
+            btn_factorial.BackColor = Color.FromArgb(56, 48, 49);
+            btn_power.BackColor = Color.FromArgb(56, 48, 49);
+            btn_log.BackColor = Color.FromArgb(56, 48, 49);
+            but_in.BackColor = Color.FromArgb(56, 48, 49);
+
+            textBox_input.ForeColor = Color.White;
+            textBox_preview.ForeColor = Color.White;
+            toolStripSplitButton.ForeColor = Color.DarkGray;
+            btn_0.ForeColor = Color.White;
+            btn_1.ForeColor = Color.White;
+            btn_2.ForeColor = Color.White;
+            btn_3.ForeColor = Color.White;
+            btn_4.ForeColor = Color.White;
+            btn_5.ForeColor = Color.White;
+            btn_6.ForeColor = Color.White;
+            btn_7.ForeColor = Color.White;
+            btn_8.ForeColor = Color.White;
+            btn_9.ForeColor = Color.White;
+            btn_conversion.ForeColor = Color.White;
+            btn_decimalPoint.ForeColor = Color.White;
+
+            btn_abs.ForeColor = Color.White;
+            btn_plus.ForeColor = Color.White;
+            btn_minus.ForeColor = Color.White;
+            btn_multiplication.ForeColor = Color.White;
+            btn_sharing.ForeColor = Color.White;
+            btn_mod.ForeColor = Color.White;
+            btn_back.ForeColor = Color.White;
+            btn_ce.ForeColor = Color.White;
+            btn_e.ForeColor = Color.White;
+            btn_pi.ForeColor = Color.White;
+            btn_nd2.ForeColor = Color.White;
+            btn_square.ForeColor = Color.White;
+            btn_exp.ForeColor = Color.White;
+            btn_squareRoot.ForeColor = Color.White;
+            btn_parenthesesEnd.ForeColor = Color.White;
+            btn_pow10.ForeColor = Color.White;
+            btn_openParentheses.ForeColor = Color.White;
+            btn_factorial.ForeColor = Color.White;
+            btn_power.ForeColor = Color.White;
+            btn_log.ForeColor = Color.White;
+            but_in.ForeColor = Color.White;
+            btn_reciprocal.ForeColor = Color.White;
+
+            btn_0.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_1.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_2.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_3.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_4.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_5.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_6.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_7.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_8.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_9.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_conversion.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_decimalPoint.FlatAppearance.MouseOverBackColor = Color.Brown;
+
+            btn_nd2.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_pi.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_e.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_ce.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_back.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_mod.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_exp.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_abs.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_sharing.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_minus.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_multiplication.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_plus.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_factorial.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_parenthesesEnd.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_openParentheses.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_squareRoot.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_pow10.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_power.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_log.FlatAppearance.MouseOverBackColor = Color.Brown;
+            but_in.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_square.FlatAppearance.MouseOverBackColor = Color.Brown;
+            btn_reciprocal.FlatAppearance.MouseOverBackColor = Color.Brown;
 
         }
     }
