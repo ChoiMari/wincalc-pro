@@ -32,20 +32,73 @@ namespace WinCalcPro
         /// <param name="e"></param>
         private void textBox_input_KeyPress(object sender, KeyPressEventArgs e)
         {
-            // 숫자와 제어 문자만 허용
-            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            // 키보드 입력 버튼으로 처리
+            switch (e.KeyChar)
             {
-                e.Handled = true; // 입력을 무시
-            }
-            // 엔터
-            if (e.KeyChar == (char)Keys.Enter)
-            {
-                // 엔터 키를 눌렀을 때의 동작을 여기에 추가
-                // 예: 계산 수행
-                btn_equal_Click(sender, e);
-            }
-            
+                case '0':
+                    btn_0_Click(sender, e);
+                    break;
+                case '1':
+                    btn_1_Click(sender, e);
+                    break;
+                case '2':
+                    btn_2_Click(sender, e);
+                    break;
+                case '3':
+                    btn_3_Click(sender, e);
+                    break;
+                case '4':
+                    btn_4_Click(sender, e);
+                    break;
+                case '5':
+                    btn_5_Click(sender, e);
+                    break;
+                case '6':
+                    btn_6_Click(sender, e);
+                    break;
+                case '7':
+                    btn_7_Click(sender, e);
+                    break;
+                case '8':
+                    btn_8_Click(sender, e);
+                    break;
+                case '9':
+                    btn_9_Click(sender, e);
+                    break;
+                case '.':
+                    btn_decimalPoint_Click(sender, e);
+                    break;
+                case '+':
+                    btn_plus_Click(sender, e);
+                    break;
+                case '-':
+                    btn_minus_Click(sender, e);
+                    break;
+                case '*':
+                    btn_multiplication_Click(sender, e);
+                    break;
+                case '/':
+                    btn_sharing_Click(sender, e);
+                    break;
+                case '(':
+                    btn_openParentheses_Click(sender, e);
+                    break;
+                case ')':
+                    btn_parenthesesEnd_Click(sender, e);
+                    break;
+                case '=':
+                    btn_equal_Click(sender, e);
+                    break;
+                case (char)Keys.Back:
+                    btn_back_Click(sender, e);
+                    break;
 
+                case (char)Keys.Enter:
+                    btn_equal_Click(sender, e);
+                    break;
+                default:
+                    break;
+            }
         }
         ScientificCalc sc = new ScientificCalc();
         decimal UserInput(string input)
