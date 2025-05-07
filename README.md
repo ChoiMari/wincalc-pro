@@ -352,7 +352,8 @@ double.TryParse(textBox.Text, out double result)
 ![프로그래머용-Light](./images/3.png)
 ![설정-Light](./images/4.png)  
 
-**🖤 Dark모드 적용**     
+**🖤 Dark모드 적용**   
+
 ![햄버거메뉴-Dark](./images/9.png)
 ![표준-Dark](./images/5.png)
 ![공학용-Dark](./images/6.png)
