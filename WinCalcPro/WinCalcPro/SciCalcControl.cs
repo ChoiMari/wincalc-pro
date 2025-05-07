@@ -555,8 +555,8 @@ namespace WinCalcPro
         }
 
         // 테마 적용
-        void LightTheme() { 
-        
+        void LightTheme() {
+            toolStripSplitButton.Image = Properties.Resources.trigonometryImg;
         }
         void DarkTheme() { 
             this.BackColor = Color.FromArgb(26, 34, 39);

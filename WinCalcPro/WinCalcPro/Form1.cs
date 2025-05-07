@@ -74,6 +74,14 @@ namespace WinCalcPro
             label_title.BackColor = Color.FromArgb(243, 242, 249);
             label_title.ForeColor = Color.Black;
             panel_hr.BackColor = Color.Gainsboro;
+
+            button_menu.Image = Properties.Resources.menuImg;
+            button_menu_close.Image = Properties.Resources.menuImg;
+            button_menu_date.Image = Properties.Resources.dateImg;
+            button_menu_prog.Image = Properties.Resources.prog;
+            button_menu_sci.Image = Properties.Resources.sci;
+            button_menu_setting.Image = Properties.Resources.setting;
+            button_menu_std.Image = Properties.Resources.stdImg;
         }
 
         // DarkTheme()로 바꾸는 메서드
