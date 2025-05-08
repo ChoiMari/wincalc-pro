@@ -1,0 +1,25 @@
+name: Integration Test
+
+on:
+  pull_request:
+    branches: [main]
+    types: [closed]  # PR이 main에 merge될 때만 실행
+
+jobs:
+  test:
+    if: github.event.pull_request.merged == true
+    # 윈도우에 실행행
+    runs-on: windows-latest
+    strategy:
+      matrix:
+        # .net framework 버전
+        dotnet-framework: [ '4.8', '4.7.2' ]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Setup dotnet ${{ matrix.dotnet-framework }}
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: ${{ matrix.dotnet-framework }}
+      # You can test your matrix by printing the current dotnet version
+      - name: Display dotnet version
+        run: dotnet --version
